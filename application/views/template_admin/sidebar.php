@@ -68,7 +68,7 @@
                 <i class="fas fa-unlock"></i> Ganti Pasword
               </a>
               <a href="<?= base_url('auth/logout') ?>" class="dropdown-item has-icon text-danger tombol-keluar">
-                <i class="fas fa-sign-out-alt"></i> Logout
+                <i class="fas fa-sign-out-alt"></i> Log Out
               </a>
             </div>
           </li>

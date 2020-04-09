@@ -28,12 +28,12 @@ $('.tombol-keluar').on('click', function (e) {
 
 	Swal({
 		title: 'Apakah anda yakin',
-		text: "ingin logout?",
+		text: "ingin log out?",
 		type: 'warning',
 		showCancelButton: true,
 		confirmButtonColor: '#3085d6',
 		cancelButtonColor: '#d33',
-		confirmButtonText: 'Logout!'
+		confirmButtonText: 'Log Out!'
 	}).then((result) => {
 		if (result.value) {
 			document.location.href = href;

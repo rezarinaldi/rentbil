@@ -33,9 +33,9 @@ $CI->load->helper('url');
 			<div class="container mt-5">
 				<div class="page-error">
 					<div class="page-inner">
-						<h1>404</h1>
-						<div class="page-description">
-							Halaman yang Anda cari tidak dapat ditemukan.
+						<h2 style="font-size: 70px;"><?php echo $heading; ?></h2>
+						<div class="page-description mt-5">
+							<?php echo $message; ?>
 						</div>
 						<div class="page-search">
 							<div class="mt-5">

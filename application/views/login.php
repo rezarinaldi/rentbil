@@ -53,7 +53,7 @@
 
               <div class="form-group">
                 <button name="login" type="submit" class="btn btn-primary btn-lg btn-block" tabindex="4">
-                  Login
+                  Log In
                 </button>
               </div>
 
