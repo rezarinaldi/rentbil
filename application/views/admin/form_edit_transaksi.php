@@ -40,11 +40,25 @@
 								</div>
 								<div class="form-group">
 									<label>Tanggal Sewa</label>
-									<input type="text" name="tgl_sewa" class="form-control picker" onclick="disable()" value="<?= $ts->tanggal_sewa ?>" required>
+									<div class="input-group">
+										<div class="input-group-prepend">
+											<div class="input-group-text">
+												<i class="fas fa-calendar"></i>
+											</div>
+										</div>
+										<input type="date" name="tgl_sewa" class="form-control" value="<?= $ts->tanggal_sewa ?>" required>
+									</div>
 								</div>
 								<div class="form-group">
 									<label>Tanggal Kembali</label>
-									<input type="text" name="tgl_kembali" class="form-control picker" onclick="disable()" value="<?= $ts->tanggal_kembali ?>" required>
+									<div class="input-group">
+										<div class="input-group-prepend">
+											<div class="input-group-text">
+												<i class="fas fa-calendar"></i>
+											</div>
+										</div>
+										<input type="date" name="tgl_kembali" class="form-control" value="<?= $ts->tanggal_kembali ?>" required>
+									</div>
 								</div>
 							</div>
 
@@ -79,13 +93,13 @@
 
 
 
-<!-- MODAL user -->
+<!-- MODAL User -->
 
 <div class="modal fade" id="modal-user">
 	<div class="modal-dialog" style="min-width: 700px; max-height: 80%">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h4 class="modal-title">Pilih user</h4>
+				<h4 class="modal-title">Pilih User</h4>
 				<button type="button" class="close" data-dismiss="modal" arial-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
@@ -93,7 +107,7 @@
 			<div class="modal-body table-responsive">
 				<table class="table table-bordered table-striped table-responsive" id="data_table">
 					<thead>
-						<tr>
+						<tr align="center">
 							<th>No</th>
 							<th>Nama</th>
 							<th>Alamat</th>
@@ -107,7 +121,7 @@
 						<?php
 						$no = 1;
 						foreach ($user as $ct) : ?>
-							<tr>
+							<tr align="center">
 								<td><?= $no++ ?></td>
 								<td><?= $ct->nama ?></td>
 								<td><?= $ct->alamat ?></td>
@@ -144,7 +158,7 @@
 			<div class="modal-body table-responsive">
 				<table class="table table-bordered table-striped" id="data_table2">
 					<thead>
-						<tr>
+						<tr align="center">
 							<th>No</th>
 							<th>Gambar</th>
 							<th>Merk</th>
@@ -159,7 +173,7 @@
 						$no = 1;
 						foreach ($mobil as $mb) : ?>
 							<?php if (($mb->status) == 1) : ?>
-								<tr>
+								<tr align="center">
 									<td><?= $no++ ?></td>
 									<td><img width="100px" height="60px" src="<?= base_url() . 'assets/upload/mobil/' . $mb->gambar ?>"></td>
 									<td><?= $mb->merk ?></td>

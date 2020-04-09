@@ -33,11 +33,19 @@
             <?= $this->session->flashdata('pesan') ?>
 
             <form method="POST" action="<?= base_url('auth/process') ?>" id="loginform" autocomplete="off" class="needs-validation" novalidate="">
+
               <div class="form-group">
                 <label for="email">Email</label>
-                <input id="email" type="email" class="form-control" name="email" tabindex="1" required autofocus>
-                <div class="invalid-feedback">
-                  Masukkan Email Dengan Benar
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">
+                      @
+                    </div>
+                  </div>
+                  <input id="email" type="email" class="form-control" name="email" tabindex="1" required autofocus>
+                  <div class="invalid-feedback">
+                    Email Masih Kosong
+                  </div>
                 </div>
               </div>
 
@@ -45,9 +53,16 @@
                 <div class="d-block">
                   <label for="password" class="control-label">Password</label>
                 </div>
-                <input id="password" type="password" class="form-control" name="password" tabindex="2" required>
-                <div class="invalid-feedback">
-                  Password masih kosong
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">
+                      <i class="fas fa-lock"></i>
+                    </div>
+                  </div>
+                  <input id="password" type="password" class="form-control" name="password" tabindex="2" required>
+                  <div class="invalid-feedback">
+                  Password Masih Kosong
+                </div>
                 </div>
               </div>
 
@@ -60,6 +75,7 @@
               <div class="mt-5 text-center">
                 Tidak punya akun? <a href="<?= base_url('register'); ?>">Buat akun baru.</a>
               </div>
+              
             </form>
 
             <div class="text-center mt-5">

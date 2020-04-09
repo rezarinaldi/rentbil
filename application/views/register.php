@@ -40,18 +40,32 @@
 										<div class="col-6">
 											<div class="form-group">
 												<label>Nama</label>
-												<input type="text" name="nama" class="form-control" required autofocus>
-												<div class="invalid-feedback">
-													Nama Tidak Boleh Kosong
+												<div class="input-group">
+													<div class="input-group-prepend">
+														<div class="input-group-text">
+															<i class="far fa-user"></i>
+														</div>
+													</div>
+													<input type="text" name="nama" class="form-control" required autofocus>
+													<div class="invalid-feedback">
+														Nama Tidak Boleh Kosong
+													</div>
 												</div>
 											</div>
 										</div>
 										<div class="col-6">
 											<div class="form-group">
 												<label>Email</label>
-												<input type="email" name="email" class="form-control" required>
-												<div class="invalid-feedback">
-													Email Tidak Boleh Kosong
+												<div class="input-group">
+													<div class="input-group-prepend">
+														<div class="input-group-text">
+															<i class="fas fa-envelope"></i>
+														</div>
+													</div>
+													<input type="email" name="email" class="form-control" required>
+													<div class="invalid-feedback">
+														Email Tidak Boleh Kosong
+													</div>
 												</div>
 											</div>
 										</div>
@@ -72,22 +86,8 @@
 													</div>
 												</div>
 											</div>
-											<!-- <div class="form-group">
-												<label>Password</label>
-												<input type="password" name="password" class="form-control" required>
-												<div class="invalid-feedback">
-													Password Tidak Boleh Kosong
-												</div>
-											</div> -->
 										</div>
 										<div class="col-6">
-											<!-- <div class="form-group">
-												<label>Confirm Password</label>
-												<input type="password" name="confirm_password" class="form-control" required>
-												<div class="invalid-feedback">
-													Password Konfirmasi Tidak Boleh Kosong
-												</div>
-											</div> -->
 											<div class="form-group">
 												<label>Confirm Password</label>
 												<div class="input-group">
@@ -108,9 +108,16 @@
 										<div class="col-6">
 											<div class="form-group">
 												<label>Alamat</label>
-												<input type="text" name="alamat" class="form-control" required>
-												<div class="invalid-feedback">
-													Alamat Tidak Boleh Kosong
+												<div class="input-group">
+													<div class="input-group-prepend">
+														<div class="input-group-text">
+															<i class="fas fa-map-marker-alt"></i>
+														</div>
+													</div>
+													<textarea name="alamat" class="form-control textarea optional" rows="2" required></textarea>
+													<div class="invalid-feedback">
+														Alamat Tidak Boleh Kosong
+													</div>
 												</div>
 											</div>
 										</div>
@@ -148,9 +155,16 @@
 										<div class="col-6">
 											<div class="form-group">
 												<label>No. KTP</label>
-												<input type="text" name="no_ktp" class="form-control" required>
-												<div class="invalid-feedback">
-													No. KTP Tidak Boleh Kosong
+												<div class="input-group">
+													<div class="input-group-prepend">
+														<div class="input-group-text">
+															<i class="fas fa-address-card"></i>
+														</div>
+													</div>
+													<input type="text" name="no_ktp" class="form-control" required>
+													<div class="invalid-feedback">
+														No. KTP Tidak Boleh Kosong
+													</div>
 												</div>
 											</div>
 										</div>
@@ -158,19 +172,35 @@
 									<div class="row">
 										<div class="col-6">
 											<div class="form-group">
-												<label>Scan KTP</label>
+												<!-- <label>Scan KTP</label>
 												<input type="file" name="scan_ktp" class="form-control" required>
 												<div class="invalid-feedback">
 													Scan KTP Tidak Boleh Kosong
+												</div> -->
+												<label>Scan KTP</label>
+												<div class="custom-file">
+													<input type="file" name="scan_ktp" class="custom-file-input" id="customFile" required>
+													<label class="custom-file-label" for="customFile">Choose file</label>
+													<div class="invalid-feedback">
+														Scan KTP Tidak Boleh Kosong
+													</div>
 												</div>
 											</div>
 										</div>
 										<div class="col-6">
 											<div class="form-group">
-												<label>Scan KK</label>
+												<!-- <label>Scan KK</label>
 												<input type="file" name="scan_kk" class="form-control" required>
 												<div class="invalid-feedback">
 													Scan KK Tidak Boleh Kosong
+												</div> -->
+												<label>Scan KK</label>
+												<div class="custom-file">
+													<input type="file" name="scan_kk" class="custom-file-input" id="customFile" required>
+													<label class="custom-file-label" for="customFile">Choose file</label>
+													<div class="invalid-feedback">
+														Scan KTP Tidak Boleh Kosong
+													</div>
 												</div>
 											</div>
 										</div>

@@ -14,12 +14,12 @@
                     <form action="<?= base_url('customer/rental/tambah_rental_simpan/') ?>" method="POST">
                         <div class="form-group">
                             <label>Tanggal Sewa</label>
-                            <input type="text" name="tgl_sewa" class="form-control picker" value="<?= $tgl_sewa ?>"
+                            <input type="date" name="tgl_sewa" class="form-control" value="<?= $tgl_sewa ?>"
                                 autocomplete="off" disabled>
                         </div>
                         <div class="form-group">
                             <label>Tanggal Kembali</label>
-                            <input type="text" name="tgl_kembali" class="form-control picker" autocomplete="off"
+                            <input type="date" name="tgl_kembali" class="form-control" autocomplete="off"
                                 value="<?= $tgl_kembali ?>" disabled>
                         </div>
                         <div class="form-group">
@@ -32,7 +32,6 @@
                             <input type="text" name="total_biaya" class="form-control"
                                 value="<?= indo_currency(($mb->harga) * $durasi) ?>" autocomplete="off" disabled>
                         </div>
-
 
                         <input type="hidden" value="<?= $this->fungsi->user_login()->id_user ?>" name="id_user"
                             id="id_user">
@@ -48,7 +47,6 @@
                         <button type="submit" class="btn btn-primary mt-3 float-right"><i
                                 class="fa fa-shopping-cart"></i>
                             Sewa</button>
-
 
                     </form>
                 </div>

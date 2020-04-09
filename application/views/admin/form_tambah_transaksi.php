@@ -33,11 +33,25 @@
 							</div>
 							<div class="form-group">
 								<label>Tanggal Sewa</label>
-								<input id="tgl_sewa" type="date" name="tgl_sewa" class="form-control" onclick="disable()" required>
+								<div class="input-group">
+									<div class="input-group-prepend">
+										<div class="input-group-text">
+											<i class="fas fa-calendar"></i>
+										</div>
+									</div>
+									<input id="tgl_sewa" type="date" name="tgl_sewa" class="form-control" required>
+								</div>
 							</div>
 							<div class="form-group">
 								<label>Tanggal Kembali</label>
-								<input id="tgl_kembali" type="date" name="tgl_kembali" class="form-control" onclick="disable()" required>
+								<div class="input-group">
+									<div class="input-group-prepend">
+										<div class="input-group-text">
+											<i class="fas fa-calendar"></i>
+										</div>
+									</div>
+									<input id="tgl_kembali" type="date" name="tgl_kembali" class="form-control" required>
+								</div>
 							</div>
 						</div>
 
