@@ -1,5 +1,3 @@
-# Tugas Proyek 1
-
 ## Video tutorial untuk membuat website ini:
 
 🎥 [Tutorial Aplikasi Rental Mobil Menggunakan Codeigniter 3](https://www.youtube.com/playlist?list=PLce3Eyp7oY9_bqW9EDki6-HLZgMvY6CP3)
