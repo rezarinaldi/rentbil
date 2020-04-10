@@ -14,27 +14,30 @@
           <li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown" class="nav-link nav-link-lg message-toggle">
               <i class="far fa-envelope"></i>
               <span class="badge badge-danger badge-counter">
-                <?php $query = $this->db->query('select*from pesan');
+                <?php $query = $this->db->query('select status from pesan where status = 0');
                 echo $query->num_rows($query) ?>
               </span>
             </a>
             <div class="dropdown-menu dropdown-list dropdown-menu-right">
-              <div class="dropdown-header" style="font-size: 15px;color: #fff; background-color: #6777ef;">Pesan</div>
+              <div class="dropdown-header" style="font-size: 15px;color: #fff; background-color: #6777ef;">Pesan Masuk</div>
               <div class="dropdown-list-content dropdown-list-message">
                 <a href="#" class="dropdown-item dropdown-item-unread">
 
-                  <?php foreach ($pesan as $psn) : ?>
+                  <?php foreach ($pesan as $psn) :
+                    if ($psn->status == 0) :
+                  ?>
 
-                    <div class="dropdown-item-avatar">
-                      <img alt="image" src="<?= base_url('assets/assets_stisla'); ?>/assets/img/avatar/default-avatar.png" class="rounded-circle">
-                    </div>
-                    <div class="dropdown-item-desc">
-                      <!-- nama -->
-                      <p><?= $psn->nama ?></p>
-                      <!-- pesan -->
-                      <p><?= $psn->isi_pesan ?></p>
-                    </div>
+                      <div class="dropdown-item-avatar">
+                        <img alt="image" src="<?= base_url('assets/assets_stisla'); ?>/assets/img/avatar/default-avatar.png" class="rounded-circle">
+                      </div>
+                      <div class="dropdown-item-desc">
+                        <!-- nama -->
+                        <p><?= $psn->nama ?></p>
+                        <!-- pesan -->
+                        <p><?= $psn->isi_pesan ?></p>
+                      </div>
 
+                    <?php endif ?>
                   <?php endforeach; ?>
 
                 </a>
@@ -47,7 +50,7 @@
           <li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown" class="nav-link notification-toggle nav-link-lg">
               <i class="far fa-bell"></i>
               <span class="badge badge-danger badge-counter">
-              <?php $query = $this->db->query('select status_pembayaran from transaksi where status_pembayaran = 0');
+                <?php $query = $this->db->query('select status_pembayaran from transaksi where status_pembayaran = 0');
                 echo $query->num_rows($query) ?>
               </span>
             </a>

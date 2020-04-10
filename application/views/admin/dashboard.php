@@ -112,27 +112,30 @@
                     <i class="far fa-question-circle"></i>
                   </div>
                   <h4>
-                    <?php $query = $this->db->query('select*from pesan');
+                    <?php $query = $this->db->query('select status from pesan where status = 0');
                     echo $query->num_rows($query) ?>
                   </h4>
-                  <div class="card-description">Pesan</div>
+                  <div class="card-description">Pesan Belum Dibaca</div>
                 </div>
                 <div class="card-body p-0">
                   <div class="tickets-list">
 
-                    <?php foreach ($pesan as $psn) : ?>
+                    <?php foreach ($pesan as $psn) :
+                      if ($psn->status == 0) :
+                    ?>
 
-                      <a href="#" class="ticket-item">
-                        <div class="ticket-title">
-                          <!-- isi pesan -->
-                          <h4><?= $psn->isi_pesan ?></h4>
-                        </div>
-                        <div class="ticket-info">
-                          <!-- nama -->
-                          <div><i class="far fa-user"></i> <?= $psn->nama ?></div>
-                        </div>
-                      </a>
+                        <a href="#" class="ticket-item">
+                          <div class="ticket-title">
+                            <!-- isi pesan -->
+                            <h4><?= $psn->isi_pesan ?></h4>
+                          </div>
+                          <div class="ticket-info">
+                            <!-- nama -->
+                            <div><i class="far fa-user"></i> <?= $psn->nama ?></div>
+                          </div>
+                        </a>
 
+                      <?php endif ?>
                     <?php endforeach; ?>
 
                     <a href="<?= base_url('admin/data_pesan') ?>" class="ticket-item ticket-more">

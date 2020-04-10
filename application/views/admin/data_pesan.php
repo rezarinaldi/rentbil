@@ -5,6 +5,7 @@
         </div>
 
         <?= $this->session->flashdata('pesan') ?>
+
         <div class="card shadow mb-4">
             <div class="card-body">
                 <table class="table table-hover table-striped table-bordered" id="data_table">
@@ -15,6 +16,8 @@
                             <th>Email</th>
                             <th>No. Telp</th>
                             <th>Isi Pesan</th>
+                            <th>Tgl Posting</th>
+                            <th>Status</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -28,8 +31,16 @@
                                 <td><?= $psn->email ?></td>
                                 <td><?= $psn->no_telp ?></td>
                                 <td><?= $psn->isi_pesan ?></td>
+                                <td><?= $psn->tgl_posting ?></td>
                                 <td>
-                                    <a href="<?= base_url('admin/data_type/delete_pesan/') . $psn->id_pesan ?>" class="btn btn-sm btn-danger tombol-hapus"><i class="far fa-trash-alt"></i></a>
+                                    <?php if ($psn->status == 1) { ?>
+                                        <span class="badge badge-success">Sudah Dibaca</span>
+                                    <?php } else { ?>
+                                        <span><a class="btn btn-sm btn-dark tombol-baca" href="<?= base_url('admin/data_pesan/baca_pesan/') . $psn->id_pesan ?>">Baca</a></span>
+                                    <?php } ?>
+                                </td>
+                                <td>
+                                    <a href="<?= base_url('admin/data_pesan/delete_pesan/') . $psn->id_pesan ?>" class="btn btn-sm btn-danger tombol-hapus"><i class="far fa-trash-alt"></i></a>
                                 </td>
                             </tr>
                         <?php endforeach; ?>
