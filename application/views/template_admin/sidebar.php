@@ -111,7 +111,7 @@
               </ul>
             </li>
 
-            <li><a class="nav-link" href="<?= base_url('admin/data_pesan') ?>"><i class="fas fa-comment"></i> <span>Pesan</span></a></li>
+            <li><a class="nav-link" href="<?= base_url('admin/data_pesan') ?>"><i class="fas fa-comment-dots"></i> <span>Pesan</span></a></li>
 
           </ul>
         </aside>

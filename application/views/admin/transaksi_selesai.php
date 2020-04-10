@@ -1,7 +1,7 @@
 <div class="main-content">
     <section class="section">
         <div class="section-header">
-            <h1>Data Transaksi</h1>
+            <h1>Transaksi Selesai</h1>
         </div>
 
         <a href="<?= base_url('admin/transaksi/tambah_transaksi') ?>" class="btn btn-primary mb-3"> <i class="fas fa-plus"></i> Tambah Data</a>

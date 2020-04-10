@@ -1,7 +1,7 @@
 <div class="main-content">
     <section class="section">
         <div class="section-header">
-            <h1>Data Transaksi</h1>
+            <h1>Menunggu Konfirmasi</h1>
         </div>
 
         <?= $this->session->flashdata('pesan') ?>
