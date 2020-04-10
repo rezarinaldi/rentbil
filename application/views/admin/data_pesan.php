@@ -36,7 +36,7 @@
                                     <?php if ($psn->status == 1) { ?>
                                         <span class="badge badge-success">Sudah Dibaca</span>
                                     <?php } else { ?>
-                                        <span><a class="btn btn-sm btn-dark tombol-baca" href="<?= base_url('admin/data_pesan/baca_pesan/') . $psn->id_pesan ?>">Baca</a></span>
+                                        <span><a class="btn btn-sm btn-dark tombol-baca" href="<?= base_url('admin/data_pesan/baca_pesan/') . $psn->id_pesan ?>">Belum Dibaca</a></span>
                                     <?php } ?>
                                 </td>
                                 <td>
