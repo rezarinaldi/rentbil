@@ -4,7 +4,6 @@
 			<h1>Laporan Transaksi</h1>
 		</div>
 
-		<?= $this->session->flashdata('pesan') ?>
 		<div class="card shadow mb-4">
 			<div class="card-body">
 				<form method="post" action="<?= base_url(); ?>admin/transaksi/laporan">

@@ -8,6 +8,7 @@
         <?= $this->session->flashdata('pesan') ?>
         <div class="card shadow mb-4">
             <div class="card-body">
+                <h5 class="text-dark">Laporan Mobil yang Tersedia</h5>
                 <div class="btn-group mb-4">
                     <a class="btn btn-dark btn-sm" href="<?= base_url(); ?>admin/data_mobil/laporan_print" target="blank">
                         <i class="fas fa-print"></i> Cetak Laporan

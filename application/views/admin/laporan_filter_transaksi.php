@@ -4,7 +4,6 @@
 			<h1>Laporan Transaksi</h1>
 		</div>
 
-		<?= $this->session->flashdata('pesan') ?>
 		<div class="card shadow mb-4">
 			<div class="card-body">
 				<form method="post" action="<?= base_url(); ?>admin/transaksi/laporan">
@@ -12,12 +11,12 @@
 						<div class="col-md-3">
 							<div class="form-group">
 								<label>Dari Tanggal</label>
-								<input type="date" name="dari" class="form-control">
+								<input type="date" name="dari" class="form-control" value="<?= $_POST['dari']; ?>">
 								<?= form_error('dari'); ?>
 							</div>
 							<div class="form-group">
 								<label>Sampai Tanggal</label>
-								<input type="date" name="sampai" class="form-control">
+								<input type="date" name="sampai" class="form-control" value="<?= $_POST['sampai']; ?>">
 								<?= form_error('sampai'); ?>
 							</div>
 							<div class="form-group">
@@ -30,7 +29,7 @@
 				</form>
 
 				<div class="btn-group mb-4">
-					<a class="btn btn-default btn-sm" href="<?= base_url() . 'admin/transaksi/laporan_print/?dari=' . set_value('dari') . '&sampai=' . set_value('sampai'); ?>" target="blank">
+					<a class="btn btn-dark btn-sm" href="<?= base_url() . 'admin/transaksi/laporan_print/?dari=' . set_value('dari') . '&sampai=' . set_value('sampai'); ?>" target="blank">
 						<i class="fas fa-print"></i> Cetak Laporan
 					</a>
 				</div>
@@ -38,8 +37,8 @@
 				<div class="table-responsive">
 					<table border="1" class="table table-striped table-hover table-bordered" id="data_table">
 						<thead>
-							<tr>
-								<th>No</th>
+							<tr align="center">
+								<!-- <th>No</th>
 								<th>Tanggal</th>
 								<th>Kostumer</th>
 								<th>Mobil</th>
@@ -49,11 +48,20 @@
 								<th>Denda / Hari</th>
 								<th>Tgl. Dikembalikan</th>
 								<th>Total Denda</th>
+								<th>Status</th> -->
+								<th>No</th>
+								<th>User</th>
+								<th>Mobil</th>
+								<th>Tgl Sewa</th>
+								<th>Tgl Kembali</th>
+								<th>Total Sewa</th>
 								<th>Status</th>
+								<th>Status Pembayaran</th>
 							</tr>
 						</thead>
-						<tbody> <?php $no = 1;
-								foreach ($laporan as $l) { ?>
+						<tbody>
+							<!-- <?php $no = 1;
+									foreach ($laporan as $l) { ?>
 								<tr>
 									<td><?= $no++; ?></td>
 									<td><?= date('d/m/Y', strtotime($l->transaksi_tgl)); ?></td>
@@ -76,7 +84,29 @@
 												echo "-";
 											} ?> </td>
 								</tr>
-							<?php } ?>
+							<?php } ?> -->
+							<?php
+							$no = 1;
+							foreach ($laporan as $l) : ?>
+								<tr align="center">
+									<td><?= $no++ ?></td>
+									<td><?= $l->nama ?></td>
+									<td><?= $l->merk ?></td>
+									<td><?= IndonesiaTgl($l->tanggal_sewa) ?></td>
+									<td><?= IndonesiaTgl($l->tanggal_kembali) ?></td>
+									<td><?= format_rupiah($l->total_sewa) ?></td>
+									<td><?= $l->status == 1 ? "<span class='badge badge-warning'>Disewa</span>" : "<span class='badge badge-success'>Selesai</span>" ?></td>
+									<td>
+										<?php if (($l->status_pembayaran) == 0) {
+											echo "<span class='badge badge-danger'>Belum Dibayar</span>";
+										} elseif (($l->status_pembayaran) == 1) {
+											echo "<span class='badge badge-info'>Menunggu Konfirmasi</span>";
+										} else {
+											echo "<span class='badge badge-success'>Sudah Dibayar</span>";
+										} ?>
+									</td>
+								</tr>
+							<?php endforeach; ?>
 						</tbody>
 					</table>
 				</div>

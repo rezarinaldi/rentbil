@@ -84,7 +84,6 @@ class Rental extends CI_Controller
             $this->transaksi_model->insert_status_mobil_sedia($id_mobil, 'mobil');
         };
 
-
         $tglsewa = strtotime($this->input->post('tanggal_sewa'));
         $jmlhari  = 86400 * 1;
         $tgl      = $tglsewa - $jmlhari;
@@ -152,9 +151,9 @@ class Rental extends CI_Controller
             echo "<script>alert('Bukti Pembayaran Gagal di-Upload')</script>";
         } else {
             $bukti_pembayaran = $this->upload->data('file_name');
-            echo    "<script>
-                                alert('Bukti Pembayaran Berhasil di-Upload');
-                            </script>";
+            echo "<script>
+            alert('Bukti Pembayaran Berhasil di-Upload');
+            </script>";
         }
 
         $status_pembayaran = 1;
