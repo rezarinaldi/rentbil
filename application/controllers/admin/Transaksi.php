@@ -236,7 +236,6 @@ class Transaksi extends CI_Controller
         $this->form_validation->set_rules('sampai', 'Sampai Tanggal', 'required');
 
         if ($this->form_validation->run() == true) {
-            // $data['transaksi'] = $this->db->query("select * from transaksi, mobil, kostumer where transaksi_mobil=mobil_id and transaksi_kostumer=kostumer_id and date(transaksi_tgl) >= '$dari'")->result();
             $data['laporan'] = $this->db->query("select * from transaksi, mobil, user where transaksi.id_mobil=mobil.id_mobil and transaksi.id_user=user.id_user and date(tanggal_sewa) >= '$dari'")->result();
             $this->load->view('template_admin/header', $data);
             $this->load->view('template_admin/sidebar');
@@ -257,7 +256,6 @@ class Transaksi extends CI_Controller
         $dari = $this->input->get('dari');
         $sampai = $this->input->get('sampai');
         if ($dari != "" && $sampai != "") {
-            // $data['transaksi'] = $this->db->query("select * from transaksi, mobil, kostumer where transaksi_mobil=mobil_id and transaksi_kostumer=kostumer_id and date(transaksi_tgl) >= '$dari'")->result();
             $data['laporan'] = $this->db->query("select * from transaksi, mobil, user where transaksi.id_mobil=mobil.id_mobil and transaksi.id_user=user.id_user and date(tanggal_sewa) >= '$dari'")->result();
             $this->load->view('admin/laporan_transaksi_print', $data);
         } else {
