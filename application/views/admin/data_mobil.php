@@ -9,11 +9,8 @@
         <div class="card shadow mb-4">
             <div class="card-body">
                 <div class="btn-group mb-4">
-                    <a class="btn btn-danger btn-sm" href="<?= base_url(); ?>admin/data_mobil/laporan_pdf">
-                        <i class="fas fa-file-pdf"></i> Cetak PDF
-                    </a>
                     <a class="btn btn-dark btn-sm" href="<?= base_url(); ?>admin/data_mobil/laporan_print" target="blank">
-                        <i class="fas fa-print"></i> Print
+                        <i class="fas fa-print"></i> Cetak Laporan
                     </a>
                 </div>
                 <table class="table table-hover table-striped table-bordered" id="data_table">
@@ -41,7 +38,7 @@
                                 <td><?= $mb->kode_type ?></td>
                                 <td><?= $mb->merk ?></td>
                                 <td><?= $mb->no_plat ?></td>
-                                <td><?= indo_currency($mb->harga) ?></td>
+                                <td><?= format_rupiah($mb->harga) ?></td>
                                 <td><?= $mb->status == 0 ? "<span class='badge badge-danger'>Kosong</span>" : "<span class='badge badge-primary'>Tersedia</span>" ?></td>
                                 <td>
                                     <a href="<?= base_url('admin/data_mobil/detail_mobil/') . $mb->id_mobil ?>" class="btn btn-sm btn-success"><i class="fas fa-search-plus"></i></a>

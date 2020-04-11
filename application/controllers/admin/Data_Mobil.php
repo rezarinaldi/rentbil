@@ -187,24 +187,10 @@ class Data_Mobil extends CI_Controller
         redirect('admin/data_mobil');
     }
 
-    //fitur cetak pdf
-    function laporan_pdf()
-    {
-        $data['title'] = 'Laporan Mobil yang Tersedia (PDF)';
-        $this->load->library('pdf');
-        $data['mobil'] = $this->mobil_model->get_data_type('mobil')->result();
-        $this->load->library('pdf');
-        $this->load->view('admin/laporan_mobil_pdf', $data);
-
-        $this->pdf->setPaper('A4', 'landscape');
-        $this->pdf->filename = "laporan-retalmobil.pdf";
-        $this->pdf->load_view('admin/laporan_mobil_pdf', $data);
-    }
-
     //fitur print laporan
     function laporan_print()
     {
-        $data['title'] = 'Laporan Mobil yang Tersedia (Print)';
+        $data['title'] = 'Laporan Mobil yang Tersedia';
         $data['mobil'] = $this->mobil_model->get_data_type('mobil')->result();
         $this->load->view('admin/laporan_mobil_print', $data);
     }

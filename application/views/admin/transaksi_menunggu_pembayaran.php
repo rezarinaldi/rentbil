@@ -30,9 +30,9 @@
                                     <td><?= $no++ ?></td>
                                     <td><?= $ts->nama ?></td>
                                     <td><?= $ts->merk ?></td>
-                                    <td><?= $ts->tanggal_sewa ?></td>
-                                    <td><?= $ts->tanggal_kembali ?></td>
-                                    <td><?= indo_currency($ts->total_sewa) ?></td>
+                                    <td><?= IndonesiaTgl($ts->tanggal_sewa) ?></td>
+                                    <td><?= IndonesiaTgl($ts->tanggal_kembali) ?></td>
+                                    <td><?= format_rupiah($ts->total_sewa) ?></td>
                                     <td><span class="badge badge-info">Menunggu Pembayaran</span></td>
                                     <td>
                                         <a href="<?= base_url('admin/transaksi/delete_transaksi/') . $ts->id_transaksi ?>" class="btn btn-sm btn-danger tombol-hapus"><i class="far fa-trash-alt"></i></a>

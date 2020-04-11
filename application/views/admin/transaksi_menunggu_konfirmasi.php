@@ -31,9 +31,9 @@
                                     <td><?= $no++ ?></td>
                                     <td><?= $ts->nama ?></td>
                                     <td><?= $ts->merk ?></td>
-                                    <td><?= $ts->tanggal_sewa ?></td>
-                                    <td><?= $ts->tanggal_kembali ?></td>
-                                    <td><?= indo_currency($ts->total_sewa) ?></td>
+                                    <td><?= IndonesiaTgl($ts->tanggal_sewa) ?></td>
+                                    <td><?= IndonesiaTgl($ts->tanggal_kembali) ?></td>
+                                    <td><?= format_rupiah($ts->total_sewa) ?></td>
                                     <td><span class="badge badge-info">Menunggu Konfirmasi</span></td>
                                     <td>
                                         <a href="<?= base_url() . 'assets/upload/bukti_pembayaran/' . $ts->bukti_pembayaran ?>"><img width="100px" height="60px" src="<?= base_url() . 'assets/upload/bukti_pembayaran/' . $ts->bukti_pembayaran ?>"></a>

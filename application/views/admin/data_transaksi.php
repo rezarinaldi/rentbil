@@ -30,9 +30,9 @@
                                 <td><?= $no++ ?></td>
                                 <td><?= $ts->nama ?></td>
                                 <td><?= $ts->merk ?></td>
-                                <td><?= $ts->tanggal_sewa ?></td>
-                                <td><?= $ts->tanggal_kembali ?></td>
-                                <td><?= indo_currency($ts->total_sewa) ?></td>
+                                <td><?= IndonesiaTgl($ts->tanggal_sewa) ?></td>
+                                <td><?= IndonesiaTgl($ts->tanggal_kembali) ?></td>
+                                <td><?= format_rupiah($ts->total_sewa) ?></td>
                                 <td><?= $ts->status == 1 ? "<span class='badge badge-warning'>Disewa</span>" : "<span class='badge badge-success'>Selesai</span>" ?></td>
                                 <td>
                                     <?php if (($ts->status_pembayaran) == 0) {

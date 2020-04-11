@@ -239,7 +239,7 @@ class Transaksi extends CI_Controller
             $data['laporan'] = $this->db->query("select * from transaksi, mobil, kostumer where transaksi_mobil=mobil_id and transaksi_kostumer=kostumer_id and date(transaksi_tgl) >= '$dari'")->result();
             $this->load->view('template_admin/header', $data);
             $this->load->view('template_admin/sidebar');
-            $this->load->view('admin/laporan_filter', $data);
+            $this->load->view('admin/laporan_filter_transaksi', $data);
             $this->load->view('template_admin/footer');
         } else {
             $this->load->view('template_admin/header', $data);
@@ -260,20 +260,5 @@ class Transaksi extends CI_Controller
         } else {
             redirect('admin/laporan', 'refresh');
         }
-    }
-
-    //fitur cetak pdf
-    function laporan_pdf()
-    {
-        $this->load->library('dompdf_gen');
-        $dari = $this->input->get('dari');
-        $sampai = $this->input->get('sampai');
-        $data['laporan'] = $this->db->query("select * from transaksi,mobil,kostumer where transaksi_mobil=mobil_id and transaksi_kostumer=kostumer_id and date(transaksi_tgl) >= '$dari'")->result();
-        $this->load->library('dompdf_gen');
-        $this->load->view('admin/v_laporan_pdf', $data);
-
-        $this->dompdf_gen->setPaper('A4', 'landscape');
-        $this->dompdf_gen->filename = "laporan-retalmobil.pdf";
-        $this->dompdf_gen->load_view('admin/laporan_transaksi_pdf', $data);
     }
 }
