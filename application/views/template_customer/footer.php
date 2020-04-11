@@ -54,7 +54,7 @@
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
             Copyright &copy;<script>
               document.write(new Date().getFullYear());
-            </script> All rights reserved | made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">colorlib</a>
+            </script> All rights reserved | made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
           </p>
         </div>
@@ -74,16 +74,14 @@
 <!--=======================Javascript============================-->
 
 <!--=== Jquery Min Js ===-->
+<!-- <script src="<?= base_url() ?>assets/assets_shop/js/jquery-3.2.1.min.js"></script> -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!--=== Jquery Migrate Min Js ===-->
 <script src="<?= base_url() ?>assets/assets_shop/js/jquery-migrate.min.js"></script>
 <!--=== Popper Min Js ===-->
 <script src="<?= base_url() ?>assets/assets_shop/js/popper.min.js"></script>
 <!--=== Bootstrap Min Js ===-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 <!--=== Gijgo Min Js ===-->
 <script src="<?= base_url() ?>assets/assets_shop/js/plugins/gijgo.js"></script>
 <!--=== Vegas Min Js ===-->
