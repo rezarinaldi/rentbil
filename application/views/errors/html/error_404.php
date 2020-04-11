@@ -21,6 +21,7 @@ $CI->load->helper('url');
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
 	<!-- CSS Libraries -->
+	<link rel="shortcut icon" href="<?= base_url() ?>assets/assets_shop/img/logo.ico">
 
 	<!-- Template CSS -->
 	<link rel="stylesheet" href="<?= base_url('assets/assets_stisla'); ?>/assets/css/style.css">
@@ -33,9 +34,9 @@ $CI->load->helper('url');
 			<div class="container mt-5">
 				<div class="page-error">
 					<div class="page-inner">
-						<h2 style="font-size: 70px;"><?php echo $heading; ?></h2>
+						<h2 style="font-size: 70px;"><?= $heading; ?></h2>
 						<div class="page-description mt-5">
-							<?php echo $message; ?>
+							<?= $message; ?>
 						</div>
 						<div class="page-search">
 							<div class="mt-5">

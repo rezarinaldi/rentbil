@@ -12,11 +12,11 @@
 			</div>
 			<div class="form-group">
 				<label>Tanggal Sewa</label>
-				<input type="text" class="form-control" autocomplete="off" value="<?= $tanggal_sewa ?>">
+				<input type="text" class="form-control" autocomplete="off" value="<?= IndonesiaTgl($tanggal_sewa) ?>">
 			</div>
 			<div class="form-group">
 				<label>Tanggal Kembali</label>
-				<input type="text" class="form-control" autocomplete="off" value="<?= $tanggal_kembali ?>">
+				<input type="text" class="form-control" autocomplete="off" value="<?= IndonesiaTgl($tanggal_kembali) ?>">
 			</div>
 			<div class="form-group">
 				<label>Durasi</label>
@@ -24,7 +24,7 @@
 			</div>
 			<div class="form-group">
 				<label>Total Biaya Sewa</label>
-				<input type="text" class="form-control" autocomplete="off" value="<?= indo_currency($total_sewa) ?>">
+				<input type="text" class="form-control" autocomplete="off" value="<?= format_rupiah($total_sewa) ?>">
 			</div>
 			<b>*Silahkan transfer Total Biaya Sewa ke 123456789 Bank BNI a/n WILDAN DAWAM BASH maksimal tanggal <?= $batas_bayar?>. <br>
 			Untuk konfirmasi pesanan silahkan ke halaman Riwayat Sewa</b>

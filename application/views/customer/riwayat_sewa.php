@@ -1,11 +1,11 @@
 <div class="container mt-5 mb-5" style="min-height: 65vh">
-    <div class="card bg-light">
+    <h3>Riwayat Sewa</h3>
+    <div class="card shadow mt-4 mb-4">
 
         <div class="card-body">
-            <h3>Riwayat Sewa</h3>
-            <table class="table table-responsive table-striped" id="data_table">
+            <table class="table table-hover table-striped table-bordered" id="data_table">
                 <thead>
-                    <tr>
+                    <tr align="center">
                         <th>No</th>
                         <th>Nama</th>
                         <th>Mobil</th>
@@ -20,36 +20,31 @@
                     <?php
                     $no = 1;
                     foreach ($transaksi as $ts) : ?>
-                    <tr>
-                        <td><?= $no++ ?></td>
-                        <td><?= $ts->nama ?></td>
-                        <td><?= $ts->merk ?></td>
-                        <td><?= $ts->tanggal_sewa ?></td>
-                        <td><?= $ts->tanggal_kembali ?></td>
-                        <td><?= indo_currency($ts->total_sewa) ?></td>
-                        <td>
-                            <?php
-                                if ($ts->status_pembayaran == 0) {
-                                    echo "Menunggu Pembayaran";
-                                } elseif ($ts->status_pembayaran == 1) {
-                                    echo "Menunggu Konfirmasi Pembayaran";
+                        <tr align="center">
+                            <td><?= $no++ ?></td>
+                            <td><?= $ts->nama ?></td>
+                            <td><?= $ts->merk ?></td>
+                            <td><?= IndonesiaTgl($ts->tanggal_sewa) ?></td>
+                            <td><?= IndonesiaTgl($ts->tanggal_kembali) ?></td>
+                            <td><?= format_rupiah($ts->total_sewa) ?></td>
+                            <td>
+                                <?php if (($ts->status_pembayaran) == 0) {
+                                    echo "<span class='badge badge-danger'>Belum Dibayar</span>";
+                                } elseif (($ts->status_pembayaran) == 1) {
+                                    echo "<span class='badge badge-info'>Menunggu Konfirmasi</span>";
                                 } else {
-                                    echo "Sudah Dibayar";
-                                }
-                                ?>
-                        </td>
-                        <td>
-                            <?php
+                                    echo "<span class='badge badge-success'>Sudah Dibayar</span>";
+                                } ?>
+                            </td>
+                            <td>
+                                <?php
                                 if ($ts->bukti_pembayaran == '') { ?>
-                                    <a href="<?= base_url('customer/rental/konfirmasi_pembayaran/').$ts->id_transaksi?>" class="badge badge-success">Konfirmasi Pembayaran</a>
-                                <?php } else{?>
-                                    <a href="<?=base_url().'assets/upload/bukti_pembayaran/'.$ts->bukti_pembayaran?>"><img width="100px" height="60px" src="<?=base_url().'assets/upload/bukti_pembayaran/'.$ts->bukti_pembayaran?>"></a>
+                                    <a href="<?= base_url('customer/rental/konfirmasi_pembayaran/') . $ts->id_transaksi ?>" class="badge badge-dark">Konfirmasi Pembayaran</a>
+                                <?php } else { ?>
+                                    <a href="<?= base_url() . 'assets/upload/bukti_pembayaran/' . $ts->bukti_pembayaran ?>"><img width="100px" height="60px" src="<?= base_url() . 'assets/upload/bukti_pembayaran/' . $ts->bukti_pembayaran ?>"></a>
                                 <?php } ?>
-                                
-                        </td>
-                        <td></td>
-
-                    </tr>
+                            </td>
+                        </tr>
                     <?php endforeach; ?>
                 </tbody>
             </table>

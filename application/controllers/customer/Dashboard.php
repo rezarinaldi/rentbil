@@ -2,12 +2,18 @@
 
 class Dashboard extends CI_Controller
 {
+    public function __construct()
+    {
+        parent::__construct();
+        $this->load->model('mobil_model');
+        $this->load->model('user_model');
+    }
+
     public function index()
     {
-        $this->load->model('user_model');
-
         $data['title'] = 'Home';
-        $data['mobil'] = $this->user_model->get_data('mobil')->result();
+        $data['mobil'] = $this->mobil_model->get_data_type('mobil')->result();
+        $data['type'] = $this->user_model->get_data('type')->result();
 
         $this->load->view('template_customer/header', $data);
         $this->load->view('customer/dashboard', $data);
@@ -16,8 +22,6 @@ class Dashboard extends CI_Controller
 
     public function detail_mobil($id)
     {
-        $this->load->model('user_model');
-
         $data['title'] = 'Detail Mobil';
         $data['detail'] = $this->user_model->ambil_id_mobil($id);
 

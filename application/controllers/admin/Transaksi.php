@@ -72,7 +72,7 @@ class Transaksi extends CI_Controller
             <span aria-hidden="true">&times;</span>
             </button>
             </div>');
-        redirect('admin/transaksi/selesai');
+        redirect('admin/transaksi');
     }
 
     public function edit_transaksi($id)
@@ -151,7 +151,7 @@ class Transaksi extends CI_Controller
                 <span aria-hidden="true">&times;</span>
                 </button>
                 </div>');
-        redirect('admin/transaksi/selesai');
+        redirect('admin/transaksi');
     }
 
     public function menunggu_pembayaran()

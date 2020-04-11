@@ -1,79 +1,166 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="no-js" lang="zxx">
 
 <head>
-
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--=== Favicon ===-->
+    <link rel="shortcut icon" href="<?= base_url() ?>assets/assets_shop/img/logo.ico" type="image/x-icon" />
 
-    <!-- <title>Rental Mobil</title> -->
     <title><?= $title ?></title>
 
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="<?= base_url('assets/assets_stisla') ?>/assets/img/logo.ico">
-
-    <!-- Bootstrap core CSS -->
+    <!--=== Bootstrap CSS ===-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
-    <!-- DataTables -->
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
-
-    <!-- Datetime Picker -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.css">
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-
-    <!-- Custom styles for this template -->
-    <link href="<?= base_url('assets/assets_shop') ?>/css/shop-homepage.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-
+    <!--=== Vegas Min CSS ===-->
+    <link href="<?= base_url() ?>assets/assets_shop/css/plugins/vegas.min.css" rel="stylesheet">
+    <!--=== Slicknav CSS ===-->
+    <link href="<?= base_url() ?>assets/assets_shop/css/plugins/slicknav.min.css" rel="stylesheet">
+    <!--=== Magnific Popup CSS ===-->
+    <link href="<?= base_url() ?>assets/assets_shop/css/plugins/magnific-popup.css" rel="stylesheet">
+    <!--=== Owl Carousel CSS ===-->
+    <link href="<?= base_url() ?>assets/assets_shop/css/plugins/owl.carousel.min.css" rel="stylesheet">
+    <!--=== Gijgo CSS ===-->
+    <link href="<?= base_url() ?>assets/assets_shop/css/plugins/gijgo.css" rel="stylesheet">
+    <!--=== FontAwesome CSS ===-->
+    <link href="<?= base_url() ?>assets/assets_shop/css/font-awesome.css" rel="stylesheet">
+    <!--=== Theme Reset CSS ===-->
+    <link href="<?= base_url() ?>assets/assets_shop/css/reset.css" rel="stylesheet">
+    <!--=== Main Style CSS ===-->
+    <link href="<?= base_url() ?>assets/assets_shop/css/style.css" rel="stylesheet">
+    <!--=== Responsive CSS ===-->
+    <link href="<?= base_url() ?>assets/assets_shop/css/responsive.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js">
 </head>
 
-<body>
+<body class="loader-active">
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #0E1A20; height: 75px;">
-        <div class="container">
-            <a class="navbar-brand" href="<?= base_url('customer/dashboard') ?>">Rental Mobil</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('customer/dashboard') ?>">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('customer/rental/tentang_kami') ?>">Tentang Kami</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('customer/rental/faqs') ?>">Faqs</a>
-                    </li>
-                    <!-- <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
-                    </li> -->
-                    <li class="nav-item ml-4">
-                        <?php if (isset($_SESSION['level']) == 2) { ?>
-                            <div class="dropdown">
-                                <button class="btn dropdown-toggle text-white" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i class="fas fa-user"></i> Ahlan, <?= $this->fungsi->user_login()->nama ?>
-                                </button>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item text-primary" href="<?= base_url('customer/rental/riwayat_sewa') ?>"><i class="fa fa-tasks"></i>
-                                        Riwayat Sewa</a>
-                                    <a class="dropdown-item" href="<?= base_url('auth/ganti_password') ?>"><i class="fas fa-unlock"></i> Ganti Password</a>
-                                    <a class="dropdown-item text-danger" href="<?= base_url('auth/logout') ?>" onclick="return confirm('Yakin ingin logout?');"><i class="fas fa-sign-out-alt"></i> Logout</a>
-                                </div>
-                            </div>
-                        <?php } else { ?>
-                            <div class="mt-2">
-                                <a class="text-success" style="text-decoration: none" href="<?= base_url('auth/login') ?>"><i class="fas fa-sign-in-alt text-success"></i> Login </a>
-                            </div>
-                        <?php } ?>
-                    </li>
-                </ul>
+    <!--== Preloader Area Start ==-->
+    <div class="preloader">
+        <div class="preloader-spinner">
+            <div class="loader-content">
+                <img src="<?= base_url() ?>assets/assets_shop/img/preloader.gif" alt="JSOFT">
             </div>
         </div>
-    </nav>
-    <br>
+    </div>
+    <!--== Preloader Area End ==-->
+
+    <!--== Header Area Start ==-->
+    <header id="header-area" class="fixed-top">
+        <!--== Header Top Start ==-->
+        <div id="header-top" class="d-none d-xl-block">
+            <div class="container">
+                <div class="row">
+                    <?php if (isset($_SESSION['level']) == 2) { ?>
+                        <!--== Single HeaderTop Start ==-->
+                        <div class="col-lg-3 text-left">
+                            <i class="fa fa-envelope"></i> rentamobilmlg@gmail.com
+                        </div>
+                        <!--== Single HeaderTop End ==-->
+
+                        <!--== Single HeaderTop Start ==-->
+                        <div class="col-lg-2 text-center">
+                            <i class="fa fa-mobile"></i> (0853) 34424941
+                        </div>
+                        <!--== Single HeaderTop End ==-->
+
+                        <!--== Single HeaderTop Start ==-->
+                        <div class="col-lg-3 text-center">
+                            <i class="fa fa-clock-o"></i> Setiap Hari 09.00 - 17.00
+                        </div>
+                        <!--== Single HeaderTop End ==-->
+
+                        <!--== Single HeaderTop Start ==-->
+                        <div class="col-lg-2 text-center">
+                            <i class="fa fa-user"></i> Ahlan, <?= $_SESSION['nama'] ?>
+                        </div>
+                        <!--== Single HeaderTop End ==-->
+
+                        <!--== Social Icons Start ==-->
+                        <div class="col-lg-2 text-right">
+                            <div class="header-social-icons">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-instagram"></i></a>
+                                <a href="#"><i class="fa fa-whatsapp"></i></a>
+                            </div>
+                        </div>
+                        <!--== Social Icons End ==-->
+                    <?php } else { ?>
+                        <!--== Single HeaderTop Start ==-->
+                        <div class="col-lg-3 text-left">
+                            <i class="fa fa-envelope"></i> rentalmobilmlg@gmail.com
+                        </div>
+                        <!--== Single HeaderTop End ==-->
+
+                        <!--== Single HeaderTop Start ==-->
+                        <div class="col-lg-3 text-center">
+                            <i class="fa fa-mobile"></i> (0853) 34424941
+                        </div>
+                        <!--== Single HeaderTop End ==-->
+
+                        <!--== Single HeaderTop Start ==-->
+                        <div class="col-lg-3 text-center">
+                            <i class="fa fa-clock-o"></i> Setiap Hari 09.00 - 17.00
+                        </div>
+                        <!--== Single HeaderTop End ==-->
+
+                        <!--== Social Icons Start ==-->
+                        <div class="col-lg-3 text-right">
+                            <div class="header-social-icons">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-instagram"></i></a>
+                                <a href="#"><i class="fa fa-whatsapp"></i></a>
+                            </div>
+                        </div>
+                        <!--== Social Icons End ==-->
+                    <?php } ?>
+                </div>
+            </div>
+        </div>
+        <!--== Header Top End ==-->
+
+        <!-- Header Bottom Start -->
+        <div id="header-bottom">
+            <div class="container">
+                <div class="row">
+                    <!--== Logo Start ==-->
+                    <div class="col-lg-4">
+                        <a href="<?= base_url() ?>" class="logo">
+                            <img src="<?= base_url('assets/assets_stisla') ?>/assets/img/logo.png" width="50" alt="JSOFT">
+                        </a>
+                    </div>
+                    <!--== Logo End ==-->
+
+                    <!--== Main Menu Start ==-->
+                    <div class="col-lg-8 d-none d-xl-block">
+                        <nav class="mainmenu alignright">
+                            <ul>
+                                <li><a href="<?= base_url() ?>">BERANDA</a>
+                                </li>
+                                <li><a href="<?= base_url('customer/rental/tentang') ?>">TENTANG</a></li>
+                                <li><a href="<?= base_url('customer/rental/list_mobil') ?>">LIST MOBIL</a></li>
+                                <li><a href="<?= base_url('customer/rental/kontak_kami') ?>">KONTAK KAMI</a></li>
+                                <?php if (isset($_SESSION['level']) == 2) { ?>
+                                    <li><a href="<?= base_url('customer/rental/riwayat_sewa') ?>">RIWAYAT SEWA</a></li>
+                                    <li class="ml-3 auth" style="border: 2px solid #cccc00;"><a style="margin: 5px; margin-top: -2px; margin-bottom: -5px; color: white" href="<?= base_url('auth/logout') ?>"><i class="fa fa-sign-out"></i> Log Out</a></li>
+                                <?php } else { ?>
+                                    <li class="ml-3 auth" style="border: 2px solid #cccc00;"><a style="margin: 5px; margin-top: -2px; margin-bottom: -5px; color: white" href="<?= base_url('auth/login') ?>"><i class="fa fa-sign-in"></i> Log In</a></li>
+                                <?php } ?>
+                                <style>
+                                    .auth:hover {
+                                        background: #cccc00;
+                                    }
+                                </style>
+                            </ul>
+                        </nav>
+                    </div>
+                    <!--== Main Menu End ==-->
+                </div>
+            </div>
+        </div>
+        <!--== Header Bottom End ==-->
+    </header>
+    <!--== Header Area End ==-->

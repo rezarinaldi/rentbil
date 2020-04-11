@@ -9,7 +9,7 @@
   <title><?= $title ?></title>
 
   <!-- Favicon -->
-  <link rel="shortcut icon" href="<?= base_url('assets/assets_stisla') ?>/assets/img/logo.ico">
+  <link rel="shortcut icon" href="<?= base_url() ?>assets/assets_shop/img/logo.ico">
 
   <!-- General CSS Files -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -61,8 +61,8 @@
                   </div>
                   <input id="password" type="password" class="form-control" name="password" tabindex="2" required>
                   <div class="invalid-feedback">
-                  Password Masih Kosong
-                </div>
+                    Password Masih Kosong
+                  </div>
                 </div>
               </div>
 
@@ -75,7 +75,7 @@
               <div class="mt-5 text-center">
                 Tidak punya akun? <a href="<?= base_url('register'); ?>">Buat akun baru.</a>
               </div>
-              
+
             </form>
 
             <div class="text-center mt-5">

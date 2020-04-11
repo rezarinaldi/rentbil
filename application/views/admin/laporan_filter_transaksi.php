@@ -11,13 +11,27 @@
 						<div class="col-md-3">
 							<div class="form-group">
 								<label>Dari Tanggal</label>
-								<input type="date" name="dari" class="form-control" value="<?= $_POST['dari']; ?>">
-								<?= form_error('dari'); ?>
+								<div class="input-group">
+									<div class="input-group-prepend">
+										<div class="input-group-text">
+											<i class="fas fa-calendar"></i>
+										</div>
+									</div>
+									<input type="date" name="dari" class="form-control" value="<?= $_POST['dari']; ?>">
+								</div>
+								<?= form_error('dari', '<div class="text-small text-danger">', '</div>') ?>
 							</div>
 							<div class="form-group">
 								<label>Sampai Tanggal</label>
-								<input type="date" name="sampai" class="form-control" value="<?= $_POST['sampai']; ?>">
-								<?= form_error('sampai'); ?>
+								<div class="input-group">
+									<div class="input-group-prepend">
+										<div class="input-group-text">
+											<i class="fas fa-calendar"></i>
+										</div>
+									</div>
+									<input type="date" name="sampai" class="form-control" value="<?= $_POST['sampai']; ?>">
+								</div>
+								<?= form_error('sampai', '<div class="text-small text-danger">', '</div>') ?>
 							</div>
 							<div class="form-group">
 								<button type="submit" name="cari" class="btn btn-primary">

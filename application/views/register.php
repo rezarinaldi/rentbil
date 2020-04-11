@@ -8,7 +8,7 @@
 	<!-- <title>Register</title> -->
 	<title><?= $title ?></title>
 
-	<link rel="shortcut icon" href="<?= base_url('assets/assets_stisla') ?>/assets/img/logo.ico">
+	<link rel="shortcut icon" href="<?= base_url() ?>assets/assets_shop/img/logo.ico">
 
 	<!-- General CSS Files -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">

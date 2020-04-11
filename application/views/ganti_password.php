@@ -8,7 +8,7 @@
     <!-- <title>Reset Password &mdash; Stisla</title> -->
     <title><?= $title ?></title>
 
-    <link rel="shortcut icon" href="<?= base_url('assets/assets_stisla') ?>/assets/img/logo.ico">
+    <link rel="shortcut icon" href="<?= base_url() ?>assets/assets_shop/img/logo.ico">
 
     <!-- General CSS Files -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -36,19 +36,30 @@
 
                             <div class="card-body">
                                 <form method="POST" action="<?= base_url('auth/ganti_password_aksi'); ?>" autocomplete="off">
+
                                     <div class="form-group">
                                         <label for="password_baru">Password Baru</label>
-                                        <input id="password_baru" type="password" class="form-control pwstrength" data-indicator="pwindicator" name="password_baru" tabindex="2" autofocus>
-                                        <?= form_error('password_baru', '<div class="text-small text-danger">', '</div>') ?>
-                                        <div id="pwindicator" class="pwindicator">
-                                            <div class="bar"></div>
-                                            <div class="label"></div>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text">
+                                                    <i class="fas fa-unlock"></i>
+                                                </div>
+                                            </div>
+                                            <input type="password" name="password_baru" id="password_baru" class="form-control pwstrength" data-indicator="pwindicator" tabindex="2" autofocus>
                                         </div>
+                                        <?= form_error('password_baru', '<div class="text-small text-danger">', '</div>') ?>
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="password_confirm">Confirm Password</label>
-                                        <input id="password_confirm" type="password" class="form-control" name="password_confirm" tabindex="2">
+                                        <label for="password_baru">Confirm Password</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text">
+                                                    <i class="fas fa-unlock"></i>
+                                                </div>
+                                            </div>
+                                            <input type="password" name="password_confirm" id="password_confirm" class="form-control" tabindex="2">
+                                        </div>
                                         <?= form_error('password_confirm', '<div class="text-small text-danger">', '</div>') ?>
                                     </div>
 

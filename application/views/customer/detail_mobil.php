@@ -33,7 +33,7 @@
                             </tr>
                             <tr>
                                 <th>Harga Sewa</th>
-                                <td><?= indo_currency($dt->harga) ?> /hari</td>
+                                <td><?= format_rupiah($dt->harga) ?> /hari</td>
                             </tr>
                             <tr>
                                 <td></td>

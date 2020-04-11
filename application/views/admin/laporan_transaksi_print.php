@@ -3,7 +3,7 @@
 
 <head>
 	<title><?= $title ?></title>
-	<link rel="shortcut icon" href="<?= base_url('assets/assets_stisla') ?>/assets/img/logo.ico">
+	<link rel="shortcut icon" href="<?= base_url() ?>assets/assets_shop/img/logo.ico">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 </head>
@@ -37,7 +37,7 @@
 						<td rowspan="3" width="16%">&nbsp;</td>
 					</tr>
 					<tr>
-						<td class="text-center">Jl. Soekarno Hatta No.19, RT.4/RW.13, Malang 65141, Indonesia, No.HP. +62 85877990684</td>
+						<td class="text-center">Jl. Soekarno Hatta No.19, RT.4/RW.13, Jatimulyo, Kec. Lowokwaru, Kota Malang, Jawa Timur 65141, No.HP. +62 85877990684, No. WA. +62 85334424941</td>
 					</tr>
 				</tbody>
 			</table>

@@ -59,7 +59,7 @@ class Rental extends CI_Controller
         $id_user = $this->input->post('id_user');
         $id_mobil = $this->input->post('id_mobil');
         $tgl_sewa = strtotime($this->input->post('tanggal_sewa'));
-        $tgl_sewa = date("Y-m-d H:i", $tgl_sewa);
+        $tgl_sewa = date("Y-m-d", $tgl_sewa);
         $tgl_kembali = $this->input->post('tanggal_kembali');
         $durasi = abs(round((strtotime($tgl_sewa) - strtotime($tgl_kembali)) / 86400));
         $harga = $this->input->post('harga');
@@ -103,9 +103,7 @@ class Rental extends CI_Controller
         );
 
         echo "<script>alert('Mobil Berhasil Dibooking')</script>";
-        $this->load->view('template_customer/header');
-        $this->load->view('customer/detail_sewa', $data);
-        $this->load->view('template_customer/footer');
+        echo "<script>window.location='" . base_url('customer/dashboard') . "';</script>";
     }
 
     public function riwayat_sewa()

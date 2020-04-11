@@ -30,7 +30,7 @@
                         <div class="form-group">
                             <label>Total Biaya Sewa</label>
                             <input type="text" name="total_biaya" class="form-control"
-                                value="<?= indo_currency(($mb->harga) * $durasi) ?>" autocomplete="off" disabled>
+                                value="<?= format_rupiah(($mb->harga) * $durasi) ?>" autocomplete="off" disabled>
                         </div>
 
                         <input type="hidden" value="<?= $this->fungsi->user_login()->id_user ?>" name="id_user"

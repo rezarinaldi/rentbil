@@ -55,7 +55,6 @@
             </div>
           </div>
 
-          <!-- Dibawah ini masih contoh -->
           <div class="row">
             <div class="col-md-8">
               <div class="card">
