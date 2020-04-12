@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 12 Apr 2020 pada 09.02
+-- Waktu pembuatan: 12 Apr 2020 pada 09.43
 -- Versi server: 10.4.8-MariaDB
 -- Versi PHP: 7.3.10
 
@@ -69,8 +69,8 @@ CREATE TABLE `pesan` (
 --
 
 INSERT INTO `pesan` (`id_pesan`, `id_user`, `isi_pesan`, `tgl_posting`, `status`) VALUES
-(1, 4, 'Bismillah.. Assalamu\'alaikum akhy :)', '2020-04-10 01:36:01', 0),
-(2, 7, 'Bismillah.. Assalamu\'alaikum, anta sehat? :)', '2020-04-10 02:05:23', 1);
+(1, 4, 'Bismillah.. Assalamu\'alaikum akhy :)', '2020-04-09 18:36:01', 0),
+(2, 7, 'Bismillah.. Assalamu\'alaikum, anta sehat? :)', '2020-04-09 19:05:23', 1);
 
 -- --------------------------------------------------------
 
@@ -202,12 +202,6 @@ ALTER TABLE `mobil`
   MODIFY `id_mobil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT untuk tabel `pesan`
---
-ALTER TABLE `pesan`
-  MODIFY `id_pesan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
-
---
 -- AUTO_INCREMENT untuk tabel `transaksi`
 --
 ALTER TABLE `transaksi`
@@ -234,12 +228,6 @@ ALTER TABLE `user`
 --
 ALTER TABLE `mobil`
   ADD CONSTRAINT `fk_id_type` FOREIGN KEY (`id_type`) REFERENCES `type` (`id_type`);
-
---
--- Ketidakleluasaan untuk tabel `pesan`
---
-ALTER TABLE `pesan`
-  ADD CONSTRAINT `fk_pesan` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`);
 
 --
 -- Ketidakleluasaan untuk tabel `transaksi`

@@ -21,12 +21,10 @@ class Pesan_model extends CI_Model
 
     public function insert_data($table)
     {
-        $id_pesan = $this->input->post('id_pesan');
         $isi_pesan = $this->input->post('isi_pesan');
         $status = 0;
 
         $data = array(
-            'id_pesan' => $id_pesan,
             'id_user' => $this->session->userdata('id_user'),
             'isi_pesan' => $isi_pesan,
             'status' => $status

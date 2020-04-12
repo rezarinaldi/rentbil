@@ -70,7 +70,7 @@
                                     </div>
 
                                     <div class="mt-2 text-center">
-                                        <a href="<?= base_url(''); ?>">Kembali.</a>
+                                        <a href="<?= base_url('customer/dashboard'); ?>">Kembali.</a>
                                     </div>
 
                                 </form>
