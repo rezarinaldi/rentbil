@@ -15,7 +15,7 @@ class Data_Pesan extends CI_Controller
     public function index()
     {
         $data['title'] = 'Data Pesan';
-        $data['pesan'] = $this->pesan_model->get_data('pesan')->result();
+        $data['pesan'] = $this->pesan_model->get_data_user('pesan')->result();
 
         $this->load->view('template_admin/header', $data);
         $this->load->view('template_admin/sidebar');

@@ -1,8 +1,8 @@
-<?php 
+<?php
 
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Pesan_model extends CI_Model 
+class Pesan_model extends CI_Model
 {
     public function get_data($table)
     {
@@ -12,15 +12,26 @@ class Pesan_model extends CI_Model
 
     public function get_data_user()
     {
-        $this->db->select('pesan.id_pesan, pesan.nama, pesan.email, pesan.no_telp, pesan.isi_pesan, pesan.tgl_posting, pesan.status, user.nama, user.email');
+        $this->db->select('pesan.id_pesan, pesan.id_user, pesan.isi_pesan, pesan.tgl_posting, pesan.status, user.nama, user.email, user.no_telp');
         $this->db->from('pesan');
         $this->db->join('user', 'user.id_user = pesan.id_user');
         $query = $this->db->get();
         return $query;
     }
 
-    public function insert_data($data, $table)
+    public function insert_data($table)
     {
+        $id_pesan = $this->input->post('id_pesan');
+        $isi_pesan = $this->input->post('isi_pesan');
+        $status = 0;
+
+        $data = array(
+            'id_pesan' => $id_pesan,
+            'id_user' => $this->session->userdata('id_user'),
+            'isi_pesan' => $isi_pesan,
+            'status' => $status
+        );
+
         $this->db->insert($table, $data);
     }
 

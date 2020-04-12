@@ -1,34 +1,119 @@
-<div class="container mt-5 mb-5" style="min-height: 65vh">
-	<div class="card bg-light" style="min-height: 60vh">
-
-		<div class="card-body">
-			<h1 class="text-center font-weight-bold">FAQs</h1>
-			<br>
-			<p class="ml-5">
-				<a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
-					aria-controls="collapseExample" style="text-decoration: none; color: black; font-size: 22px">
-					<i class="fas fa-plus"></i> Bagaimana cara menyewa di Tricar ?
-				</a>
-			</p>
-			<div class="collapse ml-5" id="collapseExample">
-				<div class="card card-body">
-					Pertama anda harus login terlebih dahulu sebagai customer.
-				</div>
-            </div>
-            
-			<p class="ml-5">
-				<a data-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false"
-					aria-controls="collapseExample1" style="text-decoration: none; color: black; font-size: 22px">
-					<i class="fas fa-plus"></i> Sistem Pembayarannya Bagaimana ?
-				</a>
-			</p>
-			<div class="collapse ml-5" id="collapseExample1">
-				<div class="card card-body">
-                    Pemesanan yang sudah masuk akan diproses setelah melampirkan bukti pembayaran yang valid.
-                    Pembayaran bisa melalui transfer BNI a/n WILDAN DAWAM BASH
+<!--== Page Title Area Start ==-->
+<section id="page-title-area" class="section-padding overlay">
+	<div class="container">
+		<div class="row">
+			<!-- Page Title Start -->
+			<div class="col-lg-12">
+				<div class="section-title  text-center">
+					<h2>FAQ's</h2>
+					<span class="title-line"><i class="fa fa-car"></i></span>
 				</div>
 			</div>
+			<!-- Page Title End -->
 		</div>
-
 	</div>
-</div>
+</section>
+<!--== Page Title Area End ==-->
+
+<!--== FAQ Area Start ==-->
+<section id="faq-page-area" class="section-padding">
+	<div class="container">
+		<div class="row">
+			<!-- FAQ Content Start -->
+			<div class="col-lg-8">
+				<div class="faq-details-content">
+					<!-- Single FAQ Subject  Start -->
+					<div class="single-faq-sub">
+						<h3>Penyewaan</h3>
+						<div class="single-faq-sub-content">
+							<div id="accordion">
+								<!-- Single FAQ Start -->
+								<div class="card">
+									<div class="card-header" id="headingTwo">
+										<h5 class="mb-0"><button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+												<span>Bagaimana cara menyewa di Rental Mobil Malang?</span>
+												<i class="fa fa-angle-down"></i>
+												<i class="fa fa-angle-up"></i>
+											</button></h5>
+									</div>
+									<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+										<div class="card-body">
+											Pertama anda harus login terlebih dahulu sebagai customer sebelum melakukan penyewaan.
+										</div>
+									</div>
+								</div>
+								<!-- Single FAQ Start -->
+							</div>
+						</div>
+					</div>
+					<!-- Single FAQ Subject End -->
+
+					<!-- Single FAQ Subject  Start -->
+					<div class="single-faq-sub">
+						<h3>Pembayaran</h3>
+						<div class="single-faq-sub-content">
+							<div id="accordion_2">
+								<!-- Single FAQ Start -->
+								<div class="card">
+									<div class="card-header" id="heading4">
+										<h5 class="mb-0"><button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+												<span>Sistem Pembayarannya Bagaimana?</span>
+												<i class="fa fa-angle-down"></i>
+												<i class="fa fa-angle-up"></i>
+											</button></h5>
+									</div>
+
+									<div id="collapse4" class="collapse" aria-labelledby="heading4" data-parent="#accordion_2">
+										<div class="card-body">
+											Pemesanan yang sudah masuk akan diproses setelah melampirkan bukti pembayaran yang valid.
+											Pembayaran bisa melalui transfer BNI a/n REZA RINALDI
+										</div>
+									</div>
+								</div>
+								<!-- Single FAQ End -->
+							</div>
+						</div>
+					</div>
+					<!-- Single FAQ Subject End -->
+				</div>
+			</div>
+			<!-- FAQ Content End -->
+
+			<!-- Sidebar Area Start -->
+			<div class="col-lg-4">
+				<div class="sidebar-content-wrap m-t-50">
+					<!-- Single Sidebar Start -->
+					<div class="single-sidebar">
+						<h3>Untuk Informasi Lengkapnya</h3>
+
+						<div class="sidebar-body">
+							<p>Buka:</p>
+							<p class="mb-3"><i class="fa fa-clock-o"></i> Setiap Hari, 09.00 - 17.00</p>
+							<p>Hubungi:</p>
+							<p><i class="fa fa-whatsapp"></i> (0853) 34424941</p>
+							<p><i class="fa fa-mobile"></i> (0858) 77990684</p>
+						</div>
+					</div>
+					<!-- Single Sidebar End -->
+
+					<!-- Single Sidebar Start -->
+					<div class="single-sidebar">
+						<h3>Sosial Media</h3>
+
+						<div class="sidebar-body">
+							<div class="social-icons text-center">
+								<a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
+								<a href="#" target="_blank"><i class="fa fa-whatsapp"></i></a>
+								<a href="#" target="_blank"><i class="fa fa-instagram"></i></a>
+								<a href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
+							</div>
+						</div>
+					</div>
+					<!-- Single Sidebar End -->
+				</div>
+			</div>
+			<!-- Sidebar Area End -->
+		</div>
+	</div>
+</section>
+<!--== FAQ Area End ==-->

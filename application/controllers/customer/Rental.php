@@ -4,10 +4,18 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Rental extends CI_Controller
 {
+    public function __construct()
+    {
+        parent::__construct();
+        $this->load->model('user_model');
+        $this->load->model('transaksi_model');
+        $this->load->model('rental_model');
+        $this->load->model('pesan_model');
+    }
+
     public function tambah_rental($id)
     {
         check_not_login();
-        $this->load->model('user_model');
 
         $data['title'] = 'Tambah Rental';
         $data['detail'] = $this->user_model->ambil_id_mobil($id);
@@ -20,7 +28,6 @@ class Rental extends CI_Controller
     public function tambah_rental_ready($id)
     {
         check_not_login();
-        $this->load->model('user_model');
 
         $data['detail'] = $this->user_model->ambil_id_mobil($id);
 
@@ -32,8 +39,8 @@ class Rental extends CI_Controller
     public function tambah_rental_ready_simpan()
     {
         check_not_login();
+
         $id_mobil = $this->input->post('id_mobil');
-        $this->load->model('user_model');
         $mobil = $this->user_model->ambil_id_mobil($id_mobil);
         $tgl_sewa = $this->input->post('tgl_sewa');
         $tgl_kembali = $this->input->post('tgl_kembali');
@@ -53,8 +60,6 @@ class Rental extends CI_Controller
     public function tambah_rental_simpan()
     {
         check_not_login();
-        $this->load->model('transaksi_model');
-        $this->load->model('rental_model');
 
         $id_user = $this->input->post('id_user');
         $id_mobil = $this->input->post('id_mobil');
@@ -109,7 +114,6 @@ class Rental extends CI_Controller
     public function riwayat_sewa()
     {
         check_not_login();
-        $this->load->model('rental_model');
 
         $data['title'] = 'Riwayat Sewa';
 
@@ -123,6 +127,7 @@ class Rental extends CI_Controller
     public function konfirmasi_pembayaran($id)
     {
         check_not_login();
+
         $data['id_transaksi'] = $id;
         $data['title'] = 'Konfirmasi Pembayaran';
 
@@ -134,7 +139,6 @@ class Rental extends CI_Controller
     public function konfirmasi_pembayaran_simpan()
     {
         check_not_login();
-        $this->load->model('transaksi_model');
 
         $id_transaksi = $this->input->post('id_transaksi');
 
@@ -185,5 +189,33 @@ class Rental extends CI_Controller
         $this->load->view('template_customer/header', $data);
         $this->load->view('customer/faqs');
         $this->load->view('template_customer/footer');
+    }
+
+    public function kotak_pesan()
+    {
+        check_not_login();
+
+        $data['title'] = 'Kotak Pesan';
+        $data['user'] = $this->user_model->get_data('user')->result();
+
+        $this->load->view('template_customer/header', $data);
+        $this->load->view('customer/kotak_pesan');
+        $this->load->view('template_customer/footer');
+    }
+
+    public function kirim_pesan()
+    {
+        check_not_login();
+
+        $this->pesan_model->insert_data('pesan');
+
+        $this->session->set_flashdata('pesan', '
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                Pesan Berhasil Dikirim
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+                </div>');
+        redirect('customer/rental/kotak_pesan');
     }
 }

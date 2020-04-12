@@ -28,19 +28,19 @@ $CI->load->helper('url');
 	<link rel="stylesheet" href="<?= base_url('assets/assets_stisla'); ?>/assets/css/components.css">
 </head>
 
-<body>
+<body class="bg-dark">
 	<div id="app">
 		<section class="section">
 			<div class="container mt-5">
 				<div class="page-error">
 					<div class="page-inner">
-						<h2 style="font-size: 70px;"><?= $heading; ?></h2>
-						<div class="page-description mt-5">
+						<h2 style="font-size: 70px; color: #fff;"><?= $heading; ?></h2>
+						<div class="page-description mt-5 text-light">
 							<?= $message; ?>
 						</div>
 						<div class="page-search">
 							<div class="mt-5">
-								<a href="<?= base_url(); ?>" class="btn btn-dark"><i class="fas fa-meteor"></i> Kembali ke Dashboard</a>
+								<a href="<?= base_url('customer/dashboard'); ?>" class="btn btn-dark"><i class="fas fa-meteor"></i> Kembali ke Dashboard</a>
 							</div>
 						</div>
 					</div>

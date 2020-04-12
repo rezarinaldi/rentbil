@@ -13,7 +13,6 @@ class Dashboard extends CI_Controller
     {
         $data['title'] = 'Home';
         $data['mobil'] = $this->mobil_model->get_data_type('mobil')->result();
-        $data['type'] = $this->user_model->get_data('type')->result();
 
         $this->load->view('template_customer/header', $data);
         $this->load->view('customer/dashboard', $data);

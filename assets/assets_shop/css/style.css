@@ -1541,7 +1541,7 @@ body.loader-active {
 html,
 body,
 #slideslow-bg,
-#slideslow-bg div {
+#slideslow-bg div  {
 	height: 100%;
 }
 

@@ -1,3 +1,4 @@
+
 <!--== Footer Area Start ==-->
 <section id="footer-area">
   <!-- Footer Widget Start -->
@@ -5,15 +6,15 @@
     <div class="container">
       <div class="row">
         <!-- Single Footer Widget Start -->
-        <div class="col-lg-6 col-md-6">
+        <div class="col-lg-4 col-md-6 mr-4">
           <div class="single-footer-widget">
             <h2>TENTANG</h2>
             <div class="widget-body">
-              <img src="<?= base_url('assets/assets_stisla') ?>/assets/img/logo.png" width="50" alt="JSOFT">
+              <img src="<?= base_url('assets/assets_stisla') ?>/assets/img/logo.png" width="70" class="ml-3" alt="JSOFT">
               <p>Jasa Sewa Mobil Malang Lengkap Mobil Terbaru Harga Murah & Bersaing di Area Malang</p>
 
               <div class="newsletter-area">
-                <form action="index.html">
+                <form action="#">
                   <input type="email" placeholder="Subscribe Our Newsletter">
                   <button type="submit" class="newsletter-btn"><i class="fa fa-send"></i></button>
                 </form>
@@ -25,14 +26,14 @@
         <!-- Single Footer Widget End -->
 
         <!-- Single Footer Widget Start -->
-        <div class="col-lg-6 col-md-6">
+        <div class="col-lg-7 col-md-6 ml-5">
           <div class="single-footer-widget">
             <h2>INFORMASI TAMBAHAN</h2>
             <div class="widget-body">
               <ul class="get-touch">
                 <li><i class="fa fa-map-marker"></i> Jl. Soekarno Hatta No.19, RT.4/RW.13, Jatimulyo, Kec. Lowokwaru, Kota Malang, Jawa Timur 65141</li>
-                <li><i class="fa fa-mobile"></i> (0853) 34424941</li>
-                <li><i class="fa fa-mobile"></i> (0858) 77990684</li>
+                <li><i class="fa fa-whatsapp"></i> (0853) 34424941</li>
+                <li><i class="fa fa-comment"></i> (0858) 77990684</li>
                 <li><i class="fa fa-envelope"></i> rentalmobilmlg@gmail.com</li>
               </ul>
               <a href="https://goo.gl/maps/5Djz8ix68NAgBPJS9" class="map-show" target="_blank">Show Location</a>

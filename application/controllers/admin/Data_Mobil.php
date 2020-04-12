@@ -14,7 +14,6 @@ class Data_Mobil extends CI_Controller
     {
         $data['title'] = 'Data Mobil';
         $data['mobil'] = $this->mobil_model->get_data_type('mobil')->result();
-        $data['type'] = $this->mobil_model->get_data('type')->result();
 
         $this->load->view('template_admin/header', $data);
         $this->load->view('template_admin/sidebar');

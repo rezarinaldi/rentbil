@@ -1,3 +1,4 @@
+    
     <!--== SlideshowBg Area Start ==-->
     <section id="slideslow-bg">
         <div class="container">
@@ -6,8 +7,8 @@
                     <div class="slideshowcontent">
                         <div class="display-table">
                             <div class="display-table-cell">
-                                <h1>Rental Mobil Malang</h1>
-                                <p>Jasa Sewa Mobil Malang <br> Harga Terjangkau</p>
+                                <h1>RENTAL MOBIL MALANG</h1>
+                                <p>JASA SEWA MOBIL DI MALANG <br> DENGAN HARGA YANG TERJANGKAU</p>
 
                             </div>
                         </div>
@@ -17,7 +18,7 @@
         </div>
     </section>
     <!--== SlideshowBg Area End ==-->
-
+    
     <!--== Choose Car Area Start ==-->
     <section id="choose-car" class="section-padding">
         <div class="container">
@@ -57,7 +58,7 @@
                                                         <span class="price" style="color: #ae8b0c"><i class="fa fa-tag"></i> <?= format_rupiah($mb->harga) ?> / hari</span>
                                                     </h3>
 
-                                                    <h5><?= $mb->kode_type ?></h5>
+                                                    <h5><?= $mb->nama_type ?></h5>
                                                 </div>
                                             </div>
                                         </div>

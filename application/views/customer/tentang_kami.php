@@ -1,28 +1,40 @@
-<div class="container mt-5 mb-5" style="min-height: 65vh">
-	<div class="card bg-light" style="min-height: 80vh">
-
-		<div class="card-body">
-            <h1 class="text-center font-weight-bold mt-3">Tentang Kami</h1>
-            <br>
-			<p class="mt-1" style="font-size: 22px; margin: 0 70px;">Tricar merupakan Perusahaan Jasa Transportasi Rental Mobil Malang Terpercaya, Profesional dan
-				Termurah dengan Pelayanan Memuaskan yang berdomisili di malang. Perusahaan kami sudah
-				melayani ribuan klien, baik secara organisasi ( Perusahaan ) maupun pribadi menggunakan jasa kami. <br><br>
-
-				Semua armada yang Tricar miliki selalu melakukan perawatan berkala guna memastikan kondisi mobil
-				yang Prima, Bersih dan Nyaman. Prinsip kami adalah memberikan Kenyamanan, Keamanan dan Pelayanan Terbaik
-				untuk anda menjadi hal yang Utama bagi kami. <br><br>
-
-				Harga yang kami berikan sangat kompetitif dan murah, dan dijamin tidak mengurangi kualitas pelayanan
-				yang kami berikan, sesuai Prinsip kami yaitu memberikan Kenyamanan, Keamanan dan Pelayanan Terbaik. <br><br>
-
-				Pelayanan yang kami sediakan adalah sewa mobil / rental mobil harian. <br><br>
-
-				Mengapa Sewa / Rental Mobil di Tricar : <br>
-				Jaminan Mobil Terbaru, Bersih dan Terawat
-				Terpercaya, Profesional, memberikan pelayanan Terbaik dan Harga Termurah
-                Fast Respon Customer Service Online melayani selama 24 Jam service call</p>
-                <br><br>
+<!--== Page Title Area Start ==-->
+<section id="page-title-area" class="section-padding overlay">
+	<div class="container">
+		<div class="row">
+			<!-- Page Title Start -->
+			<div class="col-lg-12">
+				<div class="section-title  text-center">
+					<h2>Tentang Kami</h2>
+					<span class="title-line"><i class="fa fa-car"></i></span>
+				</div>
+			</div>
+			<!-- Page Title End -->
 		</div>
+	</div>
+</section>
+<!--== Page Title Area End ==-->
 
+<!--== Contact Page Area Start ==-->
+<div class="contact-page-wrao section-padding">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-10 m-auto">
+				<div class="contact-form">
+					<h5 class="text-center mb-4">Selamat datang di website kami.</h5>
+
+					<h5 class="mb-4">Kami adalah jasa penyedia transportasi di Malang, dengan didukung staff dan supir berpengalaman dengan berbagai jenis armada yang nyaman yang dapat dipergunakan untuk keperluan dinas, wisata, maupun untuk acara-acara yang resmi. Dalam penyediaan kendaraan tersebut kami selalu berusaha untuk mengutamakan pelayanan kepada para konsumen kami, dimana kepuasan konsumen merupakan tujuan kami.</h5>
+
+					<h5><i class="fa fa-map-marker"></i> Alamat:</h5>
+
+					<h5 class="mb-4"><font color="#FFD000">Jl. Soekarno Hatta No.19, RT.4/RW.13, Jatimulyo, Kec. Lowokwaru, Kota Malang, Jawa Timur 65141</font></h5>
+
+					<h5 class="mb-4"><i class="fa fa-whatsapp"></i> No. WA: <font color="#FFD000">(0853) 34424941</font></h5>
+					<h5 class="mb-4"><i class="fa fa-comment"></i> No. Telp/SMS: <font color="#FFD000">(0858) 77990684</font></h5>
+					<h5 class="mb-4"><i class="fa fa-envelope"></i> E-mail: <font color="#FFD000">rentalmobilmlg@gmail.com</font></h5>
+				</div>
+			</div>
+		</div>
 	</div>
 </div>
+<!--== Contact Page Area End ==-->

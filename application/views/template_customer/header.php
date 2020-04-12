@@ -52,71 +52,39 @@
         <div id="header-top" class="d-none d-xl-block">
             <div class="container">
                 <div class="row">
-                    <?php if (isset($_SESSION['level']) == 2) { ?>
-                        <!--== Single HeaderTop Start ==-->
-                        <div class="col-lg-3 text-left">
-                            <i class="fa fa-envelope"></i> rentamobilmlg@gmail.com
-                        </div>
-                        <!--== Single HeaderTop End ==-->
+                    <!--== Single HeaderTop Start ==-->
+                    <div class="col-lg-3 text-left">
+                        <i class="fa fa-envelope"></i> rentamobilmlg@gmail.com
+                    </div>
+                    <!--== Single HeaderTop End ==-->
 
-                        <!--== Single HeaderTop Start ==-->
-                        <div class="col-lg-2 text-center">
-                            <i class="fa fa-mobile"></i> (0853) 34424941
-                        </div>
-                        <!--== Single HeaderTop End ==-->
+                    <!--== Single HeaderTop Start ==-->
+                    <div class="col-lg-2 text-center">
+                        <i class="fa fa-whatsapp"></i> (0853) 34424941
+                    </div>
+                    <!--== Single HeaderTop End ==-->
 
-                        <!--== Single HeaderTop Start ==-->
-                        <div class="col-lg-3 text-center">
-                            <i class="fa fa-clock-o"></i> Setiap Hari 09.00 - 17.00
-                        </div>
-                        <!--== Single HeaderTop End ==-->
+                    <!--== Single HeaderTop Start ==-->
+                    <div class="col-lg-3 text-center">
+                        <i class="fa fa-clock-o"></i> Setiap Hari, 09.00 - 17.00
+                    </div>
+                    <!--== Single HeaderTop End ==-->
 
-                        <!--== Single HeaderTop Start ==-->
-                        <div class="col-lg-2 text-center">
-                            <i class="fa fa-user"></i> Ahlan, <?= $_SESSION['nama'] ?>
-                        </div>
-                        <!--== Single HeaderTop End ==-->
+                    <!--== Single HeaderTop Start ==-->
+                    <div class="col-lg-2 text-center">
+                        <i class="fa fa-map-marker"></i> 65141, Kota Malang
+                    </div>
+                    <!--== Single HeaderTop End ==-->
 
-                        <!--== Social Icons Start ==-->
-                        <div class="col-lg-2 text-right">
-                            <div class="header-social-icons">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
-                                <a href="#"><i class="fa fa-whatsapp"></i></a>
-                            </div>
+                    <!--== Social Icons Start ==-->
+                    <div class="col-lg-2 text-right">
+                        <div class="header-social-icons">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-linkedin"></i></a>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                            <a href="#"><i class="fa fa-whatsapp"></i></a>
                         </div>
-                        <!--== Social Icons End ==-->
-                    <?php } else { ?>
-                        <!--== Single HeaderTop Start ==-->
-                        <div class="col-lg-3 text-left">
-                            <i class="fa fa-envelope"></i> rentalmobilmlg@gmail.com
-                        </div>
-                        <!--== Single HeaderTop End ==-->
-
-                        <!--== Single HeaderTop Start ==-->
-                        <div class="col-lg-3 text-center">
-                            <i class="fa fa-mobile"></i> (0853) 34424941
-                        </div>
-                        <!--== Single HeaderTop End ==-->
-
-                        <!--== Single HeaderTop Start ==-->
-                        <div class="col-lg-3 text-center">
-                            <i class="fa fa-clock-o"></i> Setiap Hari 09.00 - 17.00
-                        </div>
-                        <!--== Single HeaderTop End ==-->
-
-                        <!--== Social Icons Start ==-->
-                        <div class="col-lg-3 text-right">
-                            <div class="header-social-icons">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
-                                <a href="#"><i class="fa fa-whatsapp"></i></a>
-                            </div>
-                        </div>
-                        <!--== Social Icons End ==-->
-                    <?php } ?>
+                    </div>
                 </div>
             </div>
         </div>
@@ -129,7 +97,7 @@
                     <!--== Logo Start ==-->
                     <div class="col-lg-4">
                         <a href="<?= base_url() ?>" class="logo">
-                            <img src="<?= base_url('assets/assets_stisla') ?>/assets/img/logo.png" width="50" alt="JSOFT">
+                            <img src="<?= base_url('assets/assets_stisla') ?>/assets/img/logo.png" width="70" alt="JSOFT">
                         </a>
                     </div>
                     <!--== Logo End ==-->
@@ -138,12 +106,27 @@
                     <div class="col-lg-8 d-none d-xl-block">
                         <nav class="mainmenu alignright">
                             <ul>
-                                <li><a href="<?= base_url() ?>">BERANDA</a>
-                                </li>
-                                <li><a href="<?= base_url('customer/rental/tentang') ?>">TENTANG</a></li>
+                                <li><a href="<?= base_url('customer/dashboard') ?>">BERANDA</a></li>
                                 <li><a href="<?= base_url('customer/rental/list_mobil') ?>">LIST MOBIL</a></li>
-                                <li><a href="<?= base_url('customer/rental/kontak_kami') ?>">KONTAK KAMI</a></li>
+                                <li><a href="#">HALAMAN LAIN</a>
+                                    <ul>
+                                        <li><a href="<?= base_url('customer/rental/kotak_pesan') ?>">KOTAK PESAN</a></li>
+                                        <li><a href="<?= base_url('customer/rental/faqs') ?>">FAQ</a></li>
+                                        <li><a href="<?= base_url('customer/rental/tentang_kami') ?>">TENTANG KAMI</a></li>
+                                    </ul>
+                                </li>
                                 <?php if (isset($_SESSION['level']) == 2) { ?>
+                                    <li><a href="#"><i class="fa fa-user"></i> AHLAN | <?= $_SESSION['nama']; ?></a>
+                                        <ul>
+                                            <li><a href="<?= base_url('customer/rental/riwayat_sewa') ?>">RIWAYAT SEWA</a></li>
+                                            <li><a href="<?= base_url('auth/ganti_password') ?>"><i class="fa fa-unlock"></i> GANTI PASSWORD</a></li>
+                                            <li><a href="<?= base_url('auth/logout') ?>"><i class="fa fa-sign-out"></i> LOG OUT</a></li>
+                                        </ul>
+                                    </li>
+                                <?php } else { ?>
+                                    <li><a href="<?= base_url('auth/login') ?>"><i class="fa fa-sign-in"></i> LOG IN</a></li>
+                                <?php } ?>
+                                <!-- <?php if (isset($_SESSION['level']) == 2) { ?>
                                     <li><a href="<?= base_url('customer/rental/riwayat_sewa') ?>">RIWAYAT SEWA</a></li>
                                     <li class="ml-3 auth" style="border: 2px solid #cccc00;"><a style="margin: 5px; margin-top: -2px; margin-bottom: -5px; color: white" href="<?= base_url('auth/logout') ?>"><i class="fa fa-sign-out"></i> Log Out</a></li>
                                 <?php } else { ?>
@@ -153,7 +136,7 @@
                                     .auth:hover {
                                         background: #cccc00;
                                     }
-                                </style>
+                                </style> -->
                             </ul>
                         </nav>
                     </div>
