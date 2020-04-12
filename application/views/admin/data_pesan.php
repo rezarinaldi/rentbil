@@ -15,6 +15,7 @@
                             <th>Nama</th>
                             <th>Email</th>
                             <th>No. Telp</th>
+                            <th>Subjek</th>
                             <th>Isi Pesan</th>
                             <th>Tgl Posting</th>
                             <th>Status</th>
@@ -30,6 +31,7 @@
                                 <td><?= $psn->nama ?></td>
                                 <td><?= $psn->email ?></td>
                                 <td><?= $psn->no_telp ?></td>
+                                <td><?= $psn->subjek ?></td>
                                 <td><?= $psn->isi_pesan ?></td>
                                 <td><?= $psn->tgl_posting ?></td>
                                 <td>

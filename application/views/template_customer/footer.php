@@ -1,4 +1,3 @@
-
 <!--== Footer Area Start ==-->
 <section id="footer-area">
   <!-- Footer Widget Start -->

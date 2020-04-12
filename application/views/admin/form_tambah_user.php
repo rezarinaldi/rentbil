@@ -31,7 +31,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Alamat</label>
-                                <input type="text" name="alamat" class="form-control">
+                                <textarea name="alamat" rows="2" class="form-control"></textarea>
                                 <?= form_error('alamat', '<div class="text-small text-danger">', '</div>') ?>
                             </div>
                             <div class="form-group">

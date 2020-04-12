@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 12 Apr 2020 pada 09.43
+-- Waktu pembuatan: 12 Apr 2020 pada 10.53
 -- Versi server: 10.4.8-MariaDB
 -- Versi PHP: 7.3.10
 
@@ -59,6 +59,7 @@ INSERT INTO `mobil` (`id_mobil`, `id_type`, `merk`, `no_plat`, `warna`, `tahun`,
 CREATE TABLE `pesan` (
   `id_pesan` int(11) NOT NULL,
   `id_user` int(11) NOT NULL,
+  `subjek` varchar(30) DEFAULT NULL,
   `isi_pesan` longtext DEFAULT NULL,
   `tgl_posting` timestamp NOT NULL DEFAULT current_timestamp(),
   `status` int(11) NOT NULL
@@ -68,9 +69,9 @@ CREATE TABLE `pesan` (
 -- Dumping data untuk tabel `pesan`
 --
 
-INSERT INTO `pesan` (`id_pesan`, `id_user`, `isi_pesan`, `tgl_posting`, `status`) VALUES
-(1, 4, 'Bismillah.. Assalamu\'alaikum akhy :)', '2020-04-09 18:36:01', 0),
-(2, 7, 'Bismillah.. Assalamu\'alaikum, anta sehat? :)', '2020-04-09 19:05:23', 1);
+INSERT INTO `pesan` (`id_pesan`, `id_user`, `subjek`, `isi_pesan`, `tgl_posting`, `status`) VALUES
+(1, 4, 'Salam', 'Bismillah.. Assalamu\'alaikum akhy :)', '2020-04-09 18:36:01', 0),
+(2, 7, 'Salam', 'Bismillah.. Assalamu\'alaikum, anta sehat? :)', '2020-04-09 19:05:23', 1);
 
 -- --------------------------------------------------------
 

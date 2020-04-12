@@ -40,16 +40,27 @@
                             </div>
                         </div>
 
-                        <div class="message-input">
-                            <label for="">Isi Pesan</label>
-                            <textarea name="isi_pesan" cols="30" rows="3" required></textarea>
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6">
+                                <div class="website-input">
+                                    <label for="">Subjek</label>
+                                    <input type="text" name="subjek" required>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-md-6">
+                                <div class="message-input">
+                                    <label for="">Isi Pesan</label>
+                                    <textarea name="isi_pesan" cols="30" rows="5" required></textarea>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="input-submit float-right ml-3">
-                            <button type="reset">Reset</button>
+                            <button class="bg-warning" type="reset"><i class="fa fa-undo"></i> Reset</button>
                         </div>
                         <div class="input-submit float-right">
-                            <button type="submit">Kirim</button>
+                            <button class="bg-warning" type="submit"><i class="fa fa-send"></i> Kirim</button>
                         </div>
                     </form>
                 </div>

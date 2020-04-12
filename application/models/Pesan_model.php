@@ -12,7 +12,7 @@ class Pesan_model extends CI_Model
 
     public function get_data_user()
     {
-        $this->db->select('pesan.id_pesan, pesan.id_user, pesan.isi_pesan, pesan.tgl_posting, pesan.status, user.nama, user.email, user.no_telp');
+        $this->db->select('pesan.id_pesan, pesan.id_user, pesan.subjek, pesan.isi_pesan, pesan.tgl_posting, pesan.status, user.nama, user.email, user.no_telp');
         $this->db->from('pesan');
         $this->db->join('user', 'user.id_user = pesan.id_user');
         $query = $this->db->get();
@@ -21,13 +21,15 @@ class Pesan_model extends CI_Model
 
     public function insert_data($table)
     {
+        $subjek = $this->input->post('subjek');
         $isi_pesan = $this->input->post('isi_pesan');
         $status = 0;
 
         $data = array(
-            'id_user' => $this->session->userdata('id_user'),
+            'id_user'   => $this->session->userdata('id_user'),
+            'subjek'    => $subjek,
             'isi_pesan' => $isi_pesan,
-            'status' => $status
+            'status'    => $status
         );
 
         $this->db->insert($table, $data);
