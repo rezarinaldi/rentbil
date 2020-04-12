@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 08 Apr 2020 pada 11.28
+-- Waktu pembuatan: 12 Apr 2020 pada 09.02
 -- Versi server: 10.4.8-MariaDB
 -- Versi PHP: 7.3.10
 
@@ -59,18 +59,18 @@ INSERT INTO `mobil` (`id_mobil`, `id_type`, `merk`, `no_plat`, `warna`, `tahun`,
 CREATE TABLE `pesan` (
   `id_pesan` int(11) NOT NULL,
   `id_user` int(11) NOT NULL,
-  `nama` varchar(20) NOT NULL,
-  `email` varchar(25) NOT NULL,
-  `no_telp` varchar(20) NOT NULL,
-  `isi_pesan` text NOT NULL
+  `isi_pesan` longtext DEFAULT NULL,
+  `tgl_posting` timestamp NOT NULL DEFAULT current_timestamp(),
+  `status` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `pesan`
 --
 
-INSERT INTO `pesan` (`id_pesan`, `id_user`, `nama`, `email`, `no_telp`, `isi_pesan`) VALUES
-(1, 4, 'Lathifa Firdauzi', 'lathifa@gmail.com', '085727287289', 'Bismillah.. Assalamu\'alaikum akhy :)');
+INSERT INTO `pesan` (`id_pesan`, `id_user`, `isi_pesan`, `tgl_posting`, `status`) VALUES
+(1, 4, 'Bismillah.. Assalamu\'alaikum akhy :)', '2020-04-10 01:36:01', 0),
+(2, 7, 'Bismillah.. Assalamu\'alaikum, anta sehat? :)', '2020-04-10 02:05:23', 1);
 
 -- --------------------------------------------------------
 
@@ -150,7 +150,8 @@ INSERT INTO `user` (`id_user`, `nama`, `email`, `password`, `alamat`, `gender`, 
 (3, 'Admin', 'admin@admin.com', '21232f297a57a5a743894a0e4a801fc3', 'Malang', 'Laki-Laki', '085334424941', '213123123112', 'KTP-1544523262.png', 'KK.PNG', 1),
 (4, 'Lathifa Firdauzi', 'lathifa@gmail.com', '401e8eb287e4700453792a5e57490d70', 'Surabaya', 'Perempuan', '085727287289', '123213123', 'KTP-15445232621.png', 'KK1.PNG', 2),
 (6, 'Alief Al', 'alief@gmail.com', '22db6b9d4434177a4abd28b0c5781f15', 'Madura', 'Laki-Laki', '089217112213', '896786128689', 'KTP-15445232623.png', 'KK3.PNG', 2),
-(7, 'Nabila', 'nabila@gmail.com', '652d3266220e0aacb047d3aa6f51f1b0', 'Bandung', 'Perempuan', '089788967123', '275782578222', 'KTP-15445232624.png', 'KK4.PNG', 2);
+(7, 'Nabila', 'nabila@gmail.com', '652d3266220e0aacb047d3aa6f51f1b0', 'Bandung', 'Perempuan', '089788967123', '275782578222', 'KTP-15445232624.png', 'KK4.PNG', 2),
+(14, 'Fulan', 'fulan@gmail.com', '59ee8bd9e54c300ed35f1ead57cfdcf0', 'Bandung', 'Laki-Laki', '08778986664', '32400234843', 'KTP-15445232626.png', 'KK41.PNG', 2);
 
 --
 -- Indexes for dumped tables
@@ -204,13 +205,13 @@ ALTER TABLE `mobil`
 -- AUTO_INCREMENT untuk tabel `pesan`
 --
 ALTER TABLE `pesan`
-  MODIFY `id_pesan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_pesan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT untuk tabel `transaksi`
 --
 ALTER TABLE `transaksi`
-  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT untuk tabel `type`
@@ -222,7 +223,7 @@ ALTER TABLE `type`
 -- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)

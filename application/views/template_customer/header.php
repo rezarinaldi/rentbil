@@ -118,7 +118,7 @@
                                 <?php if (isset($_SESSION['level']) == 2) { ?>
                                     <li><a href="#"><i class="fa fa-user"></i> AHLAN | <?= $_SESSION['nama']; ?></a>
                                         <ul>
-                                            <li><a href="<?= base_url('customer/rental/riwayat_sewa') ?>">RIWAYAT SEWA</a></li>
+                                            <li><a href="<?= base_url('customer/rental/riwayat_sewa') ?>"><i class="fa fa-shopping-bag"></i> RIWAYAT SEWA</a></li>
                                             <li><a href="<?= base_url('auth/ganti_password') ?>"><i class="fa fa-unlock"></i> GANTI PASSWORD</a></li>
                                             <li><a href="<?= base_url('auth/logout') ?>"><i class="fa fa-sign-out"></i> LOG OUT</a></li>
                                         </ul>
