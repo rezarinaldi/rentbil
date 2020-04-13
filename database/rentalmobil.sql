@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 12 Apr 2020 pada 10.53
+-- Waktu pembuatan: 13 Apr 2020 pada 05.05
 -- Versi server: 10.4.8-MariaDB
 -- Versi PHP: 7.3.10
 
@@ -96,7 +96,7 @@ CREATE TABLE `transaksi` (
 --
 
 INSERT INTO `transaksi` (`id_transaksi`, `id_user`, `id_mobil`, `tanggal_sewa`, `tanggal_kembali`, `total_sewa`, `status`, `status_pembayaran`, `bukti_pembayaran`) VALUES
-(4, 3, 6, '2020-02-20', '2020-02-22', 1600000, 2, 2, ''),
+(4, 3, 6, '2020-02-20', '2020-02-22', 1600000, 2, 2, 'Screenshot_121.jpg'),
 (5, 6, 8, '2020-02-06', '2020-02-08', 1200000, 2, 2, ''),
 (6, 6, 10, '2020-02-27', '2020-02-29', 1300000, 2, 2, 'Screenshot_12.jpg'),
 (16, 7, 8, '2020-03-25', '2020-03-31', 3600000, 1, 2, 'WhatsApp_Image_2020-03-14_at_12_44_18_PM.jpeg'),

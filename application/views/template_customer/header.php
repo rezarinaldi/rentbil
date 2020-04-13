@@ -107,7 +107,7 @@
                         <nav class="mainmenu alignright">
                             <ul>
                                 <li><a href="<?= base_url('customer/dashboard') ?>">BERANDA</a></li>
-                                <li><a href="<?= base_url('customer/rental/list_mobil') ?>">LIST MOBIL</a></li>
+                                <li><a href="<?= base_url('customer/dashboard/list_mobil') ?>">LIST MOBIL</a></li>
                                 <li><a href="#">HALAMAN LAIN</a>
                                     <ul>
                                         <li><a href="<?= base_url('customer/rental/kotak_pesan') ?>">KOTAK PESAN</a></li>
