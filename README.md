@@ -2,10 +2,6 @@
 
 [Tutorial Aplikasi Rental Mobil Menggunakan Codeigniter 3](https://www.youtube.com/playlist?list=PLce3Eyp7oY9_bqW9EDki6-HLZgMvY6CP3)
 
-## 🧥 Anggota Kelompok:
-1. Alief Al Gaffari - 1841720149 (03)
-2. Reza Rinaldi     - 1841720078 (27)
-
 ## :atom: Cara install:
 
 - Jangan lupa install XAMPP.

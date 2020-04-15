@@ -87,7 +87,7 @@
             <div class="col-lg-8">
                 <div class="car-details-content">
                     <?php foreach ($mobil as $dt) : ?>
-                        <h2><?= $dt->merk ?><span class="price">Harga: <b><?= format_rupiah($dt->harga) ?> / Hari</b></span></h2>
+                        <h2><?= $dt->merk ?><span class="price" style="color: #014782">Harga: <b><?= format_rupiah($dt->harga) ?> / Hari</b></span></h2>
                         <img src="<?= base_url() . 'assets/upload/mobil/' . $dt->gambar ?>" style="height: 300px; width: 540px">
                         <div class="car-details-info">
                             <h4>Detail Mobil</h4>
@@ -97,25 +97,47 @@
                                     <div class="col-lg-6">
                                         <div class="tech-info-table">
                                             <table class="table table-bordered">
-                                                <tr>
+                                                <tr align="center">
                                                     <th>Type</th>
                                                     <td><?= $dt->nama_type ?></td>
                                                 </tr>
-                                                <tr>
+                                                <tr align="center">
                                                     <th>Merk</th>
                                                     <td><?= $dt->merk ?></td>
                                                 </tr>
-                                                <tr>
-                                                    <th>No Plat</th>
+                                                <tr align="center">
+                                                    <th>No. Plat</th>
                                                     <td><?= $dt->no_plat ?></td>
                                                 </tr>
-                                                <tr>
+                                                <tr align="center">
                                                     <th>Warna</th>
                                                     <td><?= $dt->warna ?></td>
                                                 </tr>
-                                                <tr>
+                                                <tr align="center">
                                                     <th>Tahun</th>
                                                     <td><?= $dt->tahun ?></td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="tech-info-table">
+                                            <table class="table table-bordered">
+                                                <tr align="center">
+                                                    <th>AC</th>
+                                                    <td><i class="fa fa-check-square" style="color: #014782"></i></td>
+                                                </tr>
+                                                <tr align="center">
+                                                    <th>Supir</th>
+                                                    <td><i class="fa fa-times-circle text-danger"></i></td>
+                                                </tr>
+                                                <tr align="center">
+                                                    <th>Audio Player</th>
+                                                    <td><i class="fa fa-check-square" style="color: #014782"></i></td>
+                                                </tr>
+                                                <tr align="center">
+                                                    <th>Central Lock</th>
+                                                    <td><i class="fa fa-times-circle text-danger"></i></td>
                                                 </tr>
                                             </table>
                                         </div>
@@ -165,7 +187,7 @@
                         <a href="<?= base_url('customer/rental/tambah_rental/') . $dt->id_mobil ?>" class="rent-btn"><i class="fa fa-car text-warning"></i> Sewa</a>
                     <?php } else { ?>
                         <a href="<?= base_url('customer/dashboard/list_mobil') ?>" class="rent-btn"><i class="fa fa-reply"></i> Kembali</a>
-                        <a href="#" class="rent-btn"><i class="fa fa-times-circle text-danger"></i> Disewa</a>
+                        <a href="javascript:;" class="rent-btn"><i class="fa fa-times-circle text-danger"></i> Disewa</a>
                     <?php } ?>
 
                 </div>

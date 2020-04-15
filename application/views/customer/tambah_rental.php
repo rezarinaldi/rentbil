@@ -1,33 +1,71 @@
-<div class="container mt-5 mb-5">
-    <div class="card bg-light">
-        <?php foreach ($detail as $dt) : ?>
-            <div class="card-body">
-                <div class="row">
-                    <h3 class="mb-4 ml-3 font-weight-bold"><?= $dt->merk ?></h3>
-                </div>
-                <div class="row">
-                    <div class="col-md-7">
-                        <img src="<?= base_url('assets/upload/mobil/') . $dt->gambar ?>" height="380px" width="610px">
-                    </div>
-                    <div class="col-md-5 mt-2">
-                        <form action="<?= base_url('customer/rental/tambah_rental_ready_simpan') ?>" method="POST" autocomplete="off">
-                            <div class="form-group">
-                                <label>Tanggal Sewa</label>
-                                <input type="hidden" name="id_mobil" value="<?= $dt->id_mobil ?>">
-                                <input type="date" name="tgl_sewa" class="form-control" required>
-                            </div>
-                            <div class="form-group">
-                                <label>Tanggal Kembali</label>
-                                <input type="date" name="tgl_kembali" class="form-control" required>
-                            </div>
-
-                            <button type="submit" class="btn btn-primary mt-3 float-right"><i class="fa fa-shopping-cart"></i>
-                                Checkout</button>
-
-                        </form>
-                    </div>
+<!--== Page Title Area Start ==-->
+<section id="page-title-area" class="section-padding overlay">
+    <div class="container">
+        <div class="row">
+            <!-- Page Title Start -->
+            <div class="col-lg-12">
+                <div class="section-title  text-center">
+                    <h2>Rental</h2>
+                    <span class="title-line"><i class="fa fa-car"></i></span>
                 </div>
             </div>
-        <?php endforeach ?>
+            <!-- Page Title End -->
+        </div>
     </div>
-</div>
+</section>
+<!--== Page Title Area End ==-->
+
+<!--== Car List Area Start ==-->
+<section id="car-list-area" class="section-padding">
+    <div class="container">
+        <div class="row">
+            <!-- Car List Content Start -->
+            <div class="col-lg-8">
+                <div class="car-details-content">
+                    <?php foreach ($mobil as $rt) : ?>
+                        <h2><?= $rt->merk ?><span class="price" style="color: #014782">Harga: <b><?= format_rupiah($rt->harga) ?> / Hari</b></span></h2>
+                        <img src="<?= base_url() . 'assets/upload/mobil/' . $rt->gambar ?>" alt="" style="width: 730px; height: 450px">
+                </div>
+            </div>
+            <!-- Car List Content End -->
+
+            <?php $today = date('Y-m-d') ?>
+
+            <!-- Sidebar Area Start -->
+            <div class="col-lg-4">
+                <form action="<?= base_url('customer/rental/tambah_rental_ready_simpan') ?>" method="POST" autocomplete="off">
+                    <div class="sidebar-content-wrap m-t-50">
+                        <!-- Single Sidebar Start -->
+                        <div class="single-sidebar">
+                            <h3>Pilih Tanggal Rental</h3>
+
+                            <div class="sidebar-body">
+                                <div class="form-group">
+                                    <label>Tanggal Sewa</label>
+                                    <input type="date" name="tgl_sewa" class="form-control" min="<?= $today ?>">
+                                </div>
+                                <div class="form-group">
+                                    <label>Tanggal Kembali</label>
+                                    <input type="date" name="tgl_kembali" class="form-control" min="<?= $today ?>">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Single Sidebar End -->
+
+                        <input type="hidden" name="id_mobil" value="<?= $rt->id_mobil ?>">
+
+                        <div class="input-submit float-left">
+                            <button class="bg-warning" type="submit"><i class="fa fa-car"></i> Sewa</button>
+                        </div>
+                        <div class="input-submit float-left">
+                            <button class="bg-warning" type="reset"><i class="fa fa-undo"></i> Reset</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        <?php endforeach ?>
+        <!-- Sidebar Area End -->
+        </div>
+    </div>
+</section>
+<!--== Car List Area End ==-->

@@ -11,6 +11,7 @@ class Rental extends CI_Controller
         $this->load->model('transaksi_model');
         $this->load->model('rental_model');
         $this->load->model('pesan_model');
+        $this->load->model('mobil_model');
     }
 
     public function tambah_rental($id)
@@ -18,21 +19,10 @@ class Rental extends CI_Controller
         check_not_login();
 
         $data['title'] = 'Tambah Rental';
-        $data['detail'] = $this->user_model->ambil_id_mobil($id);
+        $data['mobil'] = $this->mobil_model->ambil_id_mobil($id);
 
         $this->load->view('template_customer/header', $data);
         $this->load->view('customer/tambah_rental', $data);
-        $this->load->view('template_customer/footer');
-    }
-
-    public function tambah_rental_ready($id)
-    {
-        check_not_login();
-
-        $data['detail'] = $this->user_model->ambil_id_mobil($id);
-
-        $this->load->view('template_customer/header');
-        $this->load->view('customer/tambah_rental_ready', $data);
         $this->load->view('template_customer/footer');
     }
 
@@ -40,8 +30,8 @@ class Rental extends CI_Controller
     {
         check_not_login();
 
-        $id_mobil = $this->input->post('id_mobil');
-        $mobil = $this->user_model->ambil_id_mobil($id_mobil);
+        $id = $this->input->post('id_mobil');
+        $mobil = $this->mobil_model->ambil_id_mobil($id);
         $tgl_sewa = $this->input->post('tgl_sewa');
         $tgl_kembali = $this->input->post('tgl_kembali');
         $durasi = abs(round((strtotime($tgl_sewa) - strtotime($tgl_kembali)) / 86400));
@@ -108,7 +98,10 @@ class Rental extends CI_Controller
         );
 
         echo "<script>alert('Mobil Berhasil Dibooking')</script>";
-        echo "<script>window.location='" . base_url('customer/dashboard') . "';</script>";
+        $data['title'] = 'Detail Sewa';
+        $this->load->view('template_customer/header', $data);
+        $this->load->view('customer/detail_sewa', $data);
+        $this->load->view('template_customer/footer');
     }
 
     public function riwayat_sewa()

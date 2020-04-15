@@ -150,12 +150,11 @@ class Transaksi extends CI_Controller
         $where = array('id_transaksi' => $id);
         $this->transaksi_model->delete_data($where, 'transaksi');
         $this->session->set_flashdata('pesan', '
-                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                Data transaksi Berhasil Dihapus
-                <button transaksi="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
-                </div>');
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        Data transaksi Berhasil Dihapus
+        <button transaksi="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button></div>');
         redirect('admin/transaksi');
     }
 
