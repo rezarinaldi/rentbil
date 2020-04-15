@@ -4,7 +4,7 @@
             <h1>Data Type</h1>
         </div>
 
-        <a href="<?= base_url('admin/data_type/tambah_data_type') ?>" class="btn btn-primary mb-3"> <i class="fas fa-plus"></i> Tambah Data</a>
+        <a href="<?= base_url('admin/data_type/tambah_type') ?>" class="btn btn-primary mb-3"> <i class="fas fa-plus"></i> Tambah Data</a>
         <?= $this->session->flashdata('pesan') ?>
         <div class="card shadow mb-4">
             <div class="card-body">

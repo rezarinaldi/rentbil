@@ -10,6 +10,7 @@ class Data_User extends CI_Controller
         parent::__construct();
         check_not_login();
         check_admin();
+        $this->load->model('pesan_model');
         $this->load->model('user_model');
     }
 
@@ -17,9 +18,10 @@ class Data_User extends CI_Controller
     {
         $data['title'] = 'Data User';
         $data['user'] = $this->user_model->get_data('user')->result();
+        $data['pesan'] = $this->pesan_model->get_data_user('pesan')->result();
 
         $this->load->view('template_admin/header', $data);
-        $this->load->view('template_admin/sidebar');
+        $this->load->view('template_admin/sidebar', $data);
         $this->load->view('admin/data_user', $data);
         $this->load->view('template_admin/footer');
     }
@@ -28,9 +30,10 @@ class Data_User extends CI_Controller
     {
         $data['title'] = 'Form Tambah Data User';
         $data['user'] = $this->user_model->get_data('user')->result();
+        $data['pesan'] = $this->pesan_model->get_data_user('pesan')->result();
 
         $this->load->view('template_admin/header', $data);
-        $this->load->view('template_admin/sidebar');
+        $this->load->view('template_admin/sidebar', $data);
         $this->load->view('admin/form_tambah_user', $data);
         $this->load->view('template_admin/footer');
     }
@@ -111,9 +114,10 @@ class Data_User extends CI_Controller
         $where = array('id_user' => $id);
         $data['title'] = 'Form Ubah Data User';
         $data['user'] = $this->db->query("SELECT * FROM user us WHERE us.id_user='$id'")->result();
+        $data['pesan'] = $this->pesan_model->get_data_user('pesan')->result();
 
         $this->load->view('template_admin/header', $data);
-        $this->load->view('template_admin/sidebar');
+        $this->load->view('template_admin/sidebar', $data);
         $this->load->view('admin/form_edit_user', $data);
         $this->load->view('template_admin/footer');
     }
@@ -226,7 +230,7 @@ class Data_User extends CI_Controller
     //     $data['detail'] = $this->user_model->ambil_id_user($id);
 
     //     $this->load->view('template_admin/header', $data);
-    //     $this->load->view('template_admin/sidebar');
+    //     $this->load->view('template_admin/sidebar', $data);
     //     $this->load->view('admin/detail_user', $data);
     //     $this->load->view('template_admin/footer');
     // }

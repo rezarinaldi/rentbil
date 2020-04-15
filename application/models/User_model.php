@@ -58,15 +58,6 @@ class User_model extends CI_Model
         } else {
             return false;
         }
-        // $this->db->select('*');
-        // $this->db->from('mobil');
-        // $this->db->where('id_mobil', $id);
-        // $hasil = $this->db->get();
-        // if($hasil->num_rows() > 0){
-        //     return $hasil->result();
-        // }else{
-        //     return false;
-        // }
     }
 
     public function ubah_password($where, $data, $table)

@@ -12,7 +12,6 @@ class Auth extends CI_Controller
     {
         $data['title'] = 'Login';
 
-        // check_already_login();
         $this->load->view('login', $data);
     }
 
@@ -20,7 +19,6 @@ class Auth extends CI_Controller
     {
         $post = $this->input->post(null, TRUE);
         if (isset($post['login'])) {
-            $this->load->model('user_model');
             $query = $this->user_model->login($post);
             if ($query->num_rows() > 0) {
                 $row = $query->row();
@@ -43,10 +41,11 @@ class Auth extends CI_Controller
                     </script>";
                 }
             } else {
-                echo "<script>
-                    alert('Login Gagal, email/password salah');
-                    window.location='" . site_url('auth/login') . "';
-                </script>";
+                $this->session->set_flashdata('pesan', '
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                email atau password Anda salah!<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span></button></div>');
+                redirect('auth/login');
             }
         }
     }

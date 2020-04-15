@@ -51,28 +51,6 @@
     });
 </script>
 
-
-<!-- DateTimePicker -->
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js">
-</script>
-<script>
-    $('.picker').datetimepicker({
-        timepicker: true,
-        datepicker: true,
-        format: 'Y-m-d H:i', // formatDate
-        hours12: false,
-        minDate: 0,
-        step: 30
-    });
-
-    function disable() {
-        document.onkeydown = function(e) {
-            return false;
-        }
-    }
-</script> -->
-<!-- END DateTimePicker -->
-
 <!-- MODAL IMAGE -->
 <script>
     var modal = document.getElementById("Modal_gambar");

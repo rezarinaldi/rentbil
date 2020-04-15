@@ -81,10 +81,10 @@
       <div class="main-sidebar">
         <aside id="sidebar-wrapper">
           <div class="sidebar-brand">
-            <a href="index.html"><img src="<?= base_url('assets/assets_stisla') ?>/assets/img/logo.png" height="45" width="45" alt=""> rental mobil</a>
+            <a href="<?= base_url('admin/dashboard') ?>"><img src="<?= base_url('assets/assets_stisla') ?>/assets/img/logo.png" height="45" width="45" alt=""> rental mobil</a>
           </div>
           <div class="sidebar-brand sidebar-brand-sm">
-            <a href="index.html"><img src="<?= base_url('assets/assets_stisla') ?>/assets/img/logo.png" height="45" width="45" alt=""></a>
+            <a href="<?= base_url('admin/dashboard') ?>"><img src="<?= base_url('assets/assets_stisla') ?>/assets/img/logo.png" height="45" width="45" alt=""></a>
           </div>
           <ul class="sidebar-menu">
             <li><a class="nav-link" href="<?= base_url('admin/dashboard') ?>"><i class="fas fa-tachometer-alt"></i> <span>Dashboard</span></a></li>

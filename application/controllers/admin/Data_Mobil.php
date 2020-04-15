@@ -7,6 +7,7 @@ class Data_Mobil extends CI_Controller
         parent::__construct();
         check_not_login();
         check_admin();
+        $this->load->model('pesan_model');
         $this->load->model('mobil_model');
     }
 
@@ -14,9 +15,10 @@ class Data_Mobil extends CI_Controller
     {
         $data['title'] = 'Data Mobil';
         $data['mobil'] = $this->mobil_model->get_data_type('mobil')->result();
+        $data['pesan'] = $this->pesan_model->get_data_user('pesan')->result();
 
         $this->load->view('template_admin/header', $data);
-        $this->load->view('template_admin/sidebar');
+        $this->load->view('template_admin/sidebar', $data);
         $this->load->view('admin/data_mobil', $data);
         $this->load->view('template_admin/footer');
     }
@@ -25,9 +27,10 @@ class Data_Mobil extends CI_Controller
     {
         $data['title'] = 'Form Tambah Data Mobil';
         $data['type'] = $this->mobil_model->get_data('type')->result();
+        $data['pesan'] = $this->pesan_model->get_data_user('pesan')->result();
 
         $this->load->view('template_admin/header', $data);
-        $this->load->view('template_admin/sidebar');
+        $this->load->view('template_admin/sidebar', $data);
         $this->load->view('admin/form_tambah_mobil', $data);
         $this->load->view('template_admin/footer');
     }
@@ -89,9 +92,10 @@ class Data_Mobil extends CI_Controller
         $data['title'] = 'Form Ubah Data Mobil';
         $data['mobil'] = $this->db->query("SELECT * FROM mobil mb, type tp WHERE mb.id_type=tp.id_type AND mb.id_mobil='$id'")->result();
         $data['type'] = $this->mobil_model->get_data('type')->result();
+        $data['pesan'] = $this->pesan_model->get_data_user('pesan')->result();
 
         $this->load->view('template_admin/header', $data);
-        $this->load->view('template_admin/sidebar');
+        $this->load->view('template_admin/sidebar', $data);
         $this->load->view('admin/form_edit_mobil', $data);
         $this->load->view('template_admin/footer');
     }
@@ -165,9 +169,10 @@ class Data_Mobil extends CI_Controller
     {
         $data['title'] = 'Detail Mobil';
         $data['detail'] = $this->mobil_model->ambil_id_mobil($id);
+        $data['pesan'] = $this->pesan_model->get_data_user('pesan')->result();
 
         $this->load->view('template_admin/header', $data);
-        $this->load->view('template_admin/sidebar');
+        $this->load->view('template_admin/sidebar', $data);
         $this->load->view('admin/detail_mobil', $data);
         $this->load->view('template_admin/footer');
     }

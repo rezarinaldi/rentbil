@@ -7,6 +7,7 @@ class Data_Type extends CI_Controller
         parent::__construct();
         check_not_login();
         check_admin();
+        $this->load->model('pesan_model');
         $this->load->model('type_model');
     }
 
@@ -14,20 +15,22 @@ class Data_Type extends CI_Controller
     {
         $data['title'] = 'Data Type';
         $data['type'] = $this->type_model->get_data('type')->result();
+        $data['pesan'] = $this->pesan_model->get_data_user('pesan')->result();
 
         $this->load->view('template_admin/header', $data);
-        $this->load->view('template_admin/sidebar');
+        $this->load->view('template_admin/sidebar', $data);
         $this->load->view('admin/data_type', $data);
         $this->load->view('template_admin/footer');
     }
 
-    public function tambah_data_type()
+    public function tambah_type()
     {
         $data['title'] = 'Form Tambah Data Type';
         $data['type'] = $this->type_model->get_data('type')->result();
+        $data['pesan'] = $this->pesan_model->get_data_user('pesan')->result();
 
         $this->load->view('template_admin/header', $data);
-        $this->load->view('template_admin/sidebar');
+        $this->load->view('template_admin/sidebar', $data);
         $this->load->view('admin/form_tambah_type', $data);
         $this->load->view('template_admin/footer');
     }
@@ -37,7 +40,7 @@ class Data_Type extends CI_Controller
         $this->_rules();
 
         if ($this->form_validation->run() == FALSE) {
-            $this->tambah_data_type();
+            $this->tambah_type();
         } else {
             $kode_type = $this->input->post('kode_type');
             $nama_type = $this->input->post('nama_type');
@@ -64,9 +67,10 @@ class Data_Type extends CI_Controller
         $where = array('id_type' => $id);
         $data['title'] = 'Form Ubah Data Type';
         $data['type'] = $this->db->query("SELECT * FROM type tp WHERE tp.id_type='$id'")->result();
+        $data['pesan'] = $this->pesan_model->get_data_user('pesan')->result();
 
         $this->load->view('template_admin/header', $data);
-        $this->load->view('template_admin/sidebar');
+        $this->load->view('template_admin/sidebar', $data);
         $this->load->view('admin/form_edit_type', $data);
         $this->load->view('template_admin/footer');
     }

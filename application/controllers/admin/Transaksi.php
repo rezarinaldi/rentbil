@@ -7,6 +7,7 @@ class Transaksi extends CI_Controller
         parent::__construct();
         check_not_login();
         check_admin();
+        $this->load->model('pesan_model');
         $this->load->model('transaksi_model');
     }
 
@@ -14,9 +15,10 @@ class Transaksi extends CI_Controller
     {
         $data['title'] = 'Data Transaksi';
         $data['transaksi'] = $this->transaksi_model->get_data_transaksi()->result();
+        $data['pesan'] = $this->pesan_model->get_data_user('pesan')->result();
 
         $this->load->view('template_admin/header', $data);
-        $this->load->view('template_admin/sidebar');
+        $this->load->view('template_admin/sidebar', $data);
         $this->load->view('admin/data_transaksi', $data);
         $this->load->view('template_admin/footer');
     }
@@ -27,9 +29,10 @@ class Transaksi extends CI_Controller
         $data['transaksi'] = $this->transaksi_model->get_data('transaksi')->result();
         $data['user'] = $this->transaksi_model->get_data('user')->result();
         $data['mobil'] = $this->transaksi_model->get_data_mobil('mobil')->result();
+        $data['pesan'] = $this->pesan_model->get_data_user('pesan')->result();
 
         $this->load->view('template_admin/header', $data);
-        $this->load->view('template_admin/sidebar');
+        $this->load->view('template_admin/sidebar', $data);
         $this->load->view('admin/form_tambah_transaksi', $data);
         $this->load->view('template_admin/footer');
     }
@@ -81,15 +84,17 @@ class Transaksi extends CI_Controller
         $data['title'] = 'Form Ubah Data Transaksi';
         $data['user'] = $this->transaksi_model->get_data('user')->result();
         $data['mobil'] = $this->transaksi_model->get_data('mobil')->result();
+        $data['pesan'] = $this->pesan_model->get_data_user('pesan')->result();
 
         $this->db->select('transaksi.id_transaksi, transaksi.id_user, transaksi.id_mobil, mobil.harga , user.nama, mobil.merk, transaksi.tanggal_sewa, transaksi.tanggal_kembali, transaksi.status');
         $this->db->from('transaksi');
         $this->db->join('mobil', 'mobil.id_mobil = transaksi.id_mobil');
         $this->db->join('user', 'user.id_user = transaksi.id_user');
         $this->db->where('id_transaksi', $id);
+
         $data['transaksi'] = $this->db->get()->result();
         $this->load->view('template_admin/header', $data);
-        $this->load->view('template_admin/sidebar');
+        $this->load->view('template_admin/sidebar', $data);
         $this->load->view('admin/form_edit_transaksi', $data);
         $this->load->view('template_admin/footer');
     }
@@ -158,9 +163,10 @@ class Transaksi extends CI_Controller
     {
         $data['title'] = 'Menunggu Pembayaran';
         $data['transaksi'] = $this->transaksi_model->get_data_transaksi()->result();
+        $data['pesan'] = $this->pesan_model->get_data_user('pesan')->result();
 
         $this->load->view('template_admin/header', $data);
-        $this->load->view('template_admin/sidebar');
+        $this->load->view('template_admin/sidebar', $data);
         $this->load->view('admin/transaksi_menunggu_pembayaran', $data);
         $this->load->view('template_admin/footer');
     }
@@ -169,9 +175,10 @@ class Transaksi extends CI_Controller
     {
         $data['title'] = 'Menunggu Konfirmasi';
         $data['transaksi'] = $this->transaksi_model->get_data_transaksi()->result();
+        $data['pesan'] = $this->pesan_model->get_data_user('pesan')->result();
 
         $this->load->view('template_admin/header', $data);
-        $this->load->view('template_admin/sidebar');
+        $this->load->view('template_admin/sidebar', $data);
         $this->load->view('admin/transaksi_menunggu_konfirmasi', $data);
         $this->load->view('template_admin/footer');
     }
@@ -180,9 +187,10 @@ class Transaksi extends CI_Controller
     {
         $data['title'] = 'Sedang Disewa';
         $data['transaksi'] = $this->transaksi_model->get_data_transaksi()->result();
+        $data['pesan'] = $this->pesan_model->get_data_user('pesan')->result();
 
         $this->load->view('template_admin/header', $data);
-        $this->load->view('template_admin/sidebar');
+        $this->load->view('template_admin/sidebar', $data);
         $this->load->view('admin/transaksi_sedang_disewa', $data);
         $this->load->view('template_admin/footer');
     }
@@ -191,9 +199,10 @@ class Transaksi extends CI_Controller
     {
         $data['title'] = 'Transaksi Selesai';
         $data['transaksi'] = $this->transaksi_model->get_data_transaksi()->result();
+        $data['pesan'] = $this->pesan_model->get_data_user('pesan')->result();
 
         $this->load->view('template_admin/header', $data);
-        $this->load->view('template_admin/sidebar');
+        $this->load->view('template_admin/sidebar', $data);
         $this->load->view('admin/transaksi_selesai', $data);
         $this->load->view('template_admin/footer');
     }
@@ -229,6 +238,7 @@ class Transaksi extends CI_Controller
     function laporan()
     {
         $data['title'] = 'Laporan Transaksi';
+        $data['pesan'] = $this->pesan_model->get_data_user('pesan')->result();
 
         $dari = $this->input->post('dari');
         $sampai = $this->input->post('sampai');
@@ -238,12 +248,12 @@ class Transaksi extends CI_Controller
         if ($this->form_validation->run() == true) {
             $data['laporan'] = $this->db->query("select * from transaksi, mobil, user where transaksi.id_mobil=mobil.id_mobil and transaksi.id_user=user.id_user and date(tanggal_sewa) >= '$dari'")->result();
             $this->load->view('template_admin/header', $data);
-            $this->load->view('template_admin/sidebar');
+            $this->load->view('template_admin/sidebar', $data);
             $this->load->view('admin/laporan_filter_transaksi', $data);
             $this->load->view('template_admin/footer');
         } else {
             $this->load->view('template_admin/header', $data);
-            $this->load->view('template_admin/sidebar');
+            $this->load->view('template_admin/sidebar', $data);
             $this->load->view('admin/laporan_transaksi');
             $this->load->view('template_admin/footer');
         }

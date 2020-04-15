@@ -10,7 +10,7 @@ class Dashboard extends CI_Controller
 
     public function index()
     {
-        $data['title'] = 'Home';
+        $data['title'] = 'Beranda';
         $data['mobil'] = $this->mobil_model->get_data_type('mobil')->result();
 
         $this->load->view('template_customer/header', $data);
