@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 13 Apr 2020 pada 05.05
+-- Waktu pembuatan: 17 Apr 2020 pada 14.59
 -- Versi server: 10.4.8-MariaDB
 -- Versi PHP: 7.3.10
 
@@ -36,7 +36,7 @@ CREATE TABLE `mobil` (
   `warna` varchar(20) NOT NULL,
   `tahun` varchar(4) NOT NULL,
   `harga` int(11) NOT NULL,
-  `status` varchar(50) NOT NULL,
+  `status` int(11) NOT NULL COMMENT '0. kosong, 1. tersedia',
   `gambar` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -45,10 +45,10 @@ CREATE TABLE `mobil` (
 --
 
 INSERT INTO `mobil` (`id_mobil`, `id_type`, `merk`, `no_plat`, `warna`, `tahun`, `harga`, `status`, `gambar`) VALUES
-(6, 1, 'Suzuki Ciaz', 'N 1985 RTF', 'Putih', '2019', 800000, '1', 'mobil-suzuki-ciaz11.jpg'),
-(8, 5, 'Suzuki Ciaz', 'N 6758 AW', 'PINK', '2017', 600000, '0', 'Suzuki-Ciaz.jpg'),
-(10, 5, 'Suzuki Ertiga', 'N 1985 NK', 'Silver', '2018', 650000, '1', 'Suzuki-All-new-Ertiga-2018-Warna-merah-Pearl-Radiant-Red.jpg'),
-(11, 1, 'Honda Civic', 'B 9547 HUY', 'Silver', '2014', 1000000, '0', 'std_in-2499489_300e1.jpg');
+(6, 1, 'Suzuki Ciaz', 'N 1985 RTF', 'Putih', '2019', 800000, 1, 'mobil-suzuki-ciaz11.jpg'),
+(8, 5, 'Suzuki Ciaz', 'N 6758 AW', 'PINK', '2017', 600000, 0, 'Suzuki-Ciaz.jpg'),
+(10, 5, 'Suzuki Ertiga', 'N 1985 NK', 'Silver', '2018', 650000, 1, 'Suzuki-All-new-Ertiga-2018-Warna-merah-Pearl-Radiant-Red.jpg'),
+(11, 1, 'Honda Civic', 'B 9547 HUY', 'Silver', '2014', 1000000, 0, 'std_in-2499489_300e1.jpg');
 
 -- --------------------------------------------------------
 
@@ -86,8 +86,8 @@ CREATE TABLE `transaksi` (
   `tanggal_sewa` date NOT NULL,
   `tanggal_kembali` date NOT NULL,
   `total_sewa` int(11) NOT NULL,
-  `status` int(1) NOT NULL COMMENT '1. Disewa, 2. Selesai',
-  `status_pembayaran` int(1) NOT NULL COMMENT '0.belum dibayar, 1.menunggu konfirmasi, 2.sudah dibayar',
+  `status` int(1) NOT NULL COMMENT '0. batal, 1. disewa, 2. selesai',
+  `status_pembayaran` int(1) NOT NULL COMMENT '0. belum dibayar, 1. menunggu konfirmasi, 2. sudah dibayar, 3. batal',
   `bukti_pembayaran` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -101,7 +101,8 @@ INSERT INTO `transaksi` (`id_transaksi`, `id_user`, `id_mobil`, `tanggal_sewa`, 
 (6, 6, 10, '2020-02-27', '2020-02-29', 1300000, 2, 2, 'Screenshot_12.jpg'),
 (16, 7, 8, '2020-03-25', '2020-03-31', 3600000, 1, 2, 'WhatsApp_Image_2020-03-14_at_12_44_18_PM.jpeg'),
 (18, 3, 11, '2020-04-01', '2020-04-16', 15000000, 2, 2, ''),
-(22, 7, 11, '2020-04-01', '2020-04-02', 1000000, 1, 0, '');
+(22, 7, 11, '2020-04-01', '2020-04-02', 1000000, 1, 1, 'Screenshot_122.jpg'),
+(27, 4, 10, '2020-04-17', '2020-04-18', 650000, 1, 0, '');
 
 -- --------------------------------------------------------
 
@@ -152,7 +153,7 @@ INSERT INTO `user` (`id_user`, `nama`, `email`, `password`, `alamat`, `gender`, 
 (4, 'Lathifa Firdauzi', 'lathifa@gmail.com', '401e8eb287e4700453792a5e57490d70', 'Surabaya', 'Perempuan', '085727287289', '123213123', 'KTP-15445232621.png', 'KK1.PNG', 2),
 (6, 'Alief Al', 'alief@gmail.com', '22db6b9d4434177a4abd28b0c5781f15', 'Madura', 'Laki-Laki', '089217112213', '896786128689', 'KTP-15445232623.png', 'KK3.PNG', 2),
 (7, 'Nabila', 'nabila@gmail.com', '652d3266220e0aacb047d3aa6f51f1b0', 'Bandung', 'Perempuan', '089788967123', '275782578222', 'KTP-15445232624.png', 'KK4.PNG', 2),
-(14, 'Fulan', 'fulan@gmail.com', '59ee8bd9e54c300ed35f1ead57cfdcf0', 'Bandung', 'Laki-Laki', '08778986664', '32400234843', 'KTP-15445232626.png', 'KK41.PNG', 2);
+(14, 'Fulan', 'fulan@gmail.com', '59ee8bd9e54c300ed35f1ead57cfdcf0', 'Bandung', 'Laki-Laki', '087789866648', '32400234843', 'KTP-15445232626.png', 'KK41.PNG', 2);
 
 --
 -- Indexes for dumped tables
@@ -206,7 +207,7 @@ ALTER TABLE `mobil`
 -- AUTO_INCREMENT untuk tabel `transaksi`
 --
 ALTER TABLE `transaksi`
-  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT untuk tabel `type`
