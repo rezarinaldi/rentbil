@@ -55,14 +55,16 @@
                                                 echo "<span class='badge badge-danger'>Belum Dibayar</span>";
                                             } elseif (($ts->status_pembayaran) == 1) {
                                                 echo "<span class='badge badge-info'>Menunggu Konfirmasi</span>";
-                                            } else {
+                                            } elseif (($ts->status_pembayaran) == 2) {
                                                 echo "<span class='badge badge-success'>Sudah Dibayar</span>";
+                                            } else {
+                                                echo "<span class='badge badge-dark'>Batal</span>";
                                             } ?>
                                         </td>
                                         <td>
                                             <?php
                                             if ($ts->bukti_pembayaran == '') { ?>
-                                                <a href="<?= base_url('customer/rental/konfirmasi_pembayaran/') . $ts->id_transaksi ?>" class="badge badge-dark">Konfirmasi Pembayaran</a>
+                                                <a href="<?= base_url('customer/rental/konfirmasi_pembayaran/') . $ts->id_transaksi ?>" class="badge badge-warning">Konfirmasi Pembayaran</a>
                                             <?php } else { ?>
                                                 <a href="<?= base_url() . 'assets/upload/bukti_pembayaran/' . $ts->bukti_pembayaran ?>"><img width="100px" height="60px" src="<?= base_url() . 'assets/upload/bukti_pembayaran/' . $ts->bukti_pembayaran ?>"></a>
                                             <?php } ?>

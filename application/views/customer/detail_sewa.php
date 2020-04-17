@@ -66,7 +66,7 @@
 						<div class="card-body">
 							<div class="form-group">
 								<label>Nama Customer</label>
-								<input type="text" class="form-control" autocomplete="off" value="<?= $nama ?>">
+								<input type="text" class="form-control" autocomplete="off" value="<?= $this->session->userdata('nama') ?>">
 							</div>
 							<div class="form-group">
 								<label>Mobil</label>

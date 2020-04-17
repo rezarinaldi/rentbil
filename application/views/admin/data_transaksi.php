@@ -33,14 +33,24 @@
                                 <td><?= IndonesiaTgl($ts->tanggal_sewa) ?></td>
                                 <td><?= IndonesiaTgl($ts->tanggal_kembali) ?></td>
                                 <td><?= format_rupiah($ts->total_sewa) ?></td>
-                                <td><?= $ts->status == 1 ? "<span class='badge badge-warning'>Disewa</span>" : "<span class='badge badge-success'>Selesai</span>" ?></td>
+                                <td>
+                                    <?php if (($ts->status) == 0) {
+                                        echo "<span class='badge badge-dark'>Batal</span>";
+                                    } elseif (($ts->status) == 1) {
+                                        echo "<span class='badge badge-warning'>Disewa</span>";
+                                    } else {
+                                        echo "<span class='badge badge-success'>Selesai</span>";
+                                    } ?>
+                                </td>
                                 <td>
                                     <?php if (($ts->status_pembayaran) == 0) {
                                         echo "<span class='badge badge-danger'>Belum Dibayar</span>";
                                     } elseif (($ts->status_pembayaran) == 1) {
                                         echo "<span class='badge badge-info'>Menunggu Konfirmasi</span>";
-                                    } else {
+                                    } elseif (($ts->status_pembayaran) == 2) {
                                         echo "<span class='badge badge-success'>Sudah Dibayar</span>";
+                                    } else {
+                                        echo "<span class='badge badge-dark'>Batal</span>";
                                     } ?>
                                 </td>
                                 <td>

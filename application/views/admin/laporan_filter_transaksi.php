@@ -70,7 +70,6 @@
 								<th>Tgl Kembali</th>
 								<th>Total Sewa</th>
 								<th>Status</th>
-								<th>Status Pembayaran</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -109,14 +108,15 @@
 									<td><?= IndonesiaTgl($l->tanggal_sewa) ?></td>
 									<td><?= IndonesiaTgl($l->tanggal_kembali) ?></td>
 									<td><?= format_rupiah($l->total_sewa) ?></td>
-									<td><?= $l->status == 1 ? "<span class='badge badge-warning'>Disewa</span>" : "<span class='badge badge-success'>Selesai</span>" ?></td>
 									<td>
 										<?php if (($l->status_pembayaran) == 0) {
 											echo "<span class='badge badge-danger'>Belum Dibayar</span>";
 										} elseif (($l->status_pembayaran) == 1) {
 											echo "<span class='badge badge-info'>Menunggu Konfirmasi</span>";
-										} else {
+										} elseif (($l->status_pembayaran) == 2) {
 											echo "<span class='badge badge-success'>Sudah Dibayar</span>";
+										} else {
+											echo "<span class='badge badge-dark'>Batal</span>";
 										} ?>
 									</td>
 								</tr>

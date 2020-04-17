@@ -4,7 +4,6 @@
             <h1>Transaksi Selesai</h1>
         </div>
 
-        <a href="<?= base_url('admin/transaksi/tambah_transaksi') ?>" class="btn btn-primary mb-3"> <i class="fas fa-plus"></i> Tambah Data</a>
         <?= $this->session->flashdata('pesan') ?>
         <div class="card shadow mb-4">
             <div class="card-body">
@@ -12,7 +11,7 @@
                     <thead>
                         <tr align="center">
                             <th>No</th>
-                            <th>user</th>
+                            <th>User</th>
                             <th>Mobil</th>
                             <th>Tgl Sewa</th>
                             <th>Tgl Kembali</th>

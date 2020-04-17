@@ -51,7 +51,6 @@ class Rental extends CI_Controller
     {
         check_not_login();
 
-        $id_user = $this->input->post('id_user');
         $id_mobil = $this->input->post('id_mobil');
         $tgl_sewa = strtotime($this->input->post('tanggal_sewa'));
         $tgl_sewa = date("Y-m-d", $tgl_sewa);
@@ -63,7 +62,7 @@ class Rental extends CI_Controller
         $status_pembayaran = 0;
 
         $data = array(
-            'id_user' => $id_user,
+            'id_user'   => $this->session->userdata('id_user'),
             'id_mobil' => $id_mobil,
             'tanggal_sewa' => $tgl_sewa,
             'tanggal_kembali' => $tgl_kembali,
@@ -84,11 +83,10 @@ class Rental extends CI_Controller
         $tgl      = $tglsewa - $jmlhari;
         $batas_bayar = date("d-m-Y", $tgl);
 
-        $nama = $this->input->post('nama');
         $merk = $this->input->post('nama_mobil');
         $durasi = $this->input->post('durasi');
         $data = array(
-            'nama' => $nama,
+            'nama'   => $this->session->userdata('nama'),
             'merk' => $merk,
             'tanggal_sewa' => $tgl_sewa,
             'tanggal_kembali' => $tgl_kembali,
@@ -203,12 +201,11 @@ class Rental extends CI_Controller
         $this->pesan_model->insert_data('pesan');
 
         $this->session->set_flashdata('pesan', '
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                Pesan Berhasil Dikirim
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
-                </div>');
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+        Pesan Berhasil Dikirim
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button></div>');
         redirect('customer/rental/kotak_pesan');
     }
 }

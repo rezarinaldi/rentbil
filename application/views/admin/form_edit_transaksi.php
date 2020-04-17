@@ -46,7 +46,7 @@
 												<i class="fas fa-calendar"></i>
 											</div>
 										</div>
-										<input type="date" name="tgl_sewa" class="form-control" value="<?= $ts->tanggal_sewa ?>" required>
+										<input type="date" name="tgl_sewa" class="form-control" value="<?= $ts->tanggal_sewa ?>" readonly required>
 									</div>
 								</div>
 								<div class="form-group">

@@ -99,6 +99,7 @@
                 <li><a class="nav-link" href="<?= base_url('admin/transaksi/menunggu_konfirmasi') ?>">Menunggu Konfirmasi</a></li>
                 <li><a class="nav-link" href="<?= base_url('admin/transaksi/sedang_disewa') ?>">Sedang Disewa</a></li>
                 <li><a class="nav-link" href="<?= base_url('admin/transaksi/selesai') ?>">Transaksi Selesai</a></li>
+                <li><a class="nav-link" href="<?= base_url('admin/transaksi/batal') ?>">Transaksi Batal</a></li>
               </ul>
             </li>
 

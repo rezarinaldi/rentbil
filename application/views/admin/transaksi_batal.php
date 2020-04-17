@@ -1,7 +1,7 @@
 <div class="main-content">
     <section class="section">
         <div class="section-header">
-            <h1>Menunggu Konfirmasi</h1>
+            <h1>Transaksi Batal</h1>
         </div>
 
         <?= $this->session->flashdata('pesan') ?>
@@ -17,7 +17,6 @@
                             <th>Tgl Kembali</th>
                             <th>Total Sewa</th>
                             <th>Status</th>
-                            <th>Bukti Pembayaran</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -25,7 +24,7 @@
                         <?php
                         $no = 1;
                         foreach ($transaksi as $ts) :
-                            if ($ts->status_pembayaran == 1) :
+                            if (($ts->status_pembayaran == 3) && ($ts->status == 0)) :
                         ?>
                                 <tr align="center">
                                     <td><?= $no++ ?></td>
@@ -34,13 +33,10 @@
                                     <td><?= IndonesiaTgl($ts->tanggal_sewa) ?></td>
                                     <td><?= IndonesiaTgl($ts->tanggal_kembali) ?></td>
                                     <td><?= format_rupiah($ts->total_sewa) ?></td>
-                                    <td><span class="badge badge-info">Menunggu Konfirmasi</span></td>
+                                    <td><span class="badge badge-dark">Batal</span></td>
                                     <td>
-                                        <a href="<?= base_url() . 'assets/upload/bukti_pembayaran/' . $ts->bukti_pembayaran ?>"><img width="100px" height="60px" src="<?= base_url() . 'assets/upload/bukti_pembayaran/' . $ts->bukti_pembayaran ?>"></a>
-                                    </td>
-                                    <td>
-                                        <a href="<?= base_url('admin/transaksi/konfirmasi_pembayaran/') . $ts->id_transaksi ?>" class="btn btn-sm btn-light tombol-konfirmasi"><i class="fas fa-check"></i></a>
-                                        <a href="<?= base_url('admin/transaksi/pembatalan_sewa/') . $ts->id_transaksi ?>" class="btn btn-sm btn-dark tombol-pembatalan"><i class="fas fa-times"></i></a>
+                                        <a href="<?= base_url('admin/transaksi/delete_transaksi/') . $ts->id_transaksi ?>" class="btn btn-sm btn-danger tombol-hapus"><i class="far fa-trash-alt"></i></a>
+                                        <a href="<?= base_url('admin/transaksi/edit_transaksi/') . $ts->id_transaksi ?>" class="btn btn-sm btn-warning"><i class="far fa-edit"></i></a>
                                     </td>
                                 </tr>
                             <?php endif ?>

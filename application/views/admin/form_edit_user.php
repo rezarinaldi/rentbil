@@ -35,7 +35,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Alamat</label>
-                                    <textarea name="alamat" rows="2" class="form-control"><?= $us->alamat ?></textarea>
+                                    <textarea name="alamat" data-height="150" class="form-control"><?= $us->alamat ?></textarea>
                                     <?= form_error('alamat', '<div class="text-small text-danger">', '</div>') ?>
                                 </div>
                                 <div class="form-group">

@@ -114,7 +114,7 @@
 															<i class="fas fa-map-marker-alt"></i>
 														</div>
 													</div>
-													<textarea name="alamat" class="form-control textarea optional" rows="2" required></textarea>
+													<textarea name="alamat" class="form-control textarea optional" data-height="150" required></textarea>
 													<div class="invalid-feedback">
 														Alamat Tidak Boleh Kosong
 													</div>

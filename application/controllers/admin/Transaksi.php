@@ -142,7 +142,7 @@ class Transaksi extends CI_Controller
             <span aria-hidden="true">&times;</span>
             </button>
             </div>');
-        redirect('admin/transaksi/selesai');
+        redirect('admin/transaksi');
     }
 
     public function delete_transaksi($id)
@@ -204,6 +204,38 @@ class Transaksi extends CI_Controller
         $this->load->view('template_admin/sidebar', $data);
         $this->load->view('admin/transaksi_selesai', $data);
         $this->load->view('template_admin/footer');
+    }
+
+    public function batal()
+    {
+        $data['title'] = 'Transaksi Batal';
+        $data['transaksi'] = $this->transaksi_model->get_data_transaksi()->result();
+        $data['pesan'] = $this->pesan_model->get_data_user('pesan')->result();
+
+        $this->load->view('template_admin/header', $data);
+        $this->load->view('template_admin/sidebar', $data);
+        $this->load->view('admin/transaksi_batal', $data);
+        $this->load->view('template_admin/footer');
+    }
+
+    public function pembatalan_sewa($id)
+    {
+        $this->load->model('transaksi_model');
+        $id_transaksi = $id;
+        $status = 0;
+        $status_pembayaran = 3;
+
+        $data = array(
+            'status' => $status,
+            'status_pembayaran' => $status_pembayaran
+        );
+        $where = array(
+            'id_transaksi' => $id_transaksi
+        );
+
+        $this->transaksi_model->edit_data('transaksi', $data, $where);
+
+        echo "<script>window.location='" . base_url('admin/transaksi/batal') . "';</script>";
     }
 
     public function konfirmasi_pembayaran($id)

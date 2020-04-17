@@ -66,3 +66,49 @@ $('.tombol-keluar').on('click', function (e) {
 	})
 
 });
+
+// tombol-konfirmasi
+$('.tombol-konfirmasi').on('click', function (e) {
+
+	e.preventDefault();
+	const href = $(this).attr('href');
+
+	Swal({
+		title: 'Konfirmasi Pembayaran',
+		text: "yakin ingin konfirmasi pembayaran?",
+		type: 'warning',
+		showCancelButton: true,
+		confirmButtonColor: '#3085d6',
+		cancelButtonColor: '#d33',
+		confirmButtonText: 'Konfirmasi',
+		cancelButtonText: 'Batal'
+	}).then((result) => {
+		if (result.value) {
+			document.location.href = href;
+		}
+	})
+
+});
+
+// tombol-pembatalan
+$('.tombol-pembatalan').on('click', function (e) {
+
+	e.preventDefault();
+	const href = $(this).attr('href');
+
+	Swal({
+		title: 'Batal Sewa',
+		text: "yakin ingin membatalkan sewa?",
+		type: 'warning',
+		showCancelButton: true,
+		confirmButtonColor: '#3085d6',
+		cancelButtonColor: '#d33',
+		confirmButtonText: 'Oke',
+		cancelButtonText: 'Batal'
+	}).then((result) => {
+		if (result.value) {
+			document.location.href = href;
+		}
+	})
+
+});
