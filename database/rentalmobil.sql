@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 17 Apr 2020 pada 14.59
+-- Waktu pembuatan: 18 Apr 2020 pada 02.23
 -- Versi server: 10.4.8-MariaDB
 -- Versi PHP: 7.3.10
 
@@ -36,7 +36,7 @@ CREATE TABLE `mobil` (
   `warna` varchar(20) NOT NULL,
   `tahun` varchar(4) NOT NULL,
   `harga` int(11) NOT NULL,
-  `status` int(11) NOT NULL COMMENT '0. kosong, 1. tersedia',
+  `status_mobil` int(11) NOT NULL COMMENT '0. kosong, 1. tersedia',
   `gambar` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -44,11 +44,13 @@ CREATE TABLE `mobil` (
 -- Dumping data untuk tabel `mobil`
 --
 
-INSERT INTO `mobil` (`id_mobil`, `id_type`, `merk`, `no_plat`, `warna`, `tahun`, `harga`, `status`, `gambar`) VALUES
+INSERT INTO `mobil` (`id_mobil`, `id_type`, `merk`, `no_plat`, `warna`, `tahun`, `harga`, `status_mobil`, `gambar`) VALUES
 (6, 1, 'Suzuki Ciaz', 'N 1985 RTF', 'Putih', '2019', 800000, 1, 'mobil-suzuki-ciaz11.jpg'),
 (8, 5, 'Suzuki Ciaz', 'N 6758 AW', 'PINK', '2017', 600000, 0, 'Suzuki-Ciaz.jpg'),
 (10, 5, 'Suzuki Ertiga', 'N 1985 NK', 'Silver', '2018', 650000, 1, 'Suzuki-All-new-Ertiga-2018-Warna-merah-Pearl-Radiant-Red.jpg'),
-(11, 1, 'Honda Civic', 'B 9547 HUY', 'Silver', '2014', 1000000, 0, 'std_in-2499489_300e1.jpg');
+(11, 1, 'Honda Civic', 'N 9547 HUY', 'Silver', '2014', 1000000, 0, 'std_in-2499489_300e1.jpg'),
+(12, 1, 'Toyota Avanza', 'N 1456 DAG', 'Biru', '2015', 400000, 1, 'car-3.jpg'),
+(13, 1, 'Toyota Camry', 'N 1234 CAH', 'Biru', '2019', 500000, 1, 'car-2.jpg');
 
 -- --------------------------------------------------------
 
@@ -201,7 +203,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT untuk tabel `mobil`
 --
 ALTER TABLE `mobil`
-  MODIFY `id_mobil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_mobil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT untuk tabel `transaksi`

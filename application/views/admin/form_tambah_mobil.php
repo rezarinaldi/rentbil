@@ -6,7 +6,7 @@
 
         <div class="card">
             <div class="card-body">
-                <form action="<?= base_url('admin/data_mobil/tambah_mobil_simpan') ?>" enctype="multipart/form-data" method="POST">
+                <form action="<?= base_url('admin/data_mobil/tambah_mobil_simpan') ?>" enctype="multipart/form-data" method="POST" autocomplete="off">
                 <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -48,12 +48,12 @@
                             </div>
                             <div class="form-group">
                                 <label>Status</label>
-                                <select name="status" class="form-control">
+                                <select name="status_mobil" class="form-control">
                                     <option value="">Pilih Status</option>
                                     <option value="1">Tersedia</option>
                                     <option value="0">Kosong</option>
                                 </select>
-                                <?= form_error('status', '<div class="text-small text-danger">', '</div>') ?>
+                                <?= form_error('status_mobil', '<div class="text-small text-danger">', '</div>') ?>
                             </div>
                             <div class="form-group">
                                 <label>Gambar</label>

@@ -172,7 +172,7 @@
 						<?php
 						$no = 1;
 						foreach ($mobil as $mb) : ?>
-							<?php if (($mb->status) == 1) : ?>
+							<?php if (($mb->status_mobil) == 1) : ?>
 								<tr align="center">
 									<td><?= $no++ ?></td>
 									<td><img width="100px" height="60px" src="<?= base_url() . 'assets/upload/mobil/' . $mb->gambar ?>"></td>

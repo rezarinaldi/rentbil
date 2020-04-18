@@ -6,7 +6,7 @@
 
         <div class="card">
             <div class="card-body">
-                <form action="<?= base_url('admin/data_user/tambah_user_simpan') ?>" enctype="multipart/form-data" method="POST">
+                <form action="<?= base_url('admin/data_user/tambah_user_simpan') ?>" enctype="multipart/form-data" method="POST" autocomplete="off">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">

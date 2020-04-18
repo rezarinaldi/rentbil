@@ -52,17 +52,17 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Status</label>
-                                    <select name="status" class="form-control">
-                                        <option <?php if ($mb->status == "1") {
+                                    <select name="status_mobil" class="form-control">
+                                        <option <?php if ($mb->status_mobil == "1") {
                                                     echo "selected='selected'";
                                                 }
-                                                echo $mb->status; ?> value="1">Tersedia</option>
-                                        <option <?php if ($mb->status == "0") {
+                                                echo $mb->status_mobil; ?> value="1">Tersedia</option>
+                                        <option <?php if ($mb->status_mobil == "0") {
                                                     echo "selected='selected'";
                                                 }
-                                                echo $mb->status; ?> value="0">Kosong</option>
+                                                echo $mb->status_mobil; ?> value="0">Kosong</option>
                                     </select>
-                                    <?= form_error('status', '<div class="text-small text-danger">', '</div>') ?>
+                                    <?= form_error('status_mobil', '<div class="text-small text-danger">', '</div>') ?>
                                 </div>
                                 <div class="form-group">
                                     <label>Gambar</label>

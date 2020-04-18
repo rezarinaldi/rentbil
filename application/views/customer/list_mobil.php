@@ -48,7 +48,7 @@
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star unmark"></i>
                                         </p>
-                                        <?php if ($mb->status == 1) { ?>
+                                        <?php if ($mb->status_mobil == 1) { ?>
                                             <a href="<?= base_url('customer/rental/tambah_rental/') . $mb->id_mobil ?>" class="rent-btn"><i class="fa fa-car text-warning"></i> Sewa</a>
                                             <a href="<?= base_url('customer/dashboard/detail_mobil/') . $mb->id_mobil ?>" class="rent-btn"><i class="fa fa-search-plus text-success"></i> Detail</a>
                                         <?php } else { ?>

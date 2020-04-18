@@ -50,14 +50,14 @@
           <li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown" class="nav-link notification-toggle nav-link-lg">
               <i class="far fa-bell"></i>
               <span class="badge badge-danger badge-counter">
-                <?php $query = $this->db->query('select status_pembayaran from transaksi where status_pembayaran = 0');
+                <?php $query = $this->db->query('select status_pembayaran from transaksi where status_pembayaran = 1');
                 echo $query->num_rows($query) ?>
               </span>
             </a>
             <div class="dropdown-menu dropdown-list dropdown-menu-right">
               <div class="dropdown-header" style="font-size: 15px;color: #fff; background-color: #6777ef;">Notifikasi Transaksi</div>
               <div class="mb-2 mt-2 text-center">
-                <a href="<?= base_url('admin/transaksi/menunggu_pembayaran') ?>">Lihat Detail <i class="fas fa-chevron-right"></i></a>
+                <a href="<?= base_url('admin/transaksi/menunggu_konfirmasi') ?>">Lihat Detail <i class="fas fa-chevron-right"></i></a>
               </div>
             </div>
           </li>

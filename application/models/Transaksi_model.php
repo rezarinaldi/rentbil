@@ -20,7 +20,7 @@ class transaksi_model extends CI_Model
 
     public function get_data_mobil($table)
     {
-        $this->db->where('status', 1);
+        $this->db->where('status_mobil', 1);
         $query = $this->db->get($table);
         return $query;
     }
@@ -66,11 +66,11 @@ class transaksi_model extends CI_Model
 
     public function insert_status_mobil_sedia($where, $table)
     {
-        $this->db->query("update mobil set status = 1 where id_mobil=$where");
+        $this->db->query("update mobil set status_mobil = 1 where id_mobil=$where");
     }
 
     public function insert_status_mobil_kosong($where, $table)
     {
-        $this->db->query("update mobil set status = 0 where id_mobil=$where");
+        $this->db->query("update mobil set status_mobil = 0 where id_mobil=$where");
     }
 }

@@ -48,7 +48,7 @@ class Data_Mobil extends CI_Controller
             $warna = $this->input->post('warna');
             $tahun = $this->input->post('tahun');
             $harga = $this->input->post('harga');
-            $status = $this->input->post('status');
+            $status_mobil = $this->input->post('status_mobil');
             $gambar = $_FILES['gambar']['name'];
             if ($gambar = '') {
             } else {
@@ -70,18 +70,17 @@ class Data_Mobil extends CI_Controller
                 'tahun' => $tahun,
                 'warna' => $warna,
                 'harga' => $harga,
-                'status' => $status,
+                'status_mobil' => $status_mobil,
                 'gambar' => $gambar
             );
 
             $this->mobil_model->insert_data($data, 'mobil');
             $this->session->set_flashdata('pesan', '
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                Data Mobil Berhasil Ditambahkan
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
-                </div>');
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+            Data Mobil Berhasil Ditambahkan
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button></div>');
             redirect('admin/data_mobil');
         }
     }
@@ -113,7 +112,7 @@ class Data_Mobil extends CI_Controller
             $warna = $this->input->post('warna');
             $tahun = $this->input->post('tahun');
             $harga = $this->input->post('harga');
-            $status = $this->input->post('status');
+            $status_mobil = $this->input->post('status_mobil');
             $gambar = $_FILES['gambar']['name'];
             if ($gambar) {
                 $config['upload_path'] = './assets/upload/mobil';
@@ -136,7 +135,7 @@ class Data_Mobil extends CI_Controller
                 'tahun' => $tahun,
                 'warna' => $warna,
                 'harga' => $harga,
-                'status' => $status
+                'status_mobil' => $status_mobil
             );
 
             $where = array(
@@ -145,12 +144,11 @@ class Data_Mobil extends CI_Controller
 
             $this->mobil_model->edit_data('mobil', $data, $where);
             $this->session->set_flashdata('pesan', '
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                Data Mobil Berhasil Diubah
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
-                </div>');
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+            Data Mobil Berhasil Diubah
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button></div>');
             redirect('admin/data_mobil');
         }
     }
@@ -162,7 +160,7 @@ class Data_Mobil extends CI_Controller
         $this->form_validation->set_rules('no_plat', 'No Plat', 'required');
         $this->form_validation->set_rules('tahun', 'Tahun', 'required');
         $this->form_validation->set_rules('warna', 'Warna', 'required');
-        $this->form_validation->set_rules('status', 'Status', 'required');
+        $this->form_validation->set_rules('status_mobil', 'Status', 'required');
     }
 
     public function detail_mobil($id)
@@ -182,12 +180,11 @@ class Data_Mobil extends CI_Controller
         $where = array('id_mobil' => $id);
         $this->mobil_model->delete_data($where, 'mobil');
         $this->session->set_flashdata('pesan', '
-                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                Data Mobil Berhasil Dihapus
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
-                </div>');
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        Data Mobil Berhasil Dihapus
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button></div>');
         redirect('admin/data_mobil');
     }
 

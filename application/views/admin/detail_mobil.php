@@ -48,7 +48,7 @@
                                 <td>Status</td>
                                 <td>
                                     <?php
-                                    if ($dt->status == "0") {
+                                    if ($dt->status_mobil == "0") {
                                         echo "<span class='badge badge-danger'>Tidak Tersedia</span>";
                                     } else {
                                         echo "<span class='badge badge-primary'>Tersedia</span>";
