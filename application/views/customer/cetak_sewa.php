@@ -10,19 +10,6 @@
 
 <body>
 
-    <style type="text/css">
-        .table-data {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        .table-data tr th,
-        .table-data tr td {
-            border: 1px solid black;
-            font-size: 10pt;
-        }
-    </style>
-
     <section id="header-kop">
         <div class="container-fluid mt-4">
             <table class="table table-borderless">
@@ -57,11 +44,6 @@
                             <td><?= $dt->nama; ?></td>
                         </tr>
                         <tr>
-                            <td>ID Mobil</td>
-                            <td>:</td>
-                            <td><?= $dt->id_mobil; ?></td>
-                        </tr>
-                        <tr>
                             <td>Merk Mobil</td>
                             <td>:</td>
                             <td><?= $dt->merk; ?></td>
@@ -90,7 +72,7 @@
                             <td><?= format_rupiah($dt->total_sewa); ?></td>
                         </tr>
                         <tr>
-                            <td>Status</td>
+                            <td>Status Pembayaran</td>
                             <td>:</td>
                             <td>
                                 <?php if (($dt->status_pembayaran) == 0) {
@@ -112,7 +94,7 @@
                             ?>
                             <td colspan='3'>
                                 <b>*Silahkan transfer Total Biaya Sewa ke 123456789 Bank BNI a/n REZA RINALDI maksimal tanggal <?= $batas_bayar ?>. <br>
-                                    Untuk konfirmasi pesanan silahkan ke halaman Riwayat Sewa</b>
+                                    Untuk konfirmasi pesanan silahkan ke halaman Riwayat Sewa. Adapun jika status pembayaran 'Batal' maka transaksi tidak perlu dilanjutkan.</b>
                             </td>
                         </tr>
                     <?php endforeach; ?>

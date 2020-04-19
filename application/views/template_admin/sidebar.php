@@ -12,7 +12,7 @@
         </form>
         <ul class="navbar-nav navbar-right">
           <li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown" class="nav-link nav-link-lg message-toggle">
-              <i class="far fa-envelope"></i>
+              <i class="far fa-envelope-open"></i>
               <span class="badge badge-danger badge-counter">
                 <?php $query = $this->db->query('select status from pesan where status = 0');
                 echo $query->num_rows($query) ?>

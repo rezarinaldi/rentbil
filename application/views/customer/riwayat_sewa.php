@@ -29,7 +29,6 @@
                                 <tr align="center">
                                     <th>No</th>
                                     <th>Nama</th>
-                                    <th>ID Mobil</th>
                                     <th>Merk Mobil</th>
                                     <th>Tanggal Sewa</th>
                                     <th>Tanggal Kembali</th>
@@ -46,21 +45,20 @@
                                     <tr align="center">
                                         <td><?= $no++ ?></td>
                                         <td><?= $ts->nama ?></td>
-                                        <td><?= $ts->id_mobil ?></td>
                                         <td><?= $ts->merk ?></td>
                                         <td><?= IndonesiaTgl($ts->tanggal_sewa) ?></td>
                                         <td><?= IndonesiaTgl($ts->tanggal_kembali) ?></td>
                                         <td><?= format_rupiah($ts->total_sewa) ?></td>
                                         <td>
-                                            <?php if (($ts->status_pembayaran) == 0) {
-                                                echo "<span class='badge badge-danger'>Belum Dibayar</span>";
-                                            } elseif (($ts->status_pembayaran) == 1) {
-                                                echo "<span class='badge badge-info'>Menunggu Konfirmasi</span>";
-                                            } elseif (($ts->status_pembayaran) == 2) {
-                                                echo "<span class='badge badge-success'>Sudah Dibayar</span>";
-                                            } else {
-                                                echo "<span class='badge badge-dark'>Batal</span>";
-                                            } ?>
+                                            <?php if (($ts->status_pembayaran) == 0) { ?>
+                                                <span class='btn btn-sm btn-danger'><i class="fa fa-times"></i> Belum Dibayar</span>
+                                            <?php } elseif (($ts->status_pembayaran) == 1) { ?>
+                                                <span class='btn btn-sm btn-info'><i class="fa fa-info"></i> Menunggu Konfirmasi</span>
+                                            <?php } elseif (($ts->status_pembayaran) == 2) { ?>
+                                                <span class='btn btn-sm btn-success'><i class="fa fa-check"></i> Sudah Dibayar</span>
+                                            <?php } else { ?>
+                                                <span class='btn btn-sm btn-dark'><i class="fa fa-times"></i> Batal</span>
+                                            <?php } ?>
                                         </td>
                                         <td>
                                             <?php

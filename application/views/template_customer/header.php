@@ -110,15 +110,15 @@
                                 <li><a href="<?= base_url('customer/dashboard/list_mobil') ?>">LIST MOBIL</a></li>
                                 <li><a href="#">HALAMAN LAIN</a>
                                     <ul>
-                                        <li><a href="<?= base_url('customer/rental/kotak_pesan') ?>">KOTAK PESAN</a></li>
-                                        <li><a href="<?= base_url('customer/rental/faqs') ?>">FAQ</a></li>
-                                        <li><a href="<?= base_url('customer/rental/tentang_kami') ?>">TENTANG KAMI</a></li>
+                                        <li><a href="<?= base_url('customer/rental/kotak_pesan') ?>"><i class="fa fa-envelope"></i> KOTAK PESAN</a></li>
+                                        <li><a href="<?= base_url('customer/rental/faqs') ?>"><i class="fa fa-question"></i> FAQ</a></li>
+                                        <li><a href="<?= base_url('customer/rental/tentang_kami') ?>"><i class="fa fa-info"></i> TENTANG KAMI</a></li>
                                     </ul>
                                 </li>
                                 <?php if (isset($_SESSION['level']) == 2) { ?>
                                     <li><a href="#"><i class="fa fa-user"></i> AHLAN | <?= $_SESSION['nama']; ?></a>
                                         <ul>
-                                            <li><a href="<?= base_url('customer/rental/riwayat_sewa') ?>"><i class="fa fa-shopping-bag"></i> RIWAYAT SEWA</a></li>
+                                            <li><a href="<?= base_url('customer/rental/riwayat_sewa') ?>"><i class="fa fa-tag"></i> RIWAYAT SEWA</a></li>
                                             <li><a href="<?= base_url('auth/ganti_password') ?>"><i class="fa fa-unlock"></i> GANTI PASSWORD</a></li>
                                             <li><a href="<?= base_url('auth/logout') ?>"><i class="fa fa-sign-out"></i> LOG OUT</a></li>
                                         </ul>
