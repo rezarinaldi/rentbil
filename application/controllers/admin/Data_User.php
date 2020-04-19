@@ -29,12 +29,11 @@ class Data_User extends CI_Controller
     public function tambah_user()
     {
         $data['title'] = 'Form Tambah Data User';
-        $data['user'] = $this->user_model->get_data('user')->result();
         $data['pesan'] = $this->pesan_model->get_data_user('pesan')->result();
 
         $this->load->view('template_admin/header', $data);
         $this->load->view('template_admin/sidebar', $data);
-        $this->load->view('admin/form_tambah_user', $data);
+        $this->load->view('admin/form_tambah_user');
         $this->load->view('template_admin/footer');
     }
 
@@ -99,12 +98,11 @@ class Data_User extends CI_Controller
 
             $this->user_model->insert_data($data, 'user');
             $this->session->set_flashdata('pesan', '
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                Data User Berhasil Ditambahkan
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
-                </div>');
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+            Data User Berhasil Ditambahkan
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button></div>');
             redirect('admin/data_user');
         }
     }
@@ -201,12 +199,11 @@ class Data_User extends CI_Controller
 
             $this->user_model->edit_data('user', $data, $where);
             $this->session->set_flashdata('pesan', '
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                Data User Berhasil Diubah
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
-                </div>');
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+            Data User Berhasil Diubah
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button></div>');
             redirect('admin/data_user');
         }
     }
@@ -240,12 +237,11 @@ class Data_User extends CI_Controller
         $where = array('id_user' => $id);
         $this->user_model->delete_data($where, 'user');
         $this->session->set_flashdata('pesan', '
-                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                Data User Berhasil Dihapus
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
-                </div>');
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        Data User Berhasil Dihapus
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button></div>');
         redirect('admin/data_user');
     }
 }

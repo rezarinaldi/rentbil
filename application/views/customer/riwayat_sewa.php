@@ -30,12 +30,13 @@
                                     <th>No</th>
                                     <th>Nama</th>
                                     <th>ID Mobil</th>
-                                    <th>Merk</th>
+                                    <th>Merk Mobil</th>
                                     <th>Tanggal Sewa</th>
                                     <th>Tanggal Kembali</th>
                                     <th>Total Sewa</th>
                                     <th>Status Pembayaran</th>
                                     <th>Bukti Pembayaran</th>
+                                    <th>Cetak</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -64,10 +65,13 @@
                                         <td>
                                             <?php
                                             if ($ts->bukti_pembayaran == '') { ?>
-                                                <a href="<?= base_url('customer/rental/konfirmasi_pembayaran/') . $ts->id_transaksi ?>" class="badge badge-warning">Konfirmasi Pembayaran</a>
+                                                <a href="<?= base_url('customer/rental/konfirmasi_pembayaran/') . $ts->id_transaksi ?>" class="btn btn-sm btn-warning"><i class="fa fa-credit-card"></i> Konfirmasi</a>
                                             <?php } else { ?>
                                                 <a href="<?= base_url() . 'assets/upload/bukti_pembayaran/' . $ts->bukti_pembayaran ?>"><img width="100px" height="60px" src="<?= base_url() . 'assets/upload/bukti_pembayaran/' . $ts->bukti_pembayaran ?>"></a>
                                             <?php } ?>
+                                        </td>
+                                        <td>
+                                            <a href="<?= base_url('customer/rental/cetak_sewa/') . $ts->id_transaksi ?>" class="btn btn-light"><i class="fa fa-file"></i></a>
                                         </td>
                                     </tr>
                                 <?php endforeach; ?>

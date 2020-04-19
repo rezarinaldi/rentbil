@@ -115,6 +115,16 @@ class Rental extends CI_Controller
         $this->load->view('template_customer/footer');
     }
 
+    //fitur cetak sewa
+    public function cetak_sewa($id)
+    {
+        check_not_login();
+
+        $data['title'] = 'Detail Sewa';
+        $data['detail'] = $this->rental_model->get_transaksi_id($id);
+        $this->load->view('customer/cetak_sewa', $data);
+    }
+
     public function konfirmasi_pembayaran($id)
     {
         check_not_login();

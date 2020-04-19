@@ -52,12 +52,11 @@ class Data_Type extends CI_Controller
 
             $this->type_model->insert_data($data, 'type');
             $this->session->set_flashdata('pesan', '
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                Data Mobil Berhasil Ditambahkan
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
-                </div>');
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+            Data Type Berhasil Ditambahkan
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button></div>');
             redirect('admin/data_type');
         }
     }
@@ -96,12 +95,11 @@ class Data_Type extends CI_Controller
 
             $this->type_model->edit_data('type', $data, $where);
             $this->session->set_flashdata('pesan', '
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                Data Type Berhasil Diubah
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
-                </div>');
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+            Data Type Berhasil Diubah
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button></div>');
             redirect('admin/data_type');
         }
     }
@@ -117,12 +115,11 @@ class Data_Type extends CI_Controller
         $where = array('id_type' => $id);
         $this->type_model->delete_data($where, 'type');
         $this->session->set_flashdata('pesan', '
-                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                Data Type Berhasil Dihapus
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
-                </div>');
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        Data Type Berhasil Dihapus
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button></div>');
         redirect('admin/data_type');
     }
 }

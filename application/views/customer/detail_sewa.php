@@ -92,6 +92,7 @@
 								Untuk konfirmasi pesanan silahkan ke halaman Riwayat Sewa</b>
 							<br>
 
+							<a href="<?= base_url('customer/rental/cetak_pembayaran/') . $id_transaksi ?>" class="rent-btn"><i class="fa fa-file"></i> Cetak</a>
 							<a href="<?= base_url('customer/rental/riwayat_sewa') ?>" class="rent-btn"><i class="fa fa-shopping-bag"></i> Riwayat Sewa</a>
 
 						</div>

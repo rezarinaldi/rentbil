@@ -69,12 +69,11 @@ class Transaksi extends CI_Controller
             $this->transaksi_model->insert_status_mobil_sedia($id_mobil, 'mobil');
         }
         $this->session->set_flashdata('pesan', '
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-            Data transaksi Berhasil Ditambahkan
-            <button transaksi="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-            </button>
-            </div>');
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+        Data Transaksi Berhasil Ditambahkan
+        <button transaksi="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button></div>');
         redirect('admin/transaksi');
     }
 
@@ -136,12 +135,11 @@ class Transaksi extends CI_Controller
         }
 
         $this->session->set_flashdata('pesan', '
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-            Data transaksi Berhasil Diubah
-            <button transaksi="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-            </button>
-            </div>');
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+        Data Transaksi Berhasil Diubah
+        <button transaksi="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button></div>');
         redirect('admin/transaksi');
     }
 
@@ -151,7 +149,7 @@ class Transaksi extends CI_Controller
         $this->transaksi_model->delete_data($where, 'transaksi');
         $this->session->set_flashdata('pesan', '
         <div class="alert alert-danger alert-dismissible fade show" role="alert">
-        Data transaksi Berhasil Dihapus
+        Data Transaksi Berhasil Dihapus
         <button transaksi="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span>
         </button></div>');

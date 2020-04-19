@@ -40,12 +40,11 @@ class Data_Pesan extends CI_Controller
 
         echo "<script>window.location='" . base_url('admin/data_pesan') . "';</script>";
         $this->session->set_flashdata('pesan', '
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                Pesan Sudah Dibaca
-                <button pesan="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
-                </div>');
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+        Pesan Sudah Dibaca
+        <button pesan="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button></div>');
         redirect('admin/data_pesan');
     }
 
@@ -54,12 +53,11 @@ class Data_Pesan extends CI_Controller
         $where = array('id_pesan' => $id);
         $this->pesan_model->delete_data($where, 'pesan');
         $this->session->set_flashdata('pesan', '
-                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                Data Pesan Berhasil Dihapus
-                <button pesan="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
-                </div>');
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        Data Pesan Berhasil Dihapus
+        <button pesan="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button></div>');
         redirect('admin/data_pesan');
     }
 }

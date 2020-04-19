@@ -30,12 +30,16 @@ class Rental_model extends CI_Model
 
     public function get_transaksi_id($id)
     {
-        $this->db->select('transaksi.id_transaksi, user.nama , mobil.merk, transaksi.tanggal_sewa, transaksi.tanggal_kembali, transaksi.total_sewa, transaksi.status, transaksi.status_pembayaran, transaksi.bukti_pembayaran');
+        $this->db->select('*');
         $this->db->from('transaksi');
         $this->db->join('mobil', 'mobil.id_mobil = transaksi.id_mobil');
         $this->db->join('user', 'user.id_user = transaksi.id_user');
-        $this->db->where('id_transaksi', $id);
-        $query = $this->db->get();
-        return $query;
+        $hasil = $this->db->where('id_transaksi', $id)->get();
+
+        if ($hasil->num_rows() > 0) {
+            return $hasil->result();
+        } else {
+            return false;
+        }
     }
 }
