@@ -125,18 +125,6 @@ class Rental extends CI_Controller
         $this->load->view('customer/cetak_sewa', $data);
     }
 
-    public function konfirmasi_pembayaran($id)
-    {
-        check_not_login();
-
-        $data['id_transaksi'] = $id;
-        $data['title'] = 'Konfirmasi Pembayaran';
-
-        $this->load->view('template_customer/header', $data);
-        $this->load->view('customer/konfirmasi_pembayaran', $data);
-        $this->load->view('template_customer/footer');
-    }
-
     public function konfirmasi_pembayaran_simpan()
     {
         check_not_login();
@@ -154,9 +142,12 @@ class Rental extends CI_Controller
             echo "<script>alert('Bukti Pembayaran Gagal di-Upload')</script>";
         } else {
             $bukti_pembayaran = $this->upload->data('file_name');
-            echo "<script>
-            alert('Bukti Pembayaran Berhasil di-Upload');
-            </script>";
+            $this->session->set_flashdata('pesan', '
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+            Bukti Pembayaran Berhasil di-Upload
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button></div>');
         }
 
         $status_pembayaran = 1;

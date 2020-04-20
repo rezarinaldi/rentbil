@@ -1,4 +1,3 @@
-
 <!--== Page Title Area Start ==-->
 <section id="page-title-area" class="section-padding overlay">
     <div class="container">
@@ -30,7 +29,9 @@
                             <div class="col-lg-6 col-md-6">
                                 <div class="single-car-wrap">
                                     <div class="car-list-thumb">
-                                        <img src="<?= base_url() . 'assets/upload/mobil/' . $mb->gambar ?>" style="height: 300px; width: 540px">
+                                        <a class="car-hover" href="<?= base_url() . 'assets/upload/mobil/' . $mb->gambar ?>">
+                                            <img src="<?= base_url() . 'assets/upload/mobil/' . $mb->gambar ?>" style="height: 300px; width: 540px">
+                                        </a>
                                     </div>
                                     <div class="car-list-info without-bar">
                                         <h2><a href="<?= base_url('customer/dashboard/detail_mobil/') . $mb->id_mobil ?>"><?= $mb->merk ?></a></h2>

@@ -20,7 +20,8 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 m-auto">
-                <h3>Riwayat Sewa</h3>
+                <h3 class="mb-4">Riwayat Sewa</h3>
+                <?= $this->session->flashdata('pesan') ?>
                 <div class="card shadow mt-4 mb-4">
 
                     <div class="card-body">
@@ -61,11 +62,16 @@
                                             <?php } ?>
                                         </td>
                                         <td>
-                                            <?php
-                                            if ($ts->bukti_pembayaran == '') { ?>
-                                                <a href="<?= base_url('customer/rental/konfirmasi_pembayaran/') . $ts->id_transaksi ?>" class="btn btn-sm btn-warning"><i class="fa fa-credit-card"></i> Konfirmasi</a>
+                                            <?php if ($ts->status_pembayaran == 0) { ?>
+                                                <button type="button" class="btn btn-sm btn-warning" data-toggle="modal" data-target="#konfirmasi">
+                                                    <i class="fa fa-credit-card"></i> Konfirmasi
+                                                </button>
+                                            <?php } elseif ($ts->status_pembayaran == 1 || $ts->status_pembayaran == 2) { ?>
+                                                <a class="car-hover" href="<?= base_url() . 'assets/upload/bukti_pembayaran/' . $ts->bukti_pembayaran ?>">
+                                                    <img width="100px" height="60px" src="<?= base_url() . 'assets/upload/bukti_pembayaran/' . $ts->bukti_pembayaran ?>">
+                                                </a>
                                             <?php } else { ?>
-                                                <a href="<?= base_url() . 'assets/upload/bukti_pembayaran/' . $ts->bukti_pembayaran ?>"><img width="100px" height="60px" src="<?= base_url() . 'assets/upload/bukti_pembayaran/' . $ts->bukti_pembayaran ?>"></a>
+                                                <span>-</span>
                                             <?php } ?>
                                         </td>
                                         <td>
@@ -83,3 +89,33 @@
     </div>
 </div>
 <!--== Contact Page Area End ==-->
+
+<!--== Modal Konfirmasi Pembayaran Start ==-->
+
+<div class="modal fade" id="konfirmasi" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Upload Bukti Pembayaran</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="<?= base_url('customer/rental/konfirmasi_pembayaran_simpan') ?>" enctype="multipart/form-data" method="POST">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <input type="hidden" name="id_transaksi" value="<?= $ts->id_transaksi ?>">
+                        <input type="file" name="bukti_pembayaran" class="form-control" required>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-sm btn-warning mt-3 ml-2 float-right">
+                        <i class="fa fa-upload"></i> Upload
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!--== Modal Konfirmasi Pembayaran End ==-->
