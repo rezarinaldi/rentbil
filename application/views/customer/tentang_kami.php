@@ -27,7 +27,7 @@
 
 					<h5><i class="fa fa-map-marker"></i> Alamat:</h5>
 
-					<h5 class="mb-4"><font color="#FFD000">Jl. Soekarno Hatta No.19, RT.4/RW.13, Jatimulyo, Kec. Lowokwaru, Kota Malang, Jawa Timur 65141</font></h5>
+					<h5 class="mb-4"><font color="#FFD000">Jl. Soekarno Hatta No.19, RT.04, RW.13, Mojolangu, Kec. Lowokwaru, Kota Malang, Jawa Timur 65142</font></h5>
 
 					<h5 class="mb-4"><i class="fa fa-whatsapp"></i> No. WA: <font color="#FFD000">(0853) 34424941</font></h5>
 					<h5 class="mb-4"><i class="fa fa-comment"></i> No. Telp/SMS: <font color="#FFD000">(0858) 77990684</font></h5>

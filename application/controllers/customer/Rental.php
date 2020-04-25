@@ -55,6 +55,7 @@ class Rental extends CI_Controller
         $tgl_sewa = strtotime($this->input->post('tanggal_sewa'));
         $tgl_sewa = date("Y-m-d", $tgl_sewa);
         $tgl_kembali = $this->input->post('tanggal_kembali');
+        $pickup = $this->input->post('pickup');
         $durasi = abs(round((strtotime($tgl_sewa) - strtotime($tgl_kembali)) / 86400));
         $harga = $this->input->post('harga');
         $total_sewa = $harga * $durasi;
@@ -66,6 +67,7 @@ class Rental extends CI_Controller
             'id_mobil' => $id_mobil,
             'tanggal_sewa' => $tgl_sewa,
             'tanggal_kembali' => $tgl_kembali,
+            'pickup' => $pickup,
             'total_sewa' => $total_sewa,
             'status' => $status,
             'status_pembayaran' => $status_pembayaran
@@ -82,7 +84,7 @@ class Rental extends CI_Controller
         $jmlhari  = 86400 * 1;
         $tgl      = $tglsewa - $jmlhari;
         $batas_bayar = date("d-m-Y", $tgl);
-
+        $pickup = $this->input->post('pickup');
         $merk = $this->input->post('nama_mobil');
         $durasi = $this->input->post('durasi');
         $data = array(
@@ -90,6 +92,7 @@ class Rental extends CI_Controller
             'merk' => $merk,
             'tanggal_sewa' => $tgl_sewa,
             'tanggal_kembali' => $tgl_kembali,
+            'pickup' => $pickup,
             'durasi' => $durasi,
             'total_sewa' => $total_sewa,
             'batas_bayar' => $batas_bayar

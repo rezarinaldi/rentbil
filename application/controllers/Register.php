@@ -93,21 +93,10 @@ class Register extends CI_Controller
         );
 
         $this->user_model->insert_data($data, 'user');
-        // $this->session->set_flashdata('pesan','
-        //     <div class="alert alert-success alert-dismissible fade show" role="alert">
-        //     Data user Berhasil Ditambahkan
-        //     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        //     <span aria-hidden="true">&times;</span>
-        //     </button>
-        //     </div>');
         echo "<script>
-                    alert('Register Berhasil, Silahkan Login');
-                    window.location='" . site_url('auth/login') . "';
-                </script>";
-
-        // echo "<script>alert('Anda Berhasil Registrasi')</script>";
-        // redirect('auth/login');
-
+        alert('Register Berhasil, Silahkan Login');
+        window.location='" . site_url('auth/login') . "';
+        </script>";
     }
 }
 

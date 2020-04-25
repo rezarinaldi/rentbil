@@ -12,12 +12,7 @@
               <img src="<?= base_url('assets/assets_stisla') ?>/assets/img/logo.png" width="70" class="ml-3" alt="JSOFT">
               <p>Jasa Sewa Mobil Malang Lengkap Mobil Terbaru Harga Murah & Bersaing di Area Malang</p>
 
-              <div class="newsletter-area">
-                <form action="#">
-                  <input type="email" placeholder="Subscribe Our Newsletter">
-                  <button type="submit" class="newsletter-btn"><i class="fa fa-send"></i></button>
-                </form>
-              </div>
+              <a href="https://goo.gl/maps/t4iN1jte4TTTUTVZ7" class="map-show" target="_blank"><i class="fa fa-map"></i> Lihat Lokasi</a>
 
             </div>
           </div>
@@ -30,12 +25,12 @@
             <h2>INFORMASI TAMBAHAN</h2>
             <div class="widget-body">
               <ul class="get-touch">
-                <li><i class="fa fa-map-marker"></i> Jl. Soekarno Hatta No.19, RT.4/RW.13, Jatimulyo, Kec. Lowokwaru, Kota Malang, Jawa Timur 65141</li>
+                <li><i class="fa fa-map-marker"></i> Jl. Soekarno Hatta No.19, RT.04, RW.13, Mojolangu, Kec. Lowokwaru, Kota Malang, Jawa Timur 65142</li>
                 <li><i class="fa fa-whatsapp"></i> (0853) 34424941</li>
                 <li><i class="fa fa-comment"></i> (0858) 77990684</li>
                 <li><i class="fa fa-envelope"></i> rentalmobilmlg@gmail.com</li>
+                <li><i class="fa fa-globe"></i> https://www.rentbilmlg.com/</li>
               </ul>
-              <a href="https://goo.gl/maps/5Djz8ix68NAgBPJS9" class="map-show" target="_blank">Show Location</a>
             </div>
           </div>
         </div>

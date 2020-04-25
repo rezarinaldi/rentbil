@@ -24,7 +24,7 @@
                         <td rowspan="3" width="16%">&nbsp;</td>
                     </tr>
                     <tr>
-                        <td class="text-center">Jl. Soekarno Hatta No.19, RT.4/RW.13, Jatimulyo, Kec. Lowokwaru, Kota Malang, Jawa Timur 65141, No.HP. +62 85877990684, No. WA. +62 85334424941</td>
+                        <td class="text-center">Jl. Soekarno Hatta No.19, RT.04, RW.13, Mojolangu, Kec. Lowokwaru, Kota Malang, Jawa Timur 65142, SMS/No. Telp. +62 85877990684, No. WA. +62 85334424941, https://www.rentbilmlg.com/</td>
                     </tr>
                 </tbody>
             </table>
@@ -58,6 +58,22 @@
                             <td>:</td>
                             <td><?= IndonesiaTgl($dt->tanggal_kembali); ?></td>
                         </tr>
+                        <tr>
+                            <td>Metode Pickup</td>
+                            <td>:</td>
+                            <td>
+                                <?php if (($dt->pickup) == 0) {
+                                    echo "Ambil Sendiri";
+                                } else {
+                                    echo "Pickup Sesuai Alamat";
+                                } ?>
+                            </td>
+                        </tr>
+                        <!-- <tr>
+                            <td>Biaya Supir</td>
+                            <td>:</td>
+                            <td><?= format_rupiah($dt->total_sewa); ?></td>
+                        </tr> -->
                         <tr>
                             <?php
                             $durasi = abs(round((strtotime($dt->tanggal_sewa) - strtotime($dt->tanggal_kembali)) / 86400));

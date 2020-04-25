@@ -4,11 +4,11 @@
             <h1>Data Transaksi</h1>
         </div>
 
-        <a href="<?= base_url('admin/transaksi/tambah_transaksi') ?>" class="btn btn-primary mb-3"> <i class="fas fa-plus"></i> Tambah Data</a>
+        <!-- <a href="<?= base_url('admin/transaksi/tambah_transaksi') ?>" class="btn btn-primary mb-3"> <i class="fas fa-plus"></i> Tambah Data</a> -->
         <?= $this->session->flashdata('pesan') ?>
         <div class="card shadow mb-4">
             <div class="card-body">
-                <table class="table table-hover table-striped table-bordered" id="data_table">
+                <table class="table table-hover table-striped table-bordered table-responsive" id="data_table">
                     <thead>
                         <tr align="center">
                             <th>No</th>
@@ -16,6 +16,7 @@
                             <th>Mobil</th>
                             <th>Tgl Sewa</th>
                             <th>Tgl Kembali</th>
+                            <th>Metode Pickup</th>
                             <th>Total Sewa</th>
                             <th>Status</th>
                             <th>Status Pembayaran</th>
@@ -32,6 +33,13 @@
                                 <td><?= $ts->merk ?></td>
                                 <td><?= IndonesiaTgl($ts->tanggal_sewa) ?></td>
                                 <td><?= IndonesiaTgl($ts->tanggal_kembali) ?></td>
+                                <td>
+                                    <?php if (($ts->pickup) == 0) {
+                                        echo "<span class='badge badge-dark'>Ambil Sendiri</span>";
+                                    } else {
+                                        echo "<span class='badge badge-light'>Pickup Sesuai Alamat</span>";
+                                    } ?>
+                                </td>
                                 <td><?= format_rupiah($ts->total_sewa) ?></td>
                                 <td>
                                     <?php if (($ts->status) == 0) {

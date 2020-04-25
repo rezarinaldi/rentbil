@@ -1,4 +1,3 @@
-    
     <!--== SlideshowBg Area Start ==-->
     <section id="slideslow-bg">
         <div class="container">
@@ -18,7 +17,7 @@
         </div>
     </section>
     <!--== SlideshowBg Area End ==-->
-    
+
     <!--== Choose Car Area Start ==-->
     <section id="choose-car" class="section-padding">
         <div class="container">
@@ -54,7 +53,7 @@
 
                                                 <div class="p-car-content">
                                                     <h3>
-                                                        <a href="<?= base_url('customer/rental/detail_mobil/') . $mb->id_mobil ?>"><?= $mb->merk ?></a>
+                                                        <a href="<?= base_url('customer/dashboard/detail_mobil/') . $mb->id_mobil ?>"><?= $mb->merk ?></a>
                                                         <span class="price" style="color: #014782"><i class="fa fa-tag"></i> <?= format_rupiah($mb->harga) ?> / hari</span>
                                                     </h3>
 

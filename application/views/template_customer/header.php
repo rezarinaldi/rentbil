@@ -72,7 +72,7 @@
 
                     <!--== Single HeaderTop Start ==-->
                     <div class="col-lg-2 text-center">
-                        <i class="fa fa-map-marker"></i> 65141, Kota Malang
+                        <i class="fa fa-map-marker"></i> 65142, Kota Malang
                     </div>
                     <!--== Single HeaderTop End ==-->
 
@@ -126,17 +126,6 @@
                                 <?php } else { ?>
                                     <li><a href="<?= base_url('auth/login') ?>"><i class="fa fa-sign-in"></i> LOG IN</a></li>
                                 <?php } ?>
-                                <!-- <?php if (isset($_SESSION['level']) == 2) { ?>
-                                    <li><a href="<?= base_url('customer/rental/riwayat_sewa') ?>">RIWAYAT SEWA</a></li>
-                                    <li class="ml-3 auth" style="border: 2px solid #cccc00;"><a style="margin: 5px; margin-top: -2px; margin-bottom: -5px; color: white" href="<?= base_url('auth/logout') ?>"><i class="fa fa-sign-out"></i> Log Out</a></li>
-                                <?php } else { ?>
-                                    <li class="ml-3 auth" style="border: 2px solid #cccc00;"><a style="margin: 5px; margin-top: -2px; margin-bottom: -5px; color: white" href="<?= base_url('auth/login') ?>"><i class="fa fa-sign-in"></i> Log In</a></li>
-                                <?php } ?>
-                                <style>
-                                    .auth:hover {
-                                        background: #cccc00;
-                                    }
-                                </style> -->
                             </ul>
                         </nav>
                     </div>

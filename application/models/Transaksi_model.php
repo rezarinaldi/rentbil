@@ -10,7 +10,7 @@ class transaksi_model extends CI_Model
 
     public function get_data_transaksi()
     {
-        $this->db->select('transaksi.id_transaksi, user.nama, mobil.merk, transaksi.tanggal_sewa, transaksi.tanggal_kembali, transaksi.total_sewa, transaksi.status, transaksi.status_pembayaran, transaksi.bukti_pembayaran');
+        $this->db->select('transaksi.id_transaksi, user.nama, mobil.merk, transaksi.tanggal_sewa, transaksi.tanggal_kembali, transaksi.pickup, transaksi.total_sewa, transaksi.status, transaksi.status_pembayaran, transaksi.bukti_pembayaran');
         $this->db->from('transaksi');
         $this->db->join('mobil', 'mobil.id_mobil = transaksi.id_mobil');
         $this->db->join('user', 'user.id_user = transaksi.id_user');

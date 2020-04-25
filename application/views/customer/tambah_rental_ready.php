@@ -53,8 +53,16 @@
                                         <input type="text" name="durasi" class="form-control" value="<?= $durasi ?> Hari" disabled>
                                     </div>
                                     <div class="form-group">
-                                        <label>Total Biaya</label>
-                                        <input type="text" name="total_biaya" class="form-control" value="<?= format_rupiah(($rt->harga) * $durasi) ?>" disabled>
+                                        <label>Total Biaya Sewa</label>
+                                        <input type="text" name="total_biaya" class="form-control" value="<?= format_rupiah(($rt->harga * $durasi)) ?>" disabled>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Metode Pickup</label>
+                                        <select name="pickup" class="form-control" required>
+                                            <option value="">Pilih Metode Pickup</option>
+                                            <option value="0">Ambil Sendiri</option>
+                                            <option value="1">Pickup Sesuai Alamat</option>
+                                        </select>
                                     </div>
 
                                 </div>

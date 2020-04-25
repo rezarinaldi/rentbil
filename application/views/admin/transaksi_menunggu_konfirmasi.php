@@ -15,6 +15,7 @@
                             <th>Mobil</th>
                             <th>Tgl Sewa</th>
                             <th>Tgl Kembali</th>
+                            <th>Metode Pickup</th>
                             <th>Total Sewa</th>
                             <th>Status</th>
                             <th>Bukti Pembayaran</th>
@@ -33,10 +34,19 @@
                                     <td><?= $ts->merk ?></td>
                                     <td><?= IndonesiaTgl($ts->tanggal_sewa) ?></td>
                                     <td><?= IndonesiaTgl($ts->tanggal_kembali) ?></td>
+                                    <td>
+                                    <?php if (($ts->pickup) == 0) {
+                                        echo "<span class='badge badge-dark'>Ambil Sendiri</span>";
+                                    } else {
+                                        echo "<span class='badge badge-light'>Pickup Sesuai Alamat</span>";
+                                    } ?>
+                                </td>
                                     <td><?= format_rupiah($ts->total_sewa) ?></td>
                                     <td><span class="badge badge-info">Menunggu Konfirmasi</span></td>
                                     <td>
-                                        <a href="<?= base_url() . 'assets/upload/bukti_pembayaran/' . $ts->bukti_pembayaran ?>"><img width="100px" height="60px" src="<?= base_url() . 'assets/upload/bukti_pembayaran/' . $ts->bukti_pembayaran ?>"></a>
+                                        <a href="<?= base_url() . 'assets/upload/bukti_pembayaran/' . $ts->bukti_pembayaran ?>">
+                                            <img width="100px" height="60px" src="<?= base_url() . 'assets/upload/bukti_pembayaran/' . $ts->bukti_pembayaran ?>">
+                                        </a>
                                     </td>
                                     <td>
                                         <a href="<?= base_url('admin/transaksi/konfirmasi_pembayaran/') . $ts->id_transaksi ?>" class="btn btn-sm btn-light tombol-konfirmasi"><i class="fas fa-check"></i></a>

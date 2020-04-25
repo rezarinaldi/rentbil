@@ -34,7 +34,9 @@
                             <tr align="center">
                                 <td><?= $no++ ?></td>
                                 <td>
-                                    <img width="100px" height="60px" src="<?= base_url() . 'assets/upload/mobil/' . $mb->gambar ?>">
+                                    <a href="<?= base_url() . 'assets/upload/mobil/' . $mb->gambar ?>">
+                                        <img width="100px" height="60px" src="<?= base_url() . 'assets/upload/mobil/' . $mb->gambar ?>">
+                                    </a>
                                 </td>
                                 <td><?= $mb->kode_type ?></td>
                                 <td><?= $mb->merk ?></td>

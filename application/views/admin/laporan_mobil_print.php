@@ -37,7 +37,7 @@
 						<td rowspan="3" width="16%">&nbsp;</td>
 					</tr>
 					<tr>
-						<td class="text-center">Jl. Soekarno Hatta No.19, RT.4/RW.13, Jatimulyo, Kec. Lowokwaru, Kota Malang, Jawa Timur 65141, No.HP. +62 85877990684, No. WA. +62 85334424941</td>
+						<td class="text-center">Jl. Soekarno Hatta No.19, RT.04, RW.13, Mojolangu, Kec. Lowokwaru, Kota Malang, Jawa Timur 65142, SMS/No. Telp. +62 85877990684, No. WA. +62 85334424941, https://www.rentbilmlg.com/</td>
 					</tr>
 				</tbody>
 			</table>
@@ -73,7 +73,7 @@
 							<td><?= $mb->merk ?></td>
 							<td><?= $mb->no_plat ?></td>
 							<td><?= format_rupiah($mb->harga) ?></td>
-							<td><?= $mb->status == 0 ? "<span class='badge badge-danger'>Kosong</span>" : "<span class='badge badge-primary'>Tersedia</span>" ?></td>
+							<td><?= $mb->status_mobil == 0 ? "<span class='badge badge-danger'>Kosong</span>" : "<span class='badge badge-primary'>Tersedia</span>" ?></td>
 						</tr>
 					<?php endforeach; ?>
 				</tbody>

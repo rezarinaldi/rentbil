@@ -41,10 +41,7 @@
                                         echo "Admin";
                                     } else {
                                         echo "Customer";
-                                    }
-
-                                    ?>
-
+                                    } ?>
                                 </td>
                                 <!-- <td>
                                 <div class="image-popup">

@@ -37,16 +37,16 @@
                     <div class="sidebar-content-wrap m-t-50">
                         <!-- Single Sidebar Start -->
                         <div class="single-sidebar">
-                            <h3>Pilih Tanggal Rental</h3>
+                            <h3>PILIH TANGGAL RENTAL</h3>
 
                             <div class="sidebar-body">
                                 <div class="form-group">
                                     <label>Tanggal Sewa</label>
-                                    <input type="date" name="tgl_sewa" class="form-control" min="<?= $today ?>">
+                                    <input type="date" name="tgl_sewa" class="form-control" min="<?= $today ?>" required>
                                 </div>
                                 <div class="form-group">
                                     <label>Tanggal Kembali</label>
-                                    <input type="date" name="tgl_kembali" class="form-control" min="<?= $today ?>">
+                                    <input type="date" name="tgl_kembali" class="form-control" min="<?= $today ?>" required>
                                 </div>
                             </div>
                         </div>

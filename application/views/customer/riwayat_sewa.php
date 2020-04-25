@@ -30,6 +30,7 @@
                                 <tr align="center">
                                     <th>No</th>
                                     <th>Nama</th>
+                                    <th>ID Mobil</th>
                                     <th>Merk Mobil</th>
                                     <th>Tanggal Sewa</th>
                                     <th>Tanggal Kembali</th>
@@ -46,6 +47,7 @@
                                     <tr align="center">
                                         <td><?= $no++ ?></td>
                                         <td><?= $ts->nama ?></td>
+                                        <td><?= $ts->id_mobil ?></td>
                                         <td><?= $ts->merk ?></td>
                                         <td><?= IndonesiaTgl($ts->tanggal_sewa) ?></td>
                                         <td><?= IndonesiaTgl($ts->tanggal_kembali) ?></td>
@@ -67,9 +69,11 @@
                                                     <i class="fa fa-credit-card"></i> Konfirmasi
                                                 </button>
                                             <?php } elseif ($ts->status_pembayaran == 1 || $ts->status_pembayaran == 2) { ?>
-                                                <a class="car-hover" href="<?= base_url() . 'assets/upload/bukti_pembayaran/' . $ts->bukti_pembayaran ?>">
-                                                    <img width="100px" height="60px" src="<?= base_url() . 'assets/upload/bukti_pembayaran/' . $ts->bukti_pembayaran ?>">
-                                                </a>
+                                                <div class="p-car-thumbnails">
+                                                    <a class="car-hover" href="<?= base_url() . 'assets/upload/bukti_pembayaran/' . $ts->bukti_pembayaran ?>">
+                                                        <img width="100px" height="60px" src="<?= base_url() . 'assets/upload/bukti_pembayaran/' . $ts->bukti_pembayaran ?>">
+                                                    </a>
+                                                </div>
                                             <?php } else { ?>
                                                 <span>-</span>
                                             <?php } ?>

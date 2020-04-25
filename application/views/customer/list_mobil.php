@@ -28,7 +28,7 @@
                         <?php foreach ($mobil as $mb) : ?>
                             <div class="col-lg-6 col-md-6">
                                 <div class="single-car-wrap">
-                                    <div class="car-list-thumb">
+                                    <div class="p-car-thumbnails">
                                         <a class="car-hover" href="<?= base_url() . 'assets/upload/mobil/' . $mb->gambar ?>">
                                             <img src="<?= base_url() . 'assets/upload/mobil/' . $mb->gambar ?>" style="height: 300px; width: 540px">
                                         </a>

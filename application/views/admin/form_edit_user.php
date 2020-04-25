@@ -81,9 +81,7 @@
                                             } else {
                                                 echo "Customer";
                                             } ?>
-
                                         </option>
-
                                         <option value="1">Admin</option>
                                         <option value="2">Customer</option>
                                     </select>
