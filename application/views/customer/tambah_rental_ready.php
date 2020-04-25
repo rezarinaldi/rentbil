@@ -57,6 +57,10 @@
                                         <input type="text" name="total_biaya" class="form-control" value="<?= format_rupiah(($rt->harga * $durasi)) ?>" disabled>
                                     </div>
                                     <div class="form-group">
+                                        <label>Denda</label>
+                                        <input type="text" name="durasi" class="form-control" value="<?= format_rupiah($rt->denda) ?> / Hari" disabled>
+                                    </div>
+                                    <div class="form-group">
                                         <label>Metode Pickup</label>
                                         <select name="pickup" class="form-control" required>
                                             <option value="">Pilih Metode Pickup</option>

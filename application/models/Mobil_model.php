@@ -10,7 +10,7 @@ class mobil_model extends CI_Model
 
     public function get_data_type()
     {
-        $this->db->select('mobil.id_mobil, mobil.id_type, mobil.merk, mobil.no_plat, mobil.warna, mobil.tahun, mobil.harga, mobil.status_mobil, mobil.gambar, type.id_type, type.kode_type, type.nama_type');
+        $this->db->select('*');
         $this->db->from('mobil');
         $this->db->join('type', 'mobil.id_type = type.id_type');
         $query = $this->db->get();
@@ -35,7 +35,7 @@ class mobil_model extends CI_Model
 
     public function ambil_id_mobil($id)
     {
-        $this->db->select('mobil.id_mobil, mobil.id_type, mobil.id_type, mobil.merk, mobil.no_plat, mobil.warna, mobil.tahun, mobil.harga, mobil.status_mobil, mobil.gambar, type.id_type, type.kode_type, type.nama_type');
+        $this->db->select('*');
         $this->db->from('mobil');
         $this->db->join('type', 'mobil.id_type = type.id_type');
         $hasil = $this->db->where('id_mobil', $id)->get();

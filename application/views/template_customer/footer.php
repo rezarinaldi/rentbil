@@ -5,7 +5,7 @@
     <div class="container">
       <div class="row">
         <!-- Single Footer Widget Start -->
-        <div class="col-lg-4 col-md-6 mr-4">
+        <div class="col-lg-4 col-md-6 mr-5">
           <div class="single-footer-widget">
             <h2>TENTANG</h2>
             <div class="widget-body">
@@ -20,7 +20,7 @@
         <!-- Single Footer Widget End -->
 
         <!-- Single Footer Widget Start -->
-        <div class="col-lg-7 col-md-6 ml-5">
+        <div class="col-lg-7 col-md-6">
           <div class="single-footer-widget">
             <h2>INFORMASI TAMBAHAN</h2>
             <div class="widget-body">

@@ -12,7 +12,7 @@ class Pesan_model extends CI_Model
 
     public function get_data_user()
     {
-        $this->db->select('pesan.id_pesan, pesan.id_user, pesan.subjek, pesan.isi_pesan, pesan.tgl_posting, pesan.status, user.nama, user.email, user.no_telp');
+        $this->db->select('*');
         $this->db->from('pesan');
         $this->db->join('user', 'user.id_user = pesan.id_user');
         $query = $this->db->get();

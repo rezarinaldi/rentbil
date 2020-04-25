@@ -22,7 +22,7 @@
                             <th>Type</th>
                             <th>Merk</th>
                             <th>No. Plat</th>
-                            <th>Harga Sewa</th>
+                            <th>Harga</th>
                             <th>Status</th>
                             <th>Action</th>
                         </tr>

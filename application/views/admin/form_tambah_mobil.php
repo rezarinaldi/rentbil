@@ -7,7 +7,7 @@
         <div class="card">
             <div class="card-body">
                 <form action="<?= base_url('admin/data_mobil/tambah_mobil_simpan') ?>" enctype="multipart/form-data" method="POST" autocomplete="off">
-                <div class="row">
+                    <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>Type Mobil</label>
@@ -39,12 +39,16 @@
                                 <input type="text" name="tahun" class="form-control">
                                 <?= form_error('tahun', '<div class="text-small text-danger">', '</div>') ?>
                             </div>
+                            <div class="form-group">
+                                <label>Harga</label>
+                                <input type="number" name="harga" class="form-control" required>
+                            </div>
                         </div>
 
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label>Harga</label>
-                                <input type="number" name="harga" class="form-control" required>
+                                <label>Denda</label>
+                                <input type="number" name="denda" class="form-control" required>
                             </div>
                             <div class="form-group">
                                 <label>Status</label>
@@ -58,6 +62,23 @@
                             <div class="form-group">
                                 <label>Gambar</label>
                                 <input type="file" name="gambar" class="form-control" required>
+                            </div>
+                            <h4 class="mb-3">Fasilitas</h4>
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="ac" name="ac" value="1">
+                                <label class="custom-control-label" for="ac">AC</label>
+                            </div>
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="supir" name="supir" value="1">
+                                <label class="custom-control-label" for="supir">Supir</label>
+                            </div>
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="audio_player" name="audio_player" value="1">
+                                <label class="custom-control-label" for="audio_player">Audio Player</label>
+                            </div>
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="central_lock" name="central_lock" value="1">
+                                <label class="custom-control-label" for="central_lock">Central Lock</label>
                             </div>
                             <button type="submit" class="btn btn-primary mt-3"><i class="fas fa-save"></i> Simpan</button>
                             <button type="reset" class="btn btn-danger mt-3"><i class="fas fa-undo"></i> Reset</button>

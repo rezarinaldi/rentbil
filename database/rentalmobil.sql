@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 25 Apr 2020 pada 06.27
+-- Waktu pembuatan: 25 Apr 2020 pada 17.20
 -- Versi server: 10.4.8-MariaDB
 -- Versi PHP: 7.3.10
 
@@ -36,6 +36,11 @@ CREATE TABLE `mobil` (
   `warna` varchar(20) NOT NULL,
   `tahun` varchar(4) NOT NULL,
   `harga` int(11) NOT NULL,
+  `denda` int(11) NOT NULL,
+  `ac` int(11) DEFAULT NULL,
+  `supir` int(11) DEFAULT NULL,
+  `audio_player` int(11) DEFAULT NULL,
+  `central_lock` int(11) DEFAULT NULL,
   `status_mobil` int(11) NOT NULL COMMENT '0. kosong, 1. tersedia',
   `gambar` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -44,13 +49,15 @@ CREATE TABLE `mobil` (
 -- Dumping data untuk tabel `mobil`
 --
 
-INSERT INTO `mobil` (`id_mobil`, `id_type`, `merk`, `no_plat`, `warna`, `tahun`, `harga`, `status_mobil`, `gambar`) VALUES
-(1, 1, 'Suzuki Ciaz', 'N 1985 RTF', 'Putih', '2019', 800000, 1, 'mobil-suzuki-ciaz11.jpg'),
-(2, 2, 'Suzuki Ciaz', 'N 6758 AW', 'Cokelat', '2017', 600000, 0, 'Suzuki-Ciaz.jpg'),
-(3, 2, 'Suzuki Ertiga', 'N 1985 NK', 'Silver', '2018', 650000, 0, 'Suzuki-All-new-Ertiga-2018-Warna-merah-Pearl-Radiant-Red.jpg'),
-(4, 1, 'Honda Civic', 'N 9547 HUY', 'Silver', '2014', 1000000, 0, 'std_in-2499489_300e1.jpg'),
-(5, 1, 'Toyota Avanza', 'N 1456 DAG', 'Biru', '2015', 400000, 1, 'car-3.jpg'),
-(6, 1, 'Toyota Camry', 'N 1234 CAH', 'Biru', '2019', 500000, 1, 'car-2.jpg');
+INSERT INTO `mobil` (`id_mobil`, `id_type`, `merk`, `no_plat`, `warna`, `tahun`, `harga`, `denda`, `ac`, `supir`, `audio_player`, `central_lock`, `status_mobil`, `gambar`) VALUES
+(1, 2, 'Suzuki Ciaz White', 'N 1985 RTF', 'Putih', '2019', 800000, 40000, 1, 1, 1, 1, 1, 'mobil-suzuki-ciaz1.jpg'),
+(2, 2, 'Suzuki Ciaz Brown', 'N 6758 AW', 'Cokelat', '2017', 600000, 30000, 1, NULL, 1, NULL, 0, 'Suzuki-Ciaz.jpg'),
+(3, 2, 'Suzuki Ertiga', 'N 1985 NK', 'Silver', '2018', 650000, 32500, 1, 0, 1, 1, 0, 'Suzuki-All-new-Ertiga-2018-Warna-merah-Pearl-Radiant-Red.jpg'),
+(4, 1, 'Hyundai 720', 'N 9547 HUY', 'Silver', '2014', 1000000, 50000, 1, 1, 1, 1, 0, 'slider-img-2.jpg'),
+(5, 1, 'BMW 1500', 'N 1456 DAG', 'Biru', '2015', 400000, 20000, 1, NULL, 1, NULL, 1, 'car-3.jpg'),
+(6, 1, 'BMW 177', 'N 1234 CAH', 'Biru', '2019', 500000, 25000, 1, 1, 1, NULL, 1, 'car-2.jpg'),
+(7, 1, 'BMW 577', 'N 4321 DB', 'Kuning', '2018', 700000, 35000, 1, 1, 1, NULL, 1, 'car-6.jpg'),
+(8, 2, 'BMW 115', 'N 2707 GG', 'Merah', '2017', 450000, 22500, 1, NULL, 1, 1, 1, 'car-4.jpg');
 
 -- --------------------------------------------------------
 
@@ -204,25 +211,25 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT untuk tabel `mobil`
 --
 ALTER TABLE `mobil`
-  MODIFY `id_mobil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_mobil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT untuk tabel `transaksi`
 --
 ALTER TABLE `transaksi`
-  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT untuk tabel `type`
 --
 ALTER TABLE `type`
-  MODIFY `id_type` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_type` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)

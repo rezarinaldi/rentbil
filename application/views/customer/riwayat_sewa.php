@@ -30,7 +30,6 @@
                                 <tr align="center">
                                     <th>No</th>
                                     <th>Nama</th>
-                                    <th>ID Mobil</th>
                                     <th>Merk Mobil</th>
                                     <th>Tanggal Sewa</th>
                                     <th>Tanggal Kembali</th>
@@ -47,7 +46,6 @@
                                     <tr align="center">
                                         <td><?= $no++ ?></td>
                                         <td><?= $ts->nama ?></td>
-                                        <td><?= $ts->id_mobil ?></td>
                                         <td><?= $ts->merk ?></td>
                                         <td><?= IndonesiaTgl($ts->tanggal_sewa) ?></td>
                                         <td><?= IndonesiaTgl($ts->tanggal_kembali) ?></td>

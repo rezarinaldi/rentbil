@@ -1,4 +1,3 @@
-
 <!--== Page Title Area Start ==-->
 <section id="page-title-area" class="section-padding overlay">
     <div class="container">
@@ -62,19 +61,43 @@
                                             <table class="table table-bordered">
                                                 <tr align="center">
                                                     <th>AC</th>
-                                                    <td><i class="fa fa-check-square" style="color: #014782"></i></td>
+                                                    <td>
+                                                        <?php if ($dt->ac == 1) { ?>
+                                                            <i class="fa fa-check-square" style="color: #014782"></i>
+                                                        <?php } else { ?>
+                                                            <i class="fa fa-times-circle text-danger"></i>
+                                                        <?php } ?>
+                                                    </td>
                                                 </tr>
                                                 <tr align="center">
                                                     <th>Supir</th>
-                                                    <td><i class="fa fa-times-circle text-danger"></i></td>
+                                                    <td>
+                                                        <?php if ($dt->supir == 1) { ?>
+                                                            <i class="fa fa-check-square" style="color: #014782"></i>
+                                                        <?php } else { ?>
+                                                            <i class="fa fa-times-circle text-danger"></i>
+                                                        <?php } ?>
+                                                    </td>
                                                 </tr>
                                                 <tr align="center">
                                                     <th>Audio Player</th>
-                                                    <td><i class="fa fa-check-square" style="color: #014782"></i></td>
+                                                    <td>
+                                                        <?php if ($dt->audio_player == 1) { ?>
+                                                            <i class="fa fa-check-square" style="color: #014782"></i>
+                                                        <?php } else { ?>
+                                                            <i class="fa fa-times-circle text-danger"></i>
+                                                        <?php } ?>
+                                                    </td>
                                                 </tr>
                                                 <tr align="center">
                                                     <th>Central Lock</th>
-                                                    <td><i class="fa fa-times-circle text-danger"></i></td>
+                                                    <td>
+                                                        <?php if ($dt->central_lock == 1) { ?>
+                                                            <i class="fa fa-check-square" style="color: #014782"></i>
+                                                        <?php } else { ?>
+                                                            <i class="fa fa-times-circle text-danger"></i>
+                                                        <?php } ?>
+                                                    </td>
                                                 </tr>
                                             </table>
                                         </div>

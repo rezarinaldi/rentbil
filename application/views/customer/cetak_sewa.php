@@ -69,11 +69,11 @@
                                 } ?>
                             </td>
                         </tr>
-                        <!-- <tr>
-                            <td>Biaya Supir</td>
+                        <tr>
+                            <td>Denda</td>
                             <td>:</td>
-                            <td><?= format_rupiah($dt->total_sewa); ?></td>
-                        </tr> -->
+                            <td><?= format_rupiah($dt->denda); ?> / Hari</td>
+                        </tr>
                         <tr>
                             <?php
                             $durasi = abs(round((strtotime($dt->tanggal_sewa) - strtotime($dt->tanggal_kembali)) / 86400));

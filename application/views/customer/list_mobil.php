@@ -37,10 +37,31 @@
                                         <h2><a href="<?= base_url('customer/dashboard/detail_mobil/') . $mb->id_mobil ?>"><?= $mb->merk ?></a></h2>
                                         <h5 style="color: #014782"><?= format_rupiah($mb->harga) ?> / hari</h5>
                                         <ul class="car-info-list">
-                                            <li><i class="fa fa-check-square" style="color: #014782"></i> AC</li>
-                                            <li><i class="fa fa-times-circle text-danger"></i> Supir</li>
-                                            <li><i class="fa fa-check-square" style="color: #014782"></i> Audio Player</li>
-                                            <li><i class="fa fa-times-circle text-danger"></i> Central Lock</li>
+                                            <li>
+                                                <?php if ($mb->ac == 1) { ?>
+                                                    <i class="fa fa-check-square" style="color: #014782"></i> AC
+                                                <?php } else { ?>
+                                                    <i class="fa fa-times-circle text-danger"></i> AC
+                                                <?php } ?>
+                                            </li>
+                                            <li>
+                                                <?php if ($mb->supir == 1) { ?>
+                                                    <i class="fa fa-check-square" style="color: #014782"></i> Supir
+                                                <?php } else { ?>
+                                                    <i class="fa fa-times-circle text-danger"></i> Supir
+                                                <?php } ?>
+                                            <li>
+                                                <?php if ($mb->audio_player == 1) { ?>
+                                                    <i class="fa fa-check-square" style="color: #014782"></i> Audio Player
+                                                <?php } else { ?>
+                                                    <i class="fa fa-times-circle text-danger"></i> Audio Player
+                                                <?php } ?>
+                                            <li>
+                                                <?php if ($mb->central_lock == 1) { ?>
+                                                    <i class="fa fa-check-square" style="color: #014782"></i> Central Lock
+                                                <?php } else { ?>
+                                                    <i class="fa fa-times-circle text-danger"></i> Central Lock
+                                                <?php } ?>
                                         </ul>
                                         <p class="rating">
                                             <i class="fa fa-star"></i>

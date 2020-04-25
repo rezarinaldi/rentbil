@@ -15,7 +15,7 @@
                     <div class="col-md-5">
                         <table class="table table-striped table-bordered">
                             <tr align="center">
-                                <td>Type Mobil</td>
+                                <th>Type Mobil</th>
                                 <td>
                                     <?php
                                     if ($dt->kode_type == "SD") {
@@ -29,24 +29,32 @@
                                 </td>
                             </tr>
                             <tr align="center">
-                                <td>Merk</td>
+                                <th>Merk</th>
                                 <td><?= $dt->merk ?></td>
                             </tr>
                             <tr align="center">
-                                <td>No. Plat</td>
+                                <th>No. Plat</th>
                                 <td><?= $dt->no_plat ?></td>
                             </tr>
                             <tr align="center">
-                                <td>Warna</td>
+                                <th>Warna</th>
                                 <td><?= $dt->warna ?></td>
                             </tr>
                             <tr align="center">
-                                <td>Tahun</td>
+                                <th>Tahun</th>
                                 <td><?= $dt->tahun ?></td>
                             </tr>
                             <tr align="center">
-                                <td>Status</td>
-                                <td>
+                                <th>Harga</th>
+                                <td><?= format_rupiah($dt->harga) ?></td>
+                            </tr>
+                            <tr align="center">
+                                <th>Denda</th>
+                                <td><?= format_rupiah($dt->denda) ?></td>
+                            </tr>
+                            <tr align="center">
+                                <th>Status</th>
+                                <th>
                                     <?php
                                     if ($dt->status_mobil == "0") {
                                         echo "<span class='badge badge-danger'>Tidak Tersedia</span>";
@@ -54,6 +62,46 @@
                                         echo "<span class='badge badge-primary'>Tersedia</span>";
                                     }
                                     ?>
+                                </th>
+                            </tr>
+                            <tr align="center">
+                                <th>AC</th>
+                                <td>
+                                    <?php if ($dt->ac == 1) { ?>
+                                        <i class="fa fa-check-square" style="color: #014782"></i>
+                                    <?php } else { ?>
+                                        <i class="fa fa-times-circle text-danger"></i>
+                                    <?php } ?>
+                                </td>
+                            </tr>
+                            <tr align="center">
+                                <th>Supir</th>
+                                <td>
+                                    <?php if ($dt->supir == 1) { ?>
+                                        <i class="fa fa-check-square" style="color: #014782"></i>
+                                    <?php } else { ?>
+                                        <i class="fa fa-times-circle text-danger"></i>
+                                    <?php } ?>
+                                </td>
+                            </tr>
+                            <tr align="center">
+                                <th>Audio Player</th>
+                                <td>
+                                    <?php if ($dt->audio_player == 1) { ?>
+                                        <i class="fa fa-check-square" style="color: #014782"></i>
+                                    <?php } else { ?>
+                                        <i class="fa fa-times-circle text-danger"></i>
+                                    <?php } ?>
+                                </td>
+                            </tr>
+                            <tr align="center">
+                                <th>Central Lock</th>
+                                <td>
+                                    <?php if ($dt->central_lock == 1) { ?>
+                                        <i class="fa fa-check-square" style="color: #014782"></i>
+                                    <?php } else { ?>
+                                        <i class="fa fa-times-circle text-danger"></i>
+                                    <?php } ?>
                                 </td>
                             </tr>
                         </table>

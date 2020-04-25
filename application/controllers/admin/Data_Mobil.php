@@ -38,18 +38,22 @@ class Data_Mobil extends CI_Controller
     public function tambah_mobil_simpan()
     {
         $this->_rules();
-
         if ($this->form_validation->run() == FALSE) {
             $this->tambah_mobil();
         } else {
-            $id_type = $this->input->post('id_type');
-            $merk = $this->input->post('merk');
-            $no_plat = $this->input->post('no_plat');
-            $warna = $this->input->post('warna');
-            $tahun = $this->input->post('tahun');
-            $harga = $this->input->post('harga');
-            $status_mobil = $this->input->post('status_mobil');
-            $gambar = $_FILES['gambar']['name'];
+            $id_type       = $this->input->post('id_type');
+            $merk          = $this->input->post('merk');
+            $no_plat       = $this->input->post('no_plat');
+            $warna         = $this->input->post('warna');
+            $tahun         = $this->input->post('tahun');
+            $harga         = $this->input->post('harga');
+            $denda         = $this->input->post('denda');
+            $ac            = $this->input->post('ac');
+            $supir         = $this->input->post('supir');
+            $audio_player  = $this->input->post('audio_player');
+            $central_lock  = $this->input->post('central_lock');
+            $status_mobil  = $this->input->post('status_mobil');
+            $gambar        = $_FILES['gambar']['name'];
             if ($gambar = '') {
             } else {
                 $config['upload_path'] = './assets/upload/mobil';
@@ -64,14 +68,19 @@ class Data_Mobil extends CI_Controller
             }
 
             $data = array(
-                'id_type' => $id_type,
-                'merk' => $merk,
-                'no_plat' => $no_plat,
-                'tahun' => $tahun,
-                'warna' => $warna,
-                'harga' => $harga,
+                'id_type'      => $id_type,
+                'merk'         => $merk,
+                'no_plat'      => $no_plat,
+                'tahun'        => $tahun,
+                'warna'        => $warna,
+                'harga'        => $harga,
+                'denda'        => $denda,
+                'ac'           => $ac,
+                'supir'        => $supir,
+                'audio_player' => $audio_player,
+                'central_lock' => $central_lock,
                 'status_mobil' => $status_mobil,
-                'gambar' => $gambar
+                'gambar'       => $gambar
             );
 
             $this->mobil_model->insert_data($data, 'mobil');
@@ -106,14 +115,19 @@ class Data_Mobil extends CI_Controller
         if ($this->form_validation->run() == FALSE) {
             $this->edit_mobil($id);
         } else {
-            $id_type = $this->input->post('id_type');
-            $merk = $this->input->post('merk');
-            $no_plat = $this->input->post('no_plat');
-            $warna = $this->input->post('warna');
-            $tahun = $this->input->post('tahun');
-            $harga = $this->input->post('harga');
-            $status_mobil = $this->input->post('status_mobil');
-            $gambar = $_FILES['gambar']['name'];
+            $id_type       = $this->input->post('id_type');
+            $merk          = $this->input->post('merk');
+            $no_plat       = $this->input->post('no_plat');
+            $warna         = $this->input->post('warna');
+            $tahun         = $this->input->post('tahun');
+            $harga         = $this->input->post('harga');
+            $denda         = $this->input->post('denda');
+            $ac            = $this->input->post('ac');
+            $supir         = $this->input->post('supir');
+            $audio_player  = $this->input->post('audio_player');
+            $central_lock  = $this->input->post('central_lock');
+            $status_mobil  = $this->input->post('status_mobil');
+            $gambar        = $_FILES['gambar']['name'];
             if ($gambar) {
                 $config['upload_path'] = './assets/upload/mobil';
                 $config['allowed_types'] = 'jpg|jpeg|png';
@@ -129,12 +143,17 @@ class Data_Mobil extends CI_Controller
             }
 
             $data = array(
-                'id_type' => $id_type,
-                'merk' => $merk,
-                'no_plat' => $no_plat,
-                'tahun' => $tahun,
-                'warna' => $warna,
-                'harga' => $harga,
+                'id_type'      => $id_type,
+                'merk'         => $merk,
+                'no_plat'      => $no_plat,
+                'tahun'        => $tahun,
+                'warna'        => $warna,
+                'harga'        => $harga,
+                'denda'        => $denda,
+                'ac'           => $ac,
+                'supir'        => $supir,
+                'audio_player' => $audio_player,
+                'central_lock' => $central_lock,
                 'status_mobil' => $status_mobil
             );
 
