@@ -66,7 +66,13 @@
 									<div id="collapse4" class="collapse" aria-labelledby="heading4" data-parent="#accordion_2">
 										<div class="card-body">
 											Pemesanan yang sudah masuk akan diproses setelah melampirkan bukti pembayaran yang valid.
-											Pembayaran bisa melalui transfer BNI a/n REZA RINALDI
+											Pembayaran bisa transfer melalui:
+											<br>
+											Bank: <img src="<?= base_url('assets/assets_shop/img/bank_bni.png'); ?>" width="80px" height="30px">
+											<br>
+											No. Rekening: 123456789
+											<br>
+											Penerima: REZA RINALDI
 										</div>
 									</div>
 								</div>

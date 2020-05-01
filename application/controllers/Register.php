@@ -9,31 +9,6 @@ class Register extends CI_Controller
         $data['title'] = 'Register';
 
         $this->load->view('register', $data);
-
-        $this->form_validation->set_rules('nama', 'Nama', 'required|trim', [
-            'required' => 'Nama Tidak Boleh Kosong'
-        ]);
-        $this->form_validation->set_rules('email', 'Email', 'required|trim', [
-            'required' => 'Email Tidak Boleh Kosong'
-        ]);
-        $this->form_validation->set_rules('alamat', 'Alamat', 'required|trim', [
-            'required' => 'Alamat Tidak Boleh Kosong'
-        ]);
-        $this->form_validation->set_rules('gender', 'Gender', 'required|trim', [
-            'required' => 'Gender Tidak Boleh Kosong'
-        ]);
-        $this->form_validation->set_rules('no_telp', 'No. Telepon', 'required|trim|numeric', [
-            'required' => 'No. Telepon Tidak Boleh Kosong'
-        ]);
-        $this->form_validation->set_rules('no_ktp', 'No. Ktp', 'required|trim', [
-            'required' => 'No. Ktp Tidak Boleh Kosong'
-        ]);
-        $this->form_validation->set_rules('password', 'Password', 'required|trim', [
-            'required' => 'Password Tidak Boleh Kosong'
-        ]);
-        $this->form_validation->set_rules('confirm_password', 'Confirm Password', 'required|trim', [
-            'required' => 'Confirm Password Tidak Boleh Kosong'
-        ]);
     }
 
     public function tambah_user_simpan_customer()
@@ -93,10 +68,11 @@ class Register extends CI_Controller
         );
 
         $this->user_model->insert_data($data, 'user');
-        echo "<script>
-        alert('Register Berhasil, Silahkan Login');
-        window.location='" . site_url('auth/login') . "';
-        </script>";
+        $this->session->set_flashdata('pesan', '
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+        Registrasi berhasil, silahkeun login.<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span></button></div>');
+        redirect('auth/login');
     }
 }
 

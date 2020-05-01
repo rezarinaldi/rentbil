@@ -145,7 +145,7 @@
 															<i class="fas fa-phone"></i>
 														</div>
 													</div>
-													<input type="text" name="no_telp" class="form-control phone-number" required>
+													<input type="number" name="no_telp" class="form-control phone-number" required>
 													<div class="invalid-feedback">
 														No. Telepon Tidak Boleh Kosong
 													</div>
@@ -161,7 +161,7 @@
 															<i class="fas fa-address-card"></i>
 														</div>
 													</div>
-													<input type="text" name="no_ktp" class="form-control" required>
+													<input type="number" name="no_ktp" class="form-control" required>
 													<div class="invalid-feedback">
 														No. KTP Tidak Boleh Kosong
 													</div>

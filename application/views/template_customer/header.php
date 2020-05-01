@@ -79,10 +79,10 @@
                     <!--== Social Icons Start ==-->
                     <div class="col-lg-2 text-right">
                         <div class="header-social-icons">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-linkedin"></i></a>
-                            <a href="#"><i class="fa fa-instagram"></i></a>
-                            <a href="#"><i class="fa fa-whatsapp"></i></a>
+                            <a href="javascript:;"><i class="fa fa-facebook"></i></a>
+                            <a href="javascript:;"><i class="fa fa-linkedin"></i></a>
+                            <a href="javascript:;"><i class="fa fa-instagram"></i></a>
+                            <a href="javascript:;"><i class="fa fa-whatsapp"></i></a>
                         </div>
                     </div>
                 </div>
@@ -108,7 +108,7 @@
                             <ul>
                                 <li><a href="<?= base_url('customer/dashboard') ?>">BERANDA</a></li>
                                 <li><a href="<?= base_url('customer/dashboard/list_mobil') ?>">LIST MOBIL</a></li>
-                                <li><a href="#">HALAMAN LAIN</a>
+                                <li><a href="javascript:;">HALAMAN LAIN</a>
                                     <ul>
                                         <li><a href="<?= base_url('customer/rental/kotak_pesan') ?>"><i class="fa fa-envelope"></i> KOTAK PESAN</a></li>
                                         <li><a href="<?= base_url('customer/rental/faqs') ?>"><i class="fa fa-question"></i> FAQ</a></li>
@@ -116,7 +116,7 @@
                                     </ul>
                                 </li>
                                 <?php if (isset($_SESSION['level']) == 2) { ?>
-                                    <li><a href="#"><i class="fa fa-user"></i> AHLAN | <?= $_SESSION['nama']; ?></a>
+                                    <li><a href="javascript:;"><i class="fa fa-user"></i> AHLAN | <?= $_SESSION['nama']; ?></a>
                                         <ul>
                                             <li><a href="<?= base_url('customer/rental/riwayat_sewa') ?>"><i class="fa fa-tag"></i> RIWAYAT SEWA</a></li>
                                             <li><a href="<?= base_url('auth/ganti_password') ?>"><i class="fa fa-unlock"></i> GANTI PASSWORD</a></li>

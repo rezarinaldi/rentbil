@@ -6,12 +6,11 @@
       <nav class="navbar navbar-expand-lg main-navbar">
         <form class="form-inline mr-auto">
           <ul class="navbar-nav mr-3">
-            <li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg"><i class="fas fa-bars"></i></a></li>
-            <li><a href="#" data-toggle="search" class="nav-link nav-link-lg d-sm-none"><i class="fas fa-search"></i></a></li>
+            <li><a href="javascript:;" data-toggle="sidebar" class="nav-link nav-link-lg"><i class="fas fa-bars"></i></a></li>
           </ul>
         </form>
         <ul class="navbar-nav navbar-right">
-          <li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown" class="nav-link nav-link-lg message-toggle">
+          <li class="dropdown dropdown-list-toggle"><a href="javascript:;" data-toggle="dropdown" class="nav-link nav-link-lg message-toggle">
               <i class="far fa-envelope-open"></i>
               <span class="badge badge-danger badge-counter">
                 <?php $query = $this->db->query('select status from pesan where status = 0');
@@ -21,7 +20,7 @@
             <div class="dropdown-menu dropdown-list dropdown-menu-right">
               <div class="dropdown-header" style="font-size: 15px;color: #fff; background-color: #6777ef;">Pesan Masuk</div>
               <div class="dropdown-list-content dropdown-list-message">
-                <a href="#" class="dropdown-item dropdown-item-unread">
+                <a href="<?= base_url('admin/data_pesan') ?>" class="dropdown-item dropdown-item-unread">
 
                   <?php foreach ($pesan as $psn) :
                     if ($psn->status == 0) :
@@ -47,7 +46,7 @@
               </div>
             </div>
           </li>
-          <li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown" class="nav-link notification-toggle nav-link-lg">
+          <li class="dropdown dropdown-list-toggle"><a href="javascript:;" data-toggle="dropdown" class="nav-link notification-toggle nav-link-lg">
               <i class="far fa-bell"></i>
               <span class="badge badge-danger badge-counter">
                 <?php $query = $this->db->query('select status_pembayaran from transaksi where status_pembayaran = 1');
@@ -62,7 +61,7 @@
             </div>
           </li>
           <li class="dropdown">
-            <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
+            <a href="javascript:;" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
               <img alt="image" src="<?= base_url('assets/assets_stisla'); ?>/assets/img/avatar/avatar-1.png" class="rounded-circle mr-1">
               <div class="d-sm-none d-lg-inline-block">Ahlan, <?= $_SESSION['nama'] ?></div>
             </a>
@@ -92,7 +91,7 @@
             <li><a class="nav-link" href="<?= base_url('admin/data_type') ?>"><i class="fas fa-pencil-ruler"></i> <span>Data Type</span></a></li>
 
             <li class="nav-item dropdown">
-              <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-money-check-alt"></i> <span>Transaksi</span></a>
+              <a href="javascript:;" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-money-check-alt"></i> <span>Transaksi</span></a>
               <ul class="dropdown-menu">
                 <li><a class="nav-link" href="<?= base_url('admin/transaksi') ?>">Data Transaksi</a></li>
                 <li><a class="nav-link" href="<?= base_url('admin/transaksi/menunggu_pembayaran') ?>">Menunggu Pembayaran</a></li>
@@ -106,13 +105,13 @@
             <li><a class="nav-link" href="<?= base_url('admin/data_user') ?>"><i class="fas fa-users"></i> <span>Data User</span></a></li>
 
             <li class="nav-item dropdown">
-              <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="far fa-file-alt"></i> <span>Laporan</span></a>
+              <a href="javascript:;" class="nav-link has-dropdown" data-toggle="dropdown"><i class="far fa-file-alt"></i> <span>Laporan</span></a>
               <ul class="dropdown-menu">
                 <li><a class="nav-link" href="<?= base_url('admin/transaksi/laporan') ?>">Transaksi</a></li>
               </ul>
             </li>
 
-            <li><a class="nav-link" href="<?= base_url('admin/data_pesan') ?>"><i class="fas fa-comment-dots"></i> <span>Pesan</span></a></li>
+            <li><a class="nav-link" href="<?= base_url('admin/data_pesan') ?>"><i class="far fa-comment-dots"></i> <span>Data Pesan</span></a></li>
 
           </ul>
         </aside>

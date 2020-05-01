@@ -55,7 +55,7 @@ class Auth extends CI_Controller
         $params = array('id_user', 'level');
         $this->session->unset_userdata($params);
         $this->session->set_flashdata('pesan', '
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <div class="alert alert-info alert-dismissible fade show" role="alert">
         Anda telah keluar!<button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span></button></div>');
         redirect('auth/login');
