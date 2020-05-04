@@ -28,9 +28,6 @@
 <script src="<?= base_url('assets/assets_stisla'); ?>/assets/js/myscript.js"></script>
 <script src="<?= base_url('assets/assets_stisla'); ?>/assets/js/sweetalert2.all.min.js"></script>
 
-<!-- Page Specific JS File -->
-<script src="<?= base_url('assets/assets_stisla'); ?>/assets/js/page/index-0.js"></script>
-
 <script src="https://cdn.datatables.net/buttons/1.6.1/js/dataTables.buttons.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.flash.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>

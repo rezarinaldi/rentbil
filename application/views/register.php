@@ -80,7 +80,7 @@
 															<i class="fas fa-lock"></i>
 														</div>
 													</div>
-													<input type="password" name="password" class="form-control pwstrength" data-indicator="pwindicator" required>
+													<input type="password" name="password" class="form-control" data-indicator="pwindicator" required>
 													<div class="invalid-feedback">
 														Password Tidak Boleh Kosong
 													</div>
@@ -96,7 +96,7 @@
 															<i class="fas fa-lock"></i>
 														</div>
 													</div>
-													<input type="password" name="confirm_password" class="form-control pwstrength" data-indicator="pwindicator" required>
+													<input type="password" name="confirm_password" class="form-control" data-indicator="pwindicator" required>
 													<div class="invalid-feedback">
 														Password Konfirmasi Tidak Boleh Kosong
 													</div>
@@ -179,7 +179,7 @@
 												</div> -->
 												<label>Scan KTP</label>
 												<div class="custom-file">
-													<input type="file" name="scan_ktp" class="custom-file-input" id="customFile" required>
+													<input type="file" name="scan_ktp" class="custom-file-input" required>
 													<label class="custom-file-label" for="customFile">Choose file</label>
 													<div class="invalid-feedback">
 														Scan KTP Tidak Boleh Kosong
@@ -196,7 +196,7 @@
 												</div> -->
 												<label>Scan KK</label>
 												<div class="custom-file">
-													<input type="file" name="scan_kk" class="custom-file-input" id="customFile" required>
+													<input type="file" name="scan_kk" class="custom-file-input" required>
 													<label class="custom-file-label" for="customFile">Choose file</label>
 													<div class="invalid-feedback">
 														Scan KTP Tidak Boleh Kosong
@@ -253,9 +253,6 @@
 	<!-- Template JS File -->
 	<script src="<?= base_url() ?>/assets/assets_stisla/assets/js/scripts.js"></script>
 	<script src="<?= base_url() ?>/assets/assets_stisla/assets/js/custom.js"></script>
-
-	<!-- Page Specific JS File -->
-	<script src="<?= base_url() ?>/assets/assets_stisla/assets/js/page/auth-register.js"></script>
 </body>
 
 </html>
