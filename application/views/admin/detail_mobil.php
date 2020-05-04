@@ -49,10 +49,6 @@
                                 <td><?= format_rupiah($dt->harga) ?></td>
                             </tr>
                             <tr align="center">
-                                <th>Denda</th>
-                                <td><?= format_rupiah($dt->denda) ?></td>
-                            </tr>
-                            <tr align="center">
                                 <th>Status</th>
                                 <th>
                                     <?php

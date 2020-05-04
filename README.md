@@ -10,14 +10,13 @@
 - Jalankan http://localhost/rentbil.
 
 ## 🗡️ Admin Page:
-http://localhost/rentbil/admin/dashboard -> harus login terlebih dahulu
+http://localhost/rentbil/admin/dashboard -> harus login terlebih dahulu.
 
 ## 🤺 Login Admin:
-> Email       : admin@admin.com
+    Email       : admin@admin.com
+    Password    : admin
 
-> Password    : admin
-
-## 🌏 Web Page:
+## 🌐 Web Page:
 http://localhost/rentbil/customer/dashboard
 
-Untuk melihat daftar akun customer, bisa dilihat pada database -> tabel user (level: Customer)
+Untuk melihat daftar akun customer, bisa dilihat pada database -> tabel user (level: Customer).

@@ -57,7 +57,7 @@
 												<i class="fas fa-calendar"></i>
 											</div>
 										</div>
-										<input type="date" name="tgl_kembali" class="form-control" value="<?= $ts->tanggal_kembali ?>" required>
+										<input type="date" name="tgl_kembali" class="form-control" value="<?= $ts->tanggal_kembali ?>" readonly required>
 									</div>
 								</div>
 							</div>

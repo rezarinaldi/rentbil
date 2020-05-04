@@ -43,16 +43,12 @@
                                     <input type="text" name="tahun" class="form-control" value="<?= $mb->tahun ?>">
                                     <?= form_error('tahun', '<div class="text-small text-danger">', '</div>') ?>
                                 </div>
-                                <div class="form-group">
-                                    <label>Harga</label>
-                                    <input type="text" name="harga" class="form-control" value="<?= $mb->harga ?>" required>
-                                </div>
                             </div>
 
                             <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>Denda</label>
-                                    <input type="text" name="denda" class="form-control" value="<?= $mb->denda ?>" required>
+                            <div class="form-group">
+                                    <label>Harga</label>
+                                    <input type="text" name="harga" class="form-control" value="<?= $mb->harga ?>" required>
                                 </div>
                                 <div class="form-group">
                                     <label>Status</label>

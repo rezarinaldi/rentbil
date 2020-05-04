@@ -39,16 +39,12 @@
                                 <input type="text" name="tahun" class="form-control">
                                 <?= form_error('tahun', '<div class="text-small text-danger">', '</div>') ?>
                             </div>
-                            <div class="form-group">
-                                <label>Harga</label>
-                                <input type="number" name="harga" class="form-control" required>
-                            </div>
                         </div>
 
                         <div class="col-md-6">
-                            <div class="form-group">
-                                <label>Denda</label>
-                                <input type="number" name="denda" class="form-control" required>
+                        <div class="form-group">
+                                <label>Harga</label>
+                                <input type="number" name="harga" class="form-control" required>
                             </div>
                             <div class="form-group">
                                 <label>Status</label>

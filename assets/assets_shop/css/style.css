@@ -149,13 +149,23 @@
 }
 
 .scroll-top {
-    bottom: 50px;
-    cursor: pointer;
-    display: none;
-    position: fixed;
-    left: 30px;
-    width: 30px;
-    z-index: 9999;
+	bottom: 50px;
+	cursor: pointer;
+	display: none;
+	position: fixed;
+	left: 30px;
+	width: 30px;
+	z-index: 9999;
+}
+
+.whatsapp {
+	position: fixed;
+	width: 60px;
+	bottom: 40px;
+	right: 40px;
+	border-radius: 50px;
+	box-shadow: 2px 2px 3px #000;
+	z-index: 9999;
 }
 
 /*== Theme Defualt CSS ==*/
@@ -739,7 +749,7 @@ a.slicknav_btn {
 .choose-content-wrap .nav-tabs li a.active {
 	background-color: #ffd000 !important;
 	background-color: #ffd000 !important;
-	color: #fff!important;
+	color: #fff !important;
 }
 
 
@@ -777,7 +787,7 @@ a.slicknav_btn {
 	text-transform: uppercase;
 }
 
-.popucar-menu a + a {
+.popucar-menu a+a {
 	border-left: 0px;
 }
 
@@ -946,7 +956,7 @@ a.slicknav_btn {
 	text-transform: uppercase;
 }
 
-.newcar-menu a + a {
+.newcar-menu a+a {
 	border-left: 0px;
 }
 
@@ -1541,7 +1551,7 @@ body.loader-active {
 html,
 body,
 #slideslow-bg,
-#slideslow-bg div  {
+#slideslow-bg div {
 	height: 100%;
 }
 
@@ -2309,7 +2319,7 @@ body,
 	position: relative;
 }
 
-.car-info-list li + li {
+.car-info-list li+li {
 	border-left: 0;
 }
 
@@ -3073,7 +3083,7 @@ body,
 	vertical-align: middle;
 }
 
-.zero > img {
+.zero>img {
 	margin-left: 5px;
 	margin-top: 5px;
 	width: 115px;
