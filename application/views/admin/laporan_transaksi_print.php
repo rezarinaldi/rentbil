@@ -52,17 +52,6 @@
 			<table class="table-data">
 				<thead>
 					<tr align="center">
-						<!-- <th>No</th>
-						<th>Tanggal</th>
-						<th>Kostumer</th>
-						<th>Mobil</th>
-						<th>Tgl. <RP></RP>ental</th>
-						<th>Tgl. Kembali</th>
-						<th>Harga</th>
-						<th>Denda / Hari</th>
-						<th>Tgl. Dikembalikan</th>
-						<th>Total Denda</th>
-						<th>Status</th> -->
 						<th>No</th>
 						<th>User</th>
 						<th>Mobil</th>
@@ -74,34 +63,6 @@
 					</tr>
 				</thead>
 				<tbody>
-					<!-- <?php
-							$no = 1;
-							foreach ($laporan as $l) {
-							?>
-						<tr align="center">
-							<td><?= $no++; ?></td>
-							<td><?= date('d/m/Y', strtotime($l->transaksi_tgl)); ?></td>
-							<td><?= $l->kostumer_nama; ?></td>
-							<td><?= $l->mobil_merk; ?></td>
-							<td><?= date('d/m/Y', strtotime($l->transaksi_tgl_pinjam)); ?></td>
-							<td><?= date('d/m/Y', strtotime($l->transaksi_tgl_kembali)); ?></td>
-							<td><?= "Rp. " . number_format($l->transaksi_harga); ?></td>
-							<td><?= "Rp. " . number_format($l->transaksi_denda); ?></td>
-							<td> <?php if ($l->transaksi_tgldikembalikan == "0000-00-00") {
-										echo "-";
-									} else {
-										echo date('d/m/Y', strtotime($l->transaksi_tgldikembalikan));
-									} ?>
-							</td>
-							<td><?= "Rp. " . number_format($l->transaksi_totaldenda) . " ,-"; ?></td>
-							<td> <?php if ($l->transaksi_status == "1") {
-										echo "Selesai";
-									} else {
-										echo "-";
-									} ?>
-							</td>
-						</tr>
-					<?php } ?> -->
 					<?php
 					$no = 1;
 					foreach ($laporan as $l) : ?>
@@ -114,22 +75,22 @@
 							<td><?= format_rupiah($l->total_sewa) ?></td>
 							<td>
 								<?php if (($l->status) == 0) {
-									echo "<span class='badge badge-dark'>Batal</span>";
+									echo "Batal";
 								} elseif (($l->status) == 1) {
-									echo "<span class='badge badge-warning'>Disewa</span>";
+									echo "Disewa";
 								} else {
-									echo "<span class='badge badge-success'>Selesai</span>";
+									echo "Selesai";
 								} ?>
 							</td>
 							<td>
 								<?php if (($l->status_pembayaran) == 0) {
-									echo "<span class='badge badge-danger'>Belum Dibayar</span>";
+									echo "Belum Dibayar";
 								} elseif (($l->status_pembayaran) == 1) {
-									echo "<span class='badge badge-info'>Menunggu Konfirmasi</span>";
+									echo "Menunggu Konfirmasi";
 								} elseif (($l->status_pembayaran) == 2) {
-									echo "<span class='badge badge-success'>Sudah Dibayar</span>";
+									echo "Sudah Dibayar";
 								} else {
-									echo "<span class='badge badge-dark'>Batal</span>";
+									echo "Batal";
 								} ?>
 							</td>
 						</tr>

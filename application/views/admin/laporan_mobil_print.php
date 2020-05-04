@@ -73,7 +73,7 @@
 							<td><?= $mb->merk ?></td>
 							<td><?= $mb->no_plat ?></td>
 							<td><?= format_rupiah($mb->harga) ?></td>
-							<td><?= $mb->status_mobil == 0 ? "<span class='badge badge-danger'>Kosong</span>" : "<span class='badge badge-primary'>Tersedia</span>" ?></td>
+							<td><?= $mb->status_mobil == 0 ? "Kosong" : "Tersedia" ?></td>
 						</tr>
 					<?php endforeach; ?>
 				</tbody>
