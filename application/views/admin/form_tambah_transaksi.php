@@ -65,6 +65,15 @@
 								</select>
 							</div>
 
+							<div class="form-group">
+								<label>Pickup</label>
+								<select name="pickup" class="form-control" required>
+									<option value="">Pilih Metode Pickup</option>
+									<option value="0">Ambil Sendiri</option>
+									<option value="1">Pickup Sesuai Alamat</option>
+								</select>
+							</div>
+
 							<input type="hidden" value="" name="id_user" id="id_user">
 							<input type="hidden" value="" name="id_mobil" id="id_mobil">
 							<input type="hidden" value="" name="harga" id="harga">

@@ -55,7 +55,7 @@
 										<div class="card-body">
 											Anda dapat menghubungi pihak kami dengan beberapa cara:
 											<br>
-											1. Melalui kotak pesan, yakni menuju halaman 'Kotak Pesan' dengan menekan tombol disamping:
+											1. Melalui kotak pesan, yakni menuju halaman 'Kotak Pesan' (Pastikan Anda sudah login) dengan menekan tombol disamping:
 											<a href="<?= base_url('customer/rental/kotak_pesan') ?>" class="rent-btn"><i class="fa fa-envelope"></i> Kotak Pesan</a>
 											<br>
 											<br>

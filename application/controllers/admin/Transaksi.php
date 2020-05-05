@@ -48,6 +48,7 @@ class Transaksi extends CI_Controller
         $selisih_hari = ((abs(strtotime($tanggal_sewa) - strtotime($tanggal_kembali))) / (60 * 60 * 24));
         $total_sewa = $harga_mobil * $selisih_hari;
         $status = $this->input->post('status');
+        $pickup = $this->input->post('pickup');
         $status_pembayaran = 0;
 
         $data = array(
@@ -58,6 +59,7 @@ class Transaksi extends CI_Controller
             'tanggal_kembali' => $tanggal_kembali,
             'total_sewa' => $total_sewa,
             'status' => $status,
+            'pickup' => $pickup,
             'status_pembayaran' => $status_pembayaran
         );
 
@@ -109,6 +111,7 @@ class Transaksi extends CI_Controller
         $selisih_hari = ((abs(strtotime($tanggal_sewa) - strtotime($tanggal_kembali))) / (60 * 60 * 24));
         $total_sewa = $harga_mobil * round($selisih_hari);
         $status = $this->input->post('status');
+        $pickup = $this->input->post('pickup');
 
         $data = array(
             'id_transaksi' => $id_transaksi,
@@ -117,7 +120,8 @@ class Transaksi extends CI_Controller
             'tanggal_sewa' => $tanggal_sewa,
             'tanggal_kembali' => $tanggal_kembali,
             'total_sewa' => $total_sewa,
-            'status' => $status
+            'status' => $status,
+            'pickup' => $pickup
         );
 
         $where = array(
@@ -278,7 +282,6 @@ class Transaksi extends CI_Controller
 
     public function pembatalan_sewa($id)
     {
-        $this->load->model('transaksi_model');
         $id_transaksi = $id;
         $status = 0;
         $status_pembayaran = 3;
@@ -287,6 +290,7 @@ class Transaksi extends CI_Controller
             'status' => $status,
             'status_pembayaran' => $status_pembayaran
         );
+
         $where = array(
             'id_transaksi' => $id_transaksi
         );
@@ -304,13 +308,13 @@ class Transaksi extends CI_Controller
 
     public function konfirmasi_pembayaran($id)
     {
-        $this->load->model('transaksi_model');
         $id_transaksi = $id;
         $status_pembayaran = 2;
 
         $data = array(
             'status_pembayaran' => $status_pembayaran
         );
+        
         $where = array(
             'id_transaksi' => $id_transaksi
         );
