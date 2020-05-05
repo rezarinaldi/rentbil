@@ -4,9 +4,9 @@
 
 ## :atom: Cara install:
 
-- Jangan lupa install XAMPP.
+- Jangan lupa install [XAMPP](https://www.apachefriends.org/).
 - Letakkan folder rentbil di folder htdocs Anda.
-- Import database rentalmobil.sql pada folder database ke database Anda.
+- Import database [rentalmobil.sql](database/rentalmobil.sql) pada folder database ke database Anda.
 - Jalankan http://localhost/rentbil.
 
 ## 🗡️ Admin Page:
