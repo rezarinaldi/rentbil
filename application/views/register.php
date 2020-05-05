@@ -124,13 +124,20 @@
 										<div class="col-6">
 											<div class="form-group">
 												<label>Jenis Kelamin</label>
-												<select name="gender" class="form-control" required>
-													<option value="">Pilih Jenis Kelamin</option>
-													<option value="Laki-Laki">Laki-Laki</option>
-													<option value="Perempuan">Perempuan</option>
-												</select>
-												<div class="invalid-feedback">
-													Jenis Kelamin Tidak Boleh Kosong
+												<div class="input-group">
+													<div class="input-group-prepend">
+														<div class="input-group-text">
+															<i class="far fa-user"></i>
+														</div>
+													</div>
+													<select name="gender" class="form-control" required>
+														<option value="">Pilih Jenis Kelamin</option>
+														<option value="Laki-laki">Laki-laki</option>
+														<option value="Perempuan">Perempuan</option>
+													</select>
+													<div class="invalid-feedback">
+														Jenis Kelamin Tidak Boleh Kosong
+													</div>
 												</div>
 											</div>
 										</div>
@@ -172,15 +179,14 @@
 									<div class="row">
 										<div class="col-6">
 											<div class="form-group">
-												<!-- <label>Scan KTP</label>
-												<input type="file" name="scan_ktp" class="form-control" required>
-												<div class="invalid-feedback">
-													Scan KTP Tidak Boleh Kosong
-												</div> -->
 												<label>Scan KTP</label>
-												<div class="custom-file">
-													<input type="file" name="scan_ktp" class="custom-file-input" required>
-													<label class="custom-file-label" for="customFile">Choose file</label>
+												<div class="input-group">
+													<div class="input-group-prepend">
+														<div class="input-group-text">
+															<i class="fas fa-address-card"></i>
+														</div>
+													</div>
+													<input type="file" name="scan_ktp" class="form-control" required>
 													<div class="invalid-feedback">
 														Scan KTP Tidak Boleh Kosong
 													</div>
@@ -189,17 +195,16 @@
 										</div>
 										<div class="col-6">
 											<div class="form-group">
-												<!-- <label>Scan KK</label>
-												<input type="file" name="scan_kk" class="form-control" required>
-												<div class="invalid-feedback">
-													Scan KK Tidak Boleh Kosong
-												</div> -->
 												<label>Scan KK</label>
-												<div class="custom-file">
-													<input type="file" name="scan_kk" class="custom-file-input" required>
-													<label class="custom-file-label" for="customFile">Choose file</label>
+												<div class="input-group">
+													<div class="input-group-prepend">
+														<div class="input-group-text">
+															<i class="fas fa-address-card"></i>
+														</div>
+													</div>
+													<input type="file" name="scan_kk" class="form-control" required>
 													<div class="invalid-feedback">
-														Scan KTP Tidak Boleh Kosong
+														Scan KK Tidak Boleh Kosong
 													</div>
 												</div>
 											</div>
@@ -253,6 +258,7 @@
 	<!-- Template JS File -->
 	<script src="<?= base_url() ?>/assets/assets_stisla/assets/js/scripts.js"></script>
 	<script src="<?= base_url() ?>/assets/assets_stisla/assets/js/custom.js"></script>
+
 </body>
 
 </html>

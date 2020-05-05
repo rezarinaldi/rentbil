@@ -41,6 +41,7 @@
 
                                 <div class="sidebar-body">
                                     <div class="form-group">
+                                        <input type="hidden" name="id_mobil" value="<?= $rt->id_mobil ?>">
                                         <label>Tanggal Sewa</label>
                                         <input type="text" name="tanggal_sewa" class="form-control" value="<?= IndonesiaTgl($tgl_sewa) ?>" disabled>
                                     </div>
@@ -55,6 +56,10 @@
                                     <div class="form-group">
                                         <label>Total Biaya Sewa</label>
                                         <input type="text" name="total_biaya" class="form-control" value="<?= format_rupiah(($rt->harga * $durasi)) ?>" disabled>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Denda</label>
+                                        <input type="text" name="denda" class="form-control" value="<?= format_rupiah($rt->denda) ?> / Hari" disabled>
                                     </div>
                                     <div class="form-group">
                                         <label>Metode Pickup</label>

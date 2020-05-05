@@ -16,8 +16,10 @@
                             <th>Mobil</th>
                             <th>Tgl Sewa</th>
                             <th>Tgl Kembali</th>
+                            <th>Tgl Pengembalian</th>
                             <th>Metode Pickup</th>
                             <th>Total Sewa</th>
+                            <th>Total Denda</th>
                             <th>Status</th>
                             <th>Status Pembayaran</th>
                             <th>Action</th>
@@ -34,13 +36,21 @@
                                 <td><?= IndonesiaTgl($ts->tanggal_sewa) ?></td>
                                 <td><?= IndonesiaTgl($ts->tanggal_kembali) ?></td>
                                 <td>
+                                    <?php if (IndonesiaTgl($ts->tanggal_pengembalian) == "00-00-0000") { ?>
+                                        -
+                                    <?php } else { ?>
+                                        <?= IndonesiaTgl($ts->tanggal_pengembalian) ?>
+                                    <?php } ?>
+                                </td>
+                                <td>
                                     <?php if (($ts->pickup) == 0) {
                                         echo "<span class='badge badge-dark'>Ambil Sendiri</span>";
                                     } else {
-                                        echo "<span class='badge badge-light'>Pickup Sesuai Alamat</span>";
+                                        echo "<span class='badge badge-primary'>Pickup Sesuai Alamat</span>";
                                     } ?>
                                 </td>
                                 <td><?= format_rupiah($ts->total_sewa) ?></td>
+                                <td><?= format_rupiah($ts->total_denda) ?></td>
                                 <td>
                                     <?php if (($ts->status) == 0) {
                                         echo "<span class='badge badge-dark'>Batal</span>";

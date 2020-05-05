@@ -85,7 +85,7 @@ class Transaksi extends CI_Controller
         $data['mobil'] = $this->transaksi_model->get_data('mobil')->result();
         $data['pesan'] = $this->pesan_model->get_data_user('pesan')->result();
 
-        $this->db->select('transaksi.id_transaksi, transaksi.id_user, transaksi.id_mobil, mobil.harga , user.nama, mobil.merk, transaksi.tanggal_sewa, transaksi.tanggal_kembali, transaksi.status');
+        $this->db->select('*');
         $this->db->from('transaksi');
         $this->db->join('mobil', 'mobil.id_mobil = transaksi.id_mobil');
         $this->db->join('user', 'user.id_user = transaksi.id_user');
@@ -119,8 +119,6 @@ class Transaksi extends CI_Controller
             'total_sewa' => $total_sewa,
             'status' => $status
         );
-
-        echo print_r($data);
 
         $where = array(
             'id_transaksi' => $id_transaksi
@@ -216,6 +214,68 @@ class Transaksi extends CI_Controller
         $this->load->view('template_admin/footer');
     }
 
+    public function pengembalian_sewa($id)
+    {
+        $where = array('id_transaksi' => $id);
+        $data['title'] = 'Form Pengembalian Sewa';
+        $data['user'] = $this->transaksi_model->get_data('user')->result();
+        $data['mobil'] = $this->transaksi_model->get_data('mobil')->result();
+        $data['pesan'] = $this->pesan_model->get_data_user('pesan')->result();
+
+        $this->db->select('*');
+        $this->db->from('transaksi');
+        $this->db->join('mobil', 'mobil.id_mobil = transaksi.id_mobil');
+        $this->db->join('user', 'user.id_user = transaksi.id_user');
+        $this->db->where('id_transaksi', $id);
+
+        $data['transaksi'] = $this->db->get()->result();
+        $this->load->view('template_admin/header', $data);
+        $this->load->view('template_admin/sidebar', $data);
+        $this->load->view('admin/form_pengembalian_sewa', $data);
+        $this->load->view('template_admin/footer');
+    }
+
+    public function pengembalian_aksi()
+    {
+        $id                   = $this->input->post('id_transaksi');
+        $id_mobil             = $this->input->post('id_mobil');
+        $tanggal_pengembalian = $this->input->post('tanggal_pengembalian');
+        $status               = $this->input->post('status');
+        $tanggal_kembali      = $this->input->post('tanggal_kembali');
+        $denda                = $this->input->post('denda');
+
+        $x           = strtotime($tanggal_pengembalian);
+        $y           = strtotime($tanggal_kembali);
+        $selisih     = abs($x - $y) / (60 * 60 * 24);
+        $total_denda = $denda * $selisih;
+
+        $data = array(
+            'tanggal_pengembalian' => $tanggal_pengembalian,
+            'status' => $status,
+            'total_denda' => $total_denda
+        );
+
+        $where = array(
+            'id_transaksi' => $id
+        );
+
+        $this->transaksi_model->edit_data('transaksi', $data, $where);
+
+        if ($status == 1) {
+            $this->transaksi_model->insert_status_mobil_kosong($id_mobil, 'mobil');
+        } else {
+            $this->transaksi_model->insert_status_mobil_sedia($id_mobil, 'mobil');
+        }
+
+        $this->session->set_flashdata('pesan', '
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+        Transaksi Pengembalian Berhasil Diubah
+        <button transaksi="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button></div>');
+        redirect('admin/transaksi/selesai');
+    }
+
     public function pembatalan_sewa($id)
     {
         $this->load->model('transaksi_model');
@@ -233,7 +293,13 @@ class Transaksi extends CI_Controller
 
         $this->transaksi_model->edit_data('transaksi', $data, $where);
 
-        echo "<script>window.location='" . base_url('admin/transaksi/batal') . "';</script>";
+        $this->session->set_flashdata('pesan', '
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+        Penyewaan Berhasil Dibatalkan
+        <button transaksi="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button></div>');
+        redirect('admin/transaksi/batal');
     }
 
     public function konfirmasi_pembayaran($id)
@@ -251,16 +317,13 @@ class Transaksi extends CI_Controller
 
         $this->transaksi_model->edit_data('transaksi', $data, $where);
 
-        echo "<script>window.location='" . base_url('admin/transaksi/menunggu_konfirmasi') . "';</script>";
-    }
-
-    public function _rules()
-    {
-        $this->form_validation->set_rules('nama', 'Nama Customer', 'required');
-        $this->form_validation->set_rules('merk_mobil', 'Merk Mobil', 'required');
-        $this->form_validation->set_rules('tgl_sewa', 'Tanggal Sewa', 'required');
-        $this->form_validation->set_rules('tgl_kembali', 'Tanggal Kembali', 'required');
-        $this->form_validation->set_rules('status', 'Status', 'required');
+        $this->session->set_flashdata('pesan', '
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+        Pembayaran Berhasil Dikonfirmasi
+        <button transaksi="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button></div>');
+        redirect('admin/transaksi/menunggu_konfirmasi');
     }
 
     // laporan

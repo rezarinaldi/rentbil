@@ -52,53 +52,19 @@
 					<table border="1" class="table table-striped table-hover table-bordered" id="data_table">
 						<thead>
 							<tr align="center">
-								<!-- <th>No</th>
-								<th>Tanggal</th>
-								<th>Kostumer</th>
-								<th>Mobil</th>
-								<th>Tgl. Pinjam</th>
-								<th>Tgl. Kembali</th>
-								<th>Harga</th>
-								<th>Denda / Hari</th>
-								<th>Tgl. Dikembalikan</th>
-								<th>Total Denda</th>
-								<th>Status</th> -->
 								<th>No</th>
 								<th>User</th>
 								<th>Mobil</th>
 								<th>Tgl Sewa</th>
 								<th>Tgl Kembali</th>
+								<th>Tgl Pengembalian</th>
 								<th>Total Sewa</th>
+								<th>Total Denda</th>
 								<th>Status</th>
 								<th>Status Pembayaran</th>
 							</tr>
 						</thead>
 						<tbody>
-							<!-- <?php $no = 1;
-									foreach ($laporan as $l) { ?>
-								<tr>
-									<td><?= $no++; ?></td>
-									<td><?= date('d/m/Y', strtotime($l->transaksi_tgl)); ?></td>
-									<td><?= $l->kostumer_nama; ?></td>
-									<td><?= $l->mobil_merk; ?></td>
-									<td><?= date('d/m/Y', strtotime($l->transaksi_tgl_pinjam)); ?></td>
-									<td><?= date('d/m/Y', strtotime($l->transaksi_tgl_kembali)); ?></td>
-									<td><?= "Rp. " . number_format($l->transaksi_harga); ?></td>
-									<td><?= "Rp. " . number_format($l->transaksi_denda); ?></td>
-									<td> <?php if ($l->transaksi_tgldikembalikan == "0000-00-00") {
-												echo "-";
-											} else {
-												echo date('d/m/Y', strtotime($l->transaksi_tgldikembalikan));
-											} ?>
-									</td>
-									<td><?= "Rp. " . number_format($l->transaksi_totaldenda) . " ,-"; ?></td>
-									<td> <?php if ($l->transaksi_status == "1") {
-												echo "Selesai";
-											} else {
-												echo "-";
-											} ?> </td>
-								</tr>
-							<?php } ?> -->
 							<?php
 							$no = 1;
 							foreach ($laporan as $l) : ?>
@@ -108,7 +74,15 @@
 									<td><?= $l->merk ?></td>
 									<td><?= IndonesiaTgl($l->tanggal_sewa) ?></td>
 									<td><?= IndonesiaTgl($l->tanggal_kembali) ?></td>
+									<td>
+										<?php if (IndonesiaTgl($l->tanggal_pengembalian) == "00-00-0000") { ?>
+											-
+										<?php } else { ?>
+											<?= IndonesiaTgl($l->tanggal_pengembalian) ?>
+										<?php } ?>
+									</td>
 									<td><?= format_rupiah($l->total_sewa) ?></td>
+									<td><?= format_rupiah($l->total_denda) ?></td>
 									<td>
 										<?php if (($l->status) == 0) {
 											echo "<span class='badge badge-dark'>Batal</span>";

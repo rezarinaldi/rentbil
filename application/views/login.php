@@ -83,9 +83,9 @@
                 document.write(new Date().getFullYear());
               </script><br>Dibuat dengan 💙 oleh <a target="_blank" href="https://github.com/stisla/stisla">Stisla</a>
               <div class="mt-3">
-                <a href="#">Ketentuan Layanan</a>
+                <a href="javascript:;">Ketentuan Layanan</a>
                 <div class="bullet"></div>
-                <a href="#">Kebijakan Privasi</a>
+                <a href="javascript:;">Kebijakan Privasi</a>
               </div>
             </div>
           </div>
@@ -117,7 +117,6 @@
   <script src="<?= base_url() ?>/assets/assets_stisla/assets/js/scripts.js"></script>
   <script src="<?= base_url() ?>/assets/assets_stisla/assets/js/custom.js"></script>
 
-  <!-- Page Specific JS File -->
 </body>
 
 </html>

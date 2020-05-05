@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 04 Bulan Mei 2020 pada 05.05
+-- Waktu pembuatan: 05 Bulan Mei 2020 pada 11.34
 -- Versi server: 10.4.8-MariaDB
 -- Versi PHP: 7.3.10
 
@@ -36,6 +36,7 @@ CREATE TABLE `mobil` (
   `warna` varchar(20) NOT NULL,
   `tahun` varchar(4) NOT NULL,
   `harga` int(11) NOT NULL,
+  `denda` int(11) NOT NULL,
   `ac` int(11) DEFAULT NULL,
   `supir` int(11) DEFAULT NULL,
   `audio_player` int(11) DEFAULT NULL,
@@ -48,15 +49,15 @@ CREATE TABLE `mobil` (
 -- Dumping data untuk tabel `mobil`
 --
 
-INSERT INTO `mobil` (`id_mobil`, `id_type`, `merk`, `no_plat`, `warna`, `tahun`, `harga`, `ac`, `supir`, `audio_player`, `central_lock`, `status_mobil`, `gambar`) VALUES
-(1, 2, 'Suzuki Ciaz White', 'N 1985 RTF', 'Putih', '2019', 800000, 1, 1, 1, 1, 1, 'mobil-suzuki-ciaz1.jpg'),
-(2, 2, 'Suzuki Ciaz Brown', 'N 6758 AW', 'Cokelat', '2017', 600000, 1, NULL, 1, NULL, 0, 'Suzuki-Ciaz.jpg'),
-(3, 2, 'Suzuki Ertiga', 'N 1985 NK', 'Silver', '2018', 650000, 1, 0, 1, 1, 0, 'Suzuki-All-new-Ertiga-2018-Warna-merah-Pearl-Radiant-Red.jpg'),
-(4, 1, 'Hyundai 720', 'N 9547 HUY', 'Silver', '2014', 1000000, 1, 1, 1, 1, 0, 'slider-img-2.jpg'),
-(5, 1, 'BMW 1500', 'N 1456 DAG', 'Biru', '2015', 400000, 1, NULL, 1, NULL, 1, 'car-3.jpg'),
-(6, 1, 'BMW 177', 'N 1234 CAH', 'Biru', '2019', 500000, 1, 1, 1, NULL, 1, 'car-2.jpg'),
-(7, 1, 'BMW 577', 'N 4321 DB', 'Kuning', '2018', 700000, 1, 1, 1, NULL, 1, 'car-6.jpg'),
-(8, 2, 'BMW 115', 'N 2707 GG', 'Merah', '2017', 450000, 1, NULL, 1, 1, 1, 'car-4.jpg');
+INSERT INTO `mobil` (`id_mobil`, `id_type`, `merk`, `no_plat`, `warna`, `tahun`, `harga`, `denda`, `ac`, `supir`, `audio_player`, `central_lock`, `status_mobil`, `gambar`) VALUES
+(1, 2, 'Suzuki Ciaz White', 'N 1985 RTF', 'Putih', '2019', 800000, 40000, 1, 1, 1, 1, 1, 'mobil-suzuki-ciaz1.jpg'),
+(2, 2, 'Suzuki Ciaz Brown', 'N 6758 AW', 'Cokelat', '2017', 600000, 30000, 1, NULL, 1, NULL, 1, 'Suzuki-Ciaz.jpg'),
+(3, 2, 'Suzuki Ertiga', 'N 1985 NK', 'Silver', '2018', 650000, 32500, 1, NULL, 1, 1, 0, 'Suzuki-All-new-Ertiga-2018-Warna-merah-Pearl-Radiant-Red.jpg'),
+(4, 1, 'Hyundai 720', 'N 9547 HUY', 'Silver', '2014', 1000000, 50000, 1, 1, 1, 1, 0, 'slider-img-2.jpg'),
+(5, 1, 'BMW 1500', 'N 1456 DAG', 'Biru', '2015', 400000, 20000, 1, NULL, 1, NULL, 0, 'car-3.jpg'),
+(6, 1, 'BMW 177', 'N 1234 CAH', 'Biru', '2019', 500000, 25000, 1, 1, 1, NULL, 1, 'car-2.jpg'),
+(7, 1, 'BMW 577', 'N 4321 DB', 'Kuning', '2018', 700000, 35000, 1, 1, 1, NULL, 1, 'car-6.jpg'),
+(8, 2, 'BMW 115', 'N 2707 GG', 'Merah', '2017', 450000, 22500, 1, NULL, 1, 1, 1, 'car-4.jpg');
 
 -- --------------------------------------------------------
 
@@ -78,6 +79,7 @@ CREATE TABLE `pesan` (
 --
 
 INSERT INTO `pesan` (`id_pesan`, `id_user`, `subjek`, `isi_pesan`, `tgl_posting`, `status`) VALUES
+(0, 6, 'Batal Penyewaan', 'Bismillah.. Assalamu\'alaikum.. kak tolong batalkan penyewaan saya. Terima kasih :)', '2020-05-05 09:19:44', 1),
 (1, 2, 'Salam', 'Bismillah.. Assalamu\'alaikum akhy :)', '2020-04-09 18:36:01', 0),
 (2, 4, 'Salam', 'Bismillah.. Assalamu\'alaikum, anta sehat? :)', '2020-04-09 19:05:23', 1);
 
@@ -93,8 +95,10 @@ CREATE TABLE `transaksi` (
   `id_mobil` int(11) NOT NULL,
   `tanggal_sewa` date NOT NULL,
   `tanggal_kembali` date NOT NULL,
-  `pickup` int(11) NOT NULL COMMENT '0. ambil sendiri, 1. pickup sesuai alamat',
+  `tanggal_pengembalian` date DEFAULT NULL,
   `total_sewa` int(11) NOT NULL,
+  `total_denda` int(11) NOT NULL,
+  `pickup` int(11) NOT NULL COMMENT '0. ambil sendiri, 1. pickup sesuai alamat',
   `status` int(1) NOT NULL COMMENT '0. batal, 1. disewa, 2. selesai',
   `status_pembayaran` int(1) NOT NULL COMMENT '0. belum dibayar, 1. menunggu konfirmasi, 2. sudah dibayar, 3. batal',
   `bukti_pembayaran` varchar(255) NOT NULL
@@ -104,14 +108,15 @@ CREATE TABLE `transaksi` (
 -- Dumping data untuk tabel `transaksi`
 --
 
-INSERT INTO `transaksi` (`id_transaksi`, `id_user`, `id_mobil`, `tanggal_sewa`, `tanggal_kembali`, `pickup`, `total_sewa`, `status`, `status_pembayaran`, `bukti_pembayaran`) VALUES
-(1, 1, 1, '2020-02-20', '2020-02-22', 0, 1600000, 2, 2, 'Screenshot_121.jpg'),
-(2, 3, 2, '2020-02-06', '2020-02-08', 0, 1200000, 2, 2, 'IMG-20190914-WA00071.jpeg'),
-(3, 3, 3, '2020-02-27', '2020-02-29', 0, 1300000, 2, 2, 'Screenshot_12.jpg'),
-(4, 4, 2, '2020-03-25', '2020-03-31', 0, 3600000, 1, 2, 'WhatsApp_Image_2020-03-14_at_12_44_18_PM.jpeg'),
-(5, 1, 4, '2020-04-01', '2020-04-16', 0, 15000000, 2, 2, 'IMG-20190914-WA0007.jpeg'),
-(6, 4, 4, '2020-04-01', '2020-04-02', 0, 1000000, 1, 1, 'Screenshot_122.jpg'),
-(7, 2, 3, '2020-04-17', '2020-04-18', 0, 650000, 1, 0, '');
+INSERT INTO `transaksi` (`id_transaksi`, `id_user`, `id_mobil`, `tanggal_sewa`, `tanggal_kembali`, `tanggal_pengembalian`, `total_sewa`, `total_denda`, `pickup`, `status`, `status_pembayaran`, `bukti_pembayaran`) VALUES
+(1, 1, 1, '2020-02-20', '2020-02-22', '2020-02-22', 1600000, 0, 0, 2, 2, 'Screenshot_121.jpg'),
+(2, 3, 2, '2020-02-06', '2020-02-08', '2020-02-10', 1200000, 60000, 0, 2, 2, 'IMG-20190914-WA00071.jpeg'),
+(3, 3, 3, '2020-02-27', '2020-02-29', '2020-03-03', 1300000, 97500, 0, 2, 2, 'Screenshot_12.jpg'),
+(4, 4, 2, '2020-03-25', '2020-03-31', '2020-04-02', 3600000, 60000, 1, 2, 2, 'WhatsApp_Image_2020-03-14_at_12_44_18_PM.jpeg'),
+(5, 1, 4, '2020-04-01', '2020-04-16', '2020-04-16', 15000000, 0, 1, 2, 2, 'IMG-20190914-WA0007.jpeg'),
+(6, 4, 4, '2020-04-01', '2020-04-02', '0000-00-00', 1000000, 0, 1, 1, 1, 'Screenshot_122.jpg'),
+(7, 2, 3, '2020-04-17', '2020-04-18', '0000-00-00', 650000, 0, 1, 1, 0, ''),
+(8, 6, 5, '2020-05-05', '2020-05-07', NULL, 800000, 0, 1, 0, 3, '');
 
 -- --------------------------------------------------------
 
@@ -158,11 +163,12 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id_user`, `nama`, `email`, `password`, `alamat`, `gender`, `no_telp`, `no_ktp`, `scan_ktp`, `scan_kk`, `level`) VALUES
-(1, 'Admin', 'admin@admin.com', '21232f297a57a5a743894a0e4a801fc3', 'Malang', 'Laki-Laki', '085334424941', '213123123112', 'KTP-1544523262.png', 'KK.PNG', 1),
+(1, 'Admin', 'admin@admin.com', '21232f297a57a5a743894a0e4a801fc3', 'Malang', 'Laki-laki', '085334424941', '213123123112', 'KTP-1544523262.png', 'KK.PNG', 1),
 (2, 'Lathifa Firdauzi', 'lathifa@gmail.com', '401e8eb287e4700453792a5e57490d70', 'Surabaya', 'Perempuan', '085727287289', '123213123', 'KTP-15445232621.png', 'KK1.PNG', 2),
-(3, 'Alief Al', 'alief@gmail.com', '22db6b9d4434177a4abd28b0c5781f15', 'Madura', 'Laki-Laki', '089217112213', '896786128689', 'KTP-15445232623.png', 'KK3.PNG', 2),
+(3, 'Alief Al', 'alief@gmail.com', '22db6b9d4434177a4abd28b0c5781f15', 'Madura', 'Laki-laki', '089217112213', '896786128689', 'KTP-15445232623.png', 'KK3.PNG', 2),
 (4, 'Nabila', 'nabila@gmail.com', '652d3266220e0aacb047d3aa6f51f1b0', 'Bandung', 'Perempuan', '089788967123', '275782578222', 'KTP-15445232624.png', 'KK4.PNG', 2),
-(5, 'Fulan', 'fulan@gmail.com', '59ee8bd9e54c300ed35f1ead57cfdcf0', 'Bandung', 'Laki-Laki', '087789866648', '32400234843', 'KTP-15445232626.png', 'KK41.PNG', 2);
+(5, 'Fulan', 'fulan@gmail.com', '59ee8bd9e54c300ed35f1ead57cfdcf0', 'Bandung', 'Laki-laki', '087789866648', '32400234843', 'KTP-15445232626.png', 'KK41.PNG', 2),
+(6, 'Aisyah', 'aisyah@gmail.com', '26bb533df5747c7a3f2a9cc48a8cf3ee', 'Cimahi', 'Perempuan', '081334456723', '12313221489', 'KTP-154452326261.png', 'KK42.PNG', 2);
 
 --
 -- Indexes for dumped tables
@@ -216,7 +222,7 @@ ALTER TABLE `mobil`
 -- AUTO_INCREMENT untuk tabel `transaksi`
 --
 ALTER TABLE `transaksi`
-  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT untuk tabel `type`
@@ -228,7 +234,7 @@ ALTER TABLE `type`
 -- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)

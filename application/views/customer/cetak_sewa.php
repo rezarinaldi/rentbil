@@ -83,6 +83,11 @@
                             <td><?= format_rupiah($dt->total_sewa); ?></td>
                         </tr>
                         <tr>
+                            <td>Total Denda</td>
+                            <td>:</td>
+                            <td><?= format_rupiah($dt->total_denda); ?></td>
+                        </tr>
+                        <tr>
                             <td>Status Pembayaran</td>
                             <td>:</td>
                             <td>
@@ -98,6 +103,30 @@
                             </td>
                         </tr>
                         <tr>
+                            <td>Status Sewa</td>
+                            <td>:</td>
+                            <td>
+                                <?php if (($dt->status) == 0) {
+                                    echo "Batal";
+                                } elseif (($dt->status) == 1) {
+                                    echo "Sedang Menyewa";
+                                } else {
+                                    echo "Selesai";
+                                } ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Tanggal Pengembalian</td>
+                            <td>:</td>
+                            <td>
+                                <?php if (IndonesiaTgl($dt->tanggal_pengembalian) == "00-00-0000") { ?>
+                                    -
+                                <?php } else { ?>
+                                    <?= IndonesiaTgl($dt->tanggal_pengembalian) ?>
+                                <?php } ?>
+                            </td>
+                        </tr>
+                        <tr>
                             <?php
                             $jmlhari  = 86400 * 1;
                             $tgl      = strtotime($dt->tanggal_sewa) - $jmlhari;
@@ -105,7 +134,7 @@
                             ?>
                             <td colspan='3'>
                                 <b>*Silahkan transfer Total Biaya Sewa ke 123456789 Bank BNI a/n REZA RINALDI maksimal tanggal <?= $batas_bayar ?>. <br>
-                                    Untuk konfirmasi pesanan silahkan ke halaman Riwayat Sewa. Adapun jika status pembayaran 'Batal' maka transaksi tidak perlu dilanjutkan.</b>
+                                    Untuk konfirmasi pesanan silahkan ke halaman Riwayat Sewa. Adapun jika status pembayaran & sewa 'Batal' maka transaksi tidak perlu dilanjutkan.</b>
                             </td>
                         </tr>
                     <?php endforeach; ?>

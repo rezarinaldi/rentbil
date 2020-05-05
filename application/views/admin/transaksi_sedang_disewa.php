@@ -16,6 +16,7 @@
                             <th>Tgl Sewa</th>
                             <th>Tgl Kembali</th>
                             <th>Total Sewa</th>
+                            <th>Denda /Hari</th>
                             <th>Status</th>
                             <th>Action</th>
                         </tr>
@@ -33,11 +34,12 @@
                                     <td><?= IndonesiaTgl($ts->tanggal_sewa) ?></td>
                                     <td><?= IndonesiaTgl($ts->tanggal_kembali) ?></td>
                                     <td><?= format_rupiah($ts->total_sewa) ?></td>
+                                    <td><?= format_rupiah($ts->denda) ?></td>
                                     <td><span class="badge badge-warning text-dark">Sedang Disewa</span></td>
                                     <td>
-                                        <a href="<?= base_url('admin/transaksi/delete_transaksi/') . $ts->id_transaksi ?>" class="btn btn-sm btn-danger tombol-hapus"><i class="far fa-trash-alt"></i></a>
-                                        <a href="<?= base_url('admin/transaksi/edit_transaksi/') . $ts->id_transaksi ?>" class="btn btn-sm btn-warning"><i class="far fa-edit"></i></a>
+                                        <a href="<?= base_url('admin/transaksi/pengembalian_sewa/') . $ts->id_transaksi ?>" class="btn btn-sm btn-light tombol-pengembalian"><i class="fas fa-check"></i></a>
                                         <a href="<?= base_url('admin/transaksi/pembatalan_sewa/') . $ts->id_transaksi ?>" class="btn btn-sm btn-dark tombol-pembatalan"><i class="fas fa-times"></i></a>
+                                        <a href="<?= base_url('admin/transaksi/delete_transaksi/') . $ts->id_transaksi ?>" class="btn btn-sm btn-danger tombol-hapus"><i class="far fa-trash-alt"></i></a>
                                     </td>
                                 </tr>
                             <?php endif ?>

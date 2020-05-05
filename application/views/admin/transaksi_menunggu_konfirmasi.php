@@ -38,7 +38,7 @@
                                     <?php if (($ts->pickup) == 0) {
                                         echo "<span class='badge badge-dark'>Ambil Sendiri</span>";
                                     } else {
-                                        echo "<span class='badge badge-light'>Pickup Sesuai Alamat</span>";
+                                        echo "<span class='badge badge-primary'>Pickup Sesuai Alamat</span>";
                                     } ?>
                                 </td>
                                     <td><?= format_rupiah($ts->total_sewa) ?></td>

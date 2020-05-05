@@ -33,7 +33,7 @@
                         <!-- nama -->
                         <p><?= $psn->nama ?></p>
                         <!-- pesan -->
-                        <p><?= $psn->isi_pesan ?></p>
+                        <p class="mb-3"><?= $psn->isi_pesan ?></p>
                       </div>
 
                     <?php endif ?>

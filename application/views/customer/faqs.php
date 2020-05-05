@@ -42,6 +42,27 @@
 										</div>
 									</div>
 								</div>
+
+								<div class="card">
+									<div class="card-header" id="headingThree">
+										<h5 class="mb-0"><button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+												<span>Bagaimana cara menghubungi Rental Mobil Malang?</span>
+												<i class="fa fa-angle-down"></i>
+												<i class="fa fa-angle-up"></i>
+											</button></h5>
+									</div>
+									<div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+										<div class="card-body">
+											Anda dapat menghubungi pihak kami dengan beberapa cara:
+											<br>
+											1. Melalui kotak pesan, yakni menuju halaman 'Kotak Pesan' dengan menekan tombol disamping:
+											<a href="<?= base_url('customer/rental/kotak_pesan') ?>" class="rent-btn"><i class="fa fa-envelope"></i> Kotak Pesan</a>
+											<br>
+											<br>
+											2. Melalui telepon/sms/wa. Informasi nomor bisa dilihat pada card disamping kanan. Anda juga dapat melakukan pesan WhatsApp otomatis dengan menekan logo WhatsApp disamping pojok kanan website ini (Pastikan Anda sudah terhubung internet).
+										</div>
+									</div>
+								</div>
 								<!-- Single FAQ Start -->
 							</div>
 						</div>
@@ -73,6 +94,11 @@
 											No. Rekening: 123456789
 											<br>
 											Penerima: REZA RINALDI
+											<br>
+											<br>
+											Untuk mengupload bukti pembayaran bisa menuju halaman 'Riwayat Sewa' dengan menekan tombol dibawah:
+											<br>
+											<a href="<?= base_url('customer/rental/riwayat_sewa') ?>" class="rent-btn"><i class="fa fa-tag"></i> Riwayat Sewa</a>
 										</div>
 									</div>
 								</div>
@@ -108,10 +134,10 @@
 
 						<div class="sidebar-body">
 							<div class="social-icons text-center">
-								<a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
-								<a href="#" target="_blank"><i class="fa fa-whatsapp"></i></a>
-								<a href="#" target="_blank"><i class="fa fa-instagram"></i></a>
-								<a href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
+								<a href="javascript:;"><i class="fa fa-facebook"></i></a>
+								<a href="javascript:;"><i class="fa fa-whatsapp"></i></a>
+								<a href="javascript:;"><i class="fa fa-instagram"></i></a>
+								<a href="javascript:;"><i class="fa fa-linkedin"></i></a>
 							</div>
 						</div>
 					</div>

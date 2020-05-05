@@ -1,7 +1,7 @@
 <div class="main-content">
     <section class="section">
         <div class="section-header">
-            <h1>Tambah Data type</h1>
+            <h1>Tambah Data Type</h1>
         </div>
 
         <div class="card">
@@ -19,7 +19,6 @@
                                 <input type="text" name="nama_type" class="form-control">
                                 <?= form_error('nama_type', '<div class="text-small text-danger">', '</div>') ?>
                             </div>
-
                         </div>
                     </div>
                     <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> Simpan</button>

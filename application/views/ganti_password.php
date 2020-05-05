@@ -99,8 +99,7 @@
     <!-- Template JS File -->
     <script src="<?= base_url() ?>/assets/assets_stisla/assets/js/scripts.js"></script>
     <script src="<?= base_url() ?>/assets/assets_stisla/assets/js/custom.js"></script>
-
-    <!-- Page Specific JS File -->
+    
 </body>
 
 </html>

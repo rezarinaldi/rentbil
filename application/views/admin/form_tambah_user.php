@@ -38,7 +38,7 @@
                                 <label>Jenis Kelamin</label>
                                 <select name="gender" class="form-control">
                                     <option value="">Pilih Jenis Kelamin</option>
-                                    <option value="Laki-Laki">Laki-Laki</option>
+                                    <option value="Laki-laki">Laki-laki</option>
                                     <option value="Perempuan">Perempuan</option>
                                 </select>
                                 <?= form_error('gender', '<div class="text-small text-danger">', '</div>') ?>

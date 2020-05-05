@@ -43,12 +43,16 @@
                                     <input type="text" name="tahun" class="form-control" value="<?= $mb->tahun ?>">
                                     <?= form_error('tahun', '<div class="text-small text-danger">', '</div>') ?>
                                 </div>
+                                <div class="form-group">
+                                    <label>Harga</label>
+                                    <input type="text" name="harga" class="form-control" value="<?= $mb->harga ?>" required>
+                                </div>
                             </div>
 
                             <div class="col-md-6">
-                            <div class="form-group">
-                                    <label>Harga</label>
-                                    <input type="text" name="harga" class="form-control" value="<?= $mb->harga ?>" required>
+                                <div class="form-group">
+                                    <label>Denda</label>
+                                    <input type="text" name="denda" class="form-control" value="<?= $mb->denda ?>" required>
                                 </div>
                                 <div class="form-group">
                                     <label>Status</label>
@@ -70,7 +74,7 @@
                                     <img src="<?= base_url() . 'assets/upload/mobil/' . $mb->gambar ?>" width="150px">
                                     <input type="file" name="gambar" class="form-control">
                                 </div>
-                                <h4 class="mb-3">Fasilitas</h4>
+                                <h4 class="mb-3">Fasilitas Mobil</h4>
                                 <?php if ($mb->ac == "1") { ?>
                                     <div class="custom-control custom-checkbox">
                                         <input type="checkbox" class="custom-control-input" id="ac" name="ac" checked value="1">
@@ -96,7 +100,7 @@
                                 <?php if ($mb->audio_player == "1") { ?>
                                     <div class="custom-control custom-checkbox">
                                         <input type="checkbox" class="custom-control-input" id="audio_player" name="audio_player" checked value="1">
-                                        <label class="custom-control-label" for="audio_player">Audio Player</label>                                        
+                                        <label class="custom-control-label" for="audio_player">Audio Player</label>
                                     </div>
                                 <?php } else { ?>
                                     <div class="custom-control custom-checkbox">

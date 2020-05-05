@@ -57,7 +57,9 @@
 						<th>Mobil</th>
 						<th>Tgl Sewa</th>
 						<th>Tgl Kembali</th>
+						<th>Tgl Pengembalian</th>
 						<th>Total Sewa</th>
+						<th>Total Denda</th>
 						<th>Status</th>
 						<th>Status Pembayaran</th>
 					</tr>
@@ -72,7 +74,15 @@
 							<td><?= $l->merk ?></td>
 							<td><?= IndonesiaTgl($l->tanggal_sewa) ?></td>
 							<td><?= IndonesiaTgl($l->tanggal_kembali) ?></td>
+							<td>
+								<?php if (IndonesiaTgl($l->tanggal_pengembalian) == "00-00-0000") { ?>
+									-
+								<?php } else { ?>
+									<?= IndonesiaTgl($l->tanggal_pengembalian) ?>
+								<?php } ?>
+							</td>
 							<td><?= format_rupiah($l->total_sewa) ?></td>
+							<td><?= format_rupiah($l->total_denda) ?></td>
 							<td>
 								<?php if (($l->status) == 0) {
 									echo "Batal";

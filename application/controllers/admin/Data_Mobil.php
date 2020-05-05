@@ -47,6 +47,7 @@ class Data_Mobil extends CI_Controller
             $warna         = $this->input->post('warna');
             $tahun         = $this->input->post('tahun');
             $harga         = $this->input->post('harga');
+            $denda         = $this->input->post('denda');
             $ac            = $this->input->post('ac');
             $supir         = $this->input->post('supir');
             $audio_player  = $this->input->post('audio_player');
@@ -73,6 +74,7 @@ class Data_Mobil extends CI_Controller
                 'tahun'        => $tahun,
                 'warna'        => $warna,
                 'harga'        => $harga,
+                'denda'        => $denda,
                 'ac'           => $ac,
                 'supir'        => $supir,
                 'audio_player' => $audio_player,
@@ -119,6 +121,7 @@ class Data_Mobil extends CI_Controller
             $warna         = $this->input->post('warna');
             $tahun         = $this->input->post('tahun');
             $harga         = $this->input->post('harga');
+            $denda         = $this->input->post('denda');
             $ac            = $this->input->post('ac');
             $supir         = $this->input->post('supir');
             $audio_player  = $this->input->post('audio_player');
@@ -146,6 +149,7 @@ class Data_Mobil extends CI_Controller
                 'tahun'        => $tahun,
                 'warna'        => $warna,
                 'harga'        => $harga,
+                'denda'        => $denda,
                 'ac'           => $ac,
                 'supir'        => $supir,
                 'audio_player' => $audio_player,
