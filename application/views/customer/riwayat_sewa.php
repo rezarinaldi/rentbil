@@ -31,10 +31,10 @@
                                     <th>No</th>
                                     <th>Nama</th>
                                     <th>Merk Mobil</th>
-                                    <th>Tanggal Sewa</th>
-                                    <th>Tanggal Kembali</th>
                                     <th>Total Sewa</th>
+                                    <th>Total Denda</th>
                                     <th>Status Pembayaran</th>
+                                    <th>Batal Sewa</th>
                                     <th>Bukti Pembayaran</th>
                                     <th>Cetak</th>
                                 </tr>
@@ -47,9 +47,8 @@
                                         <td><?= $no++ ?></td>
                                         <td><?= $ts->nama ?></td>
                                         <td><?= $ts->merk ?></td>
-                                        <td><?= IndonesiaTgl($ts->tanggal_sewa) ?></td>
-                                        <td><?= IndonesiaTgl($ts->tanggal_kembali) ?></td>
                                         <td><?= format_rupiah($ts->total_sewa) ?></td>
+                                        <td><?= format_rupiah($ts->total_denda) ?></td>
                                         <td>
                                             <?php if (($ts->status_pembayaran) == 0) { ?>
                                                 <span class='btn btn-sm btn-danger'><i class="fa fa-times"></i> Belum Dibayar</span>
@@ -59,6 +58,15 @@
                                                 <span class='btn btn-sm btn-success'><i class="fa fa-check"></i> Sudah Dibayar</span>
                                             <?php } else { ?>
                                                 <span class='btn btn-sm btn-dark'><i class="fa fa-times"></i> Batal</span>
+                                            <?php } ?>
+                                        </td>
+                                        <td>
+                                            <?php if ($ts->status == 1) { ?>
+                                                <a href="<?= base_url('customer/rental/batal_sewa/') . $ts->id_transaksi ?>" onclick="return confirm('Yakin ingin membatalkan sewa?')" class="btn btn-sm btn-dark"><i class="fa fa-times"></i> Batal Sewa</a>
+                                            <?php } elseif ($ts->status == 2 || $ts->status == 0) { ?>
+                                                <button type="button" class="btn btn-sm btn-dark" data-toggle="modal" data-target="#batal">
+                                                    <i class="fa fa-times"></i> Batal Sewa
+                                                </button>
                                             <?php } ?>
                                         </td>
                                         <td>
@@ -121,3 +129,26 @@
 </div>
 
 <!--== Modal Konfirmasi Pembayaran End ==-->
+
+<!--== Modal Batal Penyewaan Start ==-->
+
+<div class="modal fade" id="batal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Informasi Batal Transaksi</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Maaf, transaksi ini telah selesai atau telah dibatalkan :)
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-sm btn-success" data-dismiss="modal"><i class="fa fa-check"></i> Oke</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--== Modal Batal Penyewaan End ==-->

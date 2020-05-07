@@ -282,19 +282,19 @@ class Transaksi extends CI_Controller
 
     public function pembatalan_sewa($id)
     {
-        $id_transaksi = $id;
-        $status = 0;
-        $status_pembayaran = 3;
+        $where = array('id_transaksi' => $id);
+        $data = $this->transaksi_model->get_where($where, 'transaksi')->row();
+
+        $where2 = array('id_mobil' => $data->id_mobil);
+
+        $data2 = array('status_mobil' => '1');
 
         $data = array(
-            'status' => $status,
-            'status_pembayaran' => $status_pembayaran
+            'status' => '0',
+            'status_pembayaran' => '3'
         );
 
-        $where = array(
-            'id_transaksi' => $id_transaksi
-        );
-
+        $this->transaksi_model->edit_data('mobil', $data2, $where2);
         $this->transaksi_model->edit_data('transaksi', $data, $where);
 
         $this->session->set_flashdata('pesan', '
@@ -314,7 +314,7 @@ class Transaksi extends CI_Controller
         $data = array(
             'status_pembayaran' => $status_pembayaran
         );
-        
+
         $where = array(
             'id_transaksi' => $id_transaksi
         );
