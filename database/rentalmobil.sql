@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 07 Bulan Mei 2020 pada 03.46
+-- Waktu pembuatan: 07 Bulan Mei 2020 pada 04.00
 -- Versi server: 10.4.8-MariaDB
 -- Versi PHP: 7.3.10
 
@@ -79,9 +79,9 @@ CREATE TABLE `pesan` (
 --
 
 INSERT INTO `pesan` (`id_pesan`, `id_user`, `subjek`, `isi_pesan`, `tgl_posting`, `status`) VALUES
-(0, 6, 'Batal Penyewaan', 'Bismillah.. Assalamu\'alaikum.. kak tolong batalkan penyewaan saya. Terima kasih :)', '2020-05-05 09:19:44', 1),
-(1, 2, 'Salam', 'Bismillah.. Assalamu\'alaikum akhy :)', '2020-04-09 18:36:01', 0),
-(2, 4, 'Salam', 'Bismillah.. Assalamu\'alaikum, anta sehat? :)', '2020-04-09 19:05:23', 1);
+(1, 2, 'Salam', 'Bismillah.. Assalamu\'alaikum akhy :)', '2020-04-09 11:36:01', 0),
+(2, 4, 'Salam', 'Bismillah.. Assalamu\'alaikum, anta sehat? :)', '2020-04-09 12:05:23', 1),
+(3, 6, 'Batal Penyewaan', 'Bismillah.. Assalamu\'alaikum.. kak tolong batalkan penyewaan saya. Terima kasih :)', '2020-05-05 02:19:44', 1);
 
 -- --------------------------------------------------------
 
@@ -218,6 +218,12 @@ ALTER TABLE `user`
 --
 ALTER TABLE `mobil`
   MODIFY `id_mobil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT untuk tabel `pesan`
+--
+ALTER TABLE `pesan`
+  MODIFY `id_pesan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `transaksi`
