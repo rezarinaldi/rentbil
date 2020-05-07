@@ -45,7 +45,7 @@
                                     <td><span class="badge badge-info">Menunggu Konfirmasi</span></td>
                                     <td>
                                         <a href="<?= base_url() . 'assets/upload/bukti_pembayaran/' . $ts->bukti_pembayaran ?>">
-                                            <img width="100px" height="60px" src="<?= base_url() . 'assets/upload/bukti_pembayaran/' . $ts->bukti_pembayaran ?>">
+                                            <img width="80px" src="<?= base_url() . 'assets/upload/bukti_pembayaran/' . $ts->bukti_pembayaran ?>">
                                         </a>
                                     </td>
                                     <td>

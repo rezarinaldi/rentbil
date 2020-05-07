@@ -142,7 +142,7 @@ class Transaksi extends CI_Controller
         <button transaksi="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span>
         </button></div>');
-        redirect('admin/transaksi/menunggu_pembayaran');
+        redirect('admin/transaksi');
     }
 
     public function delete_transaksi($id)

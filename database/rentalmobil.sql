@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 05 Bulan Mei 2020 pada 13.34
+-- Waktu pembuatan: 07 Bulan Mei 2020 pada 03.46
 -- Versi server: 10.4.8-MariaDB
 -- Versi PHP: 7.3.10
 
@@ -50,14 +50,14 @@ CREATE TABLE `mobil` (
 --
 
 INSERT INTO `mobil` (`id_mobil`, `id_type`, `merk`, `no_plat`, `warna`, `tahun`, `harga`, `denda`, `ac`, `supir`, `audio_player`, `central_lock`, `status_mobil`, `gambar`) VALUES
-(1, 2, 'Suzuki Ciaz White', 'N 1985 RTF', 'Putih', '2019', 800000, 40000, 1, 1, 1, 1, 1, 'mobil-suzuki-ciaz1.jpg'),
-(2, 2, 'Suzuki Ciaz Brown', 'N 6758 AW', 'Cokelat', '2017', 600000, 30000, 1, NULL, 1, NULL, 1, 'Suzuki-Ciaz.jpg'),
-(3, 2, 'Suzuki Ertiga', 'N 1985 NK', 'Silver', '2018', 650000, 32500, 1, NULL, 1, 1, 0, 'Suzuki-All-new-Ertiga-2018-Warna-merah-Pearl-Radiant-Red.jpg'),
-(4, 1, 'Hyundai 720', 'N 9547 HUY', 'Silver', '2014', 1000000, 50000, 1, 1, 1, 1, 0, 'slider-img-2.jpg'),
-(5, 1, 'BMW 1500', 'N 1456 DAG', 'Biru', '2015', 400000, 20000, 1, NULL, 1, NULL, 1, 'car-3.jpg'),
-(6, 1, 'BMW 177', 'N 1234 CAH', 'Biru', '2019', 500000, 25000, 1, 1, 1, NULL, 1, 'car-2.jpg'),
-(7, 1, 'BMW 577', 'N 4321 DB', 'Kuning', '2018', 700000, 35000, 1, 1, 1, NULL, 1, 'car-6.jpg'),
-(8, 2, 'BMW 115', 'N 2707 GG', 'Merah', '2017', 450000, 22500, 1, NULL, 1, 1, 1, 'car-4.jpg');
+(1, 2, 'Suzuki Ciaz White', 'N 1985 RTF', 'Putih', '2019', 700000, 35000, 1, 1, 1, NULL, 1, 'mobil-suzuki-ciaz1.jpg'),
+(2, 2, 'Suzuki Ciaz Brown', 'N 6758 AW', 'Cokelat', '2017', 600000, 30000, 1, NULL, 1, 1, 1, 'Suzuki-Ciaz.jpg'),
+(3, 2, 'Suzuki Ertiga', 'N 1985 NK', 'Merah', '2018', 400000, 20000, 1, NULL, NULL, 1, 0, 'Suzuki-All-new-Ertiga-2018-Warna-merah-Pearl-Radiant-Red.jpg'),
+(4, 1, 'Hyundai 720', 'N 9547 HUY', 'Silver', '2014', 700000, 35000, 1, 1, 1, NULL, 0, 'slider-img-2.jpg'),
+(5, 1, 'BMW 1500', 'N 1456 DAG', 'Biru', '2015', 900000, 45000, 1, 1, 1, 1, 1, 'car-3.jpg'),
+(6, 1, 'BMW 177', 'N 1234 CAH', 'Biru', '2019', 900000, 45000, 1, 1, 1, 1, 1, 'car-2.jpg'),
+(7, 1, 'BMW 577', 'N 4321 DB', 'Kuning', '2018', 600000, 30000, 1, 1, NULL, 1, 1, 'car-6.jpg'),
+(8, 2, 'BMW 115', 'N 2707 GG', 'Merah', '2017', 400000, 20000, 1, NULL, 1, NULL, 0, 'car-4.jpg');
 
 -- --------------------------------------------------------
 
@@ -109,14 +109,15 @@ CREATE TABLE `transaksi` (
 --
 
 INSERT INTO `transaksi` (`id_transaksi`, `id_user`, `id_mobil`, `tanggal_sewa`, `tanggal_kembali`, `tanggal_pengembalian`, `total_sewa`, `total_denda`, `pickup`, `status`, `status_pembayaran`, `bukti_pembayaran`) VALUES
-(1, 1, 1, '2020-02-20', '2020-02-22', '2020-02-22', 1600000, 0, 0, 2, 2, 'Screenshot_121.jpg'),
+(1, 1, 1, '2020-02-20', '2020-02-22', '2020-02-22', 1400000, 0, 0, 2, 2, 'Screenshot_121.jpg'),
 (2, 3, 2, '2020-02-06', '2020-02-08', '2020-02-10', 1200000, 60000, 0, 2, 2, 'IMG-20190914-WA00071.jpeg'),
-(3, 3, 3, '2020-02-27', '2020-02-29', '2020-03-03', 1300000, 97500, 0, 2, 2, 'Screenshot_12.jpg'),
+(3, 3, 3, '2020-02-27', '2020-02-29', '2020-03-03', 800000, 60000, 0, 2, 2, 'Screenshot_12.jpg'),
 (4, 4, 2, '2020-03-25', '2020-03-31', '2020-04-02', 3600000, 60000, 1, 2, 2, 'WhatsApp_Image_2020-03-14_at_12_44_18_PM.jpeg'),
-(5, 1, 4, '2020-04-01', '2020-04-16', '2020-04-16', 15000000, 0, 1, 2, 2, 'IMG-20190914-WA0007.jpeg'),
-(6, 4, 4, '2020-04-01', '2020-04-02', '0000-00-00', 1000000, 0, 1, 1, 1, 'Screenshot_122.jpg'),
-(7, 2, 3, '2020-04-17', '2020-04-18', '0000-00-00', 650000, 0, 1, 0, 0, ''),
-(8, 6, 5, '2020-05-05', '2020-05-07', NULL, 800000, 0, 1, 0, 3, '');
+(5, 1, 4, '2020-04-01', '2020-04-16', '2020-04-16', 10500000, 0, 1, 2, 2, 'IMG-20190914-WA0007.jpeg'),
+(6, 4, 4, '2020-04-01', '2020-04-02', '0000-00-00', 1400000, 0, 1, 1, 2, 'Screenshot_122.jpg'),
+(7, 2, 3, '2020-04-17', '2020-04-18', '0000-00-00', 400000, 0, 1, 1, 0, ''),
+(8, 6, 5, '2020-05-05', '2020-05-07', NULL, 1800000, 0, 1, 0, 3, ''),
+(9, 5, 8, '2020-05-07', '2020-05-09', NULL, 800000, 0, 0, 1, 1, 'photo6167767273113233753.jpg');
 
 -- --------------------------------------------------------
 
@@ -222,7 +223,7 @@ ALTER TABLE `mobil`
 -- AUTO_INCREMENT untuk tabel `transaksi`
 --
 ALTER TABLE `transaksi`
-  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT untuk tabel `type`

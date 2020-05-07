@@ -115,7 +115,7 @@
 
 
 
-<!-- MODAL User -->
+<!-- MODAL USER -->
 
 <div class="modal fade" id="modal-user">
 	<div class="modal-dialog" style="min-width: 700px; max-height: 80%">
@@ -169,7 +169,7 @@
 <!-- MODAL MOBIL -->
 
 <div class="modal fade" id="modal-mobil">
-	<div class="modal-dialog" style="min-width: 700px; max-height: 80%">
+	<div class="modal-dialog" style="min-width: 850px; max-height: 95%">
 		<div class="modal-content">
 			<div class="modal-header">
 				<h4 class="modal-title">Pilih Mobil Tersedia</h4>
@@ -187,6 +187,7 @@
 							<th>No. Plat</th>
 							<th>Warna</th>
 							<th>Tahun</th>
+							<th>Harga</th>
 							<th>Action</th>
 						</tr>
 					</thead>
@@ -202,6 +203,7 @@
 									<td><?= $mb->no_plat ?></td>
 									<td><?= $mb->warna ?></td>
 									<td><?= $mb->tahun ?></td>
+									<td><?= format_rupiah($mb->harga) ?></td>
 									<td>
 										<button class="btn btn-xs btn-primary input-group-append" id="select_mobil" data-id="<?= $mb->id_mobil ?>" data-merk="<?= $mb->merk ?>" data-harga="<?= $mb->harga ?>">
 											<i class="fas fa-check mr-1 mt-1"></i>Select
