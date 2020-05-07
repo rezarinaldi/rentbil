@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 07 Bulan Mei 2020 pada 04.00
+-- Waktu pembuatan: 07 Bulan Mei 2020 pada 20.54
 -- Versi server: 10.4.8-MariaDB
 -- Versi PHP: 7.3.10
 
@@ -53,7 +53,7 @@ INSERT INTO `mobil` (`id_mobil`, `id_type`, `merk`, `no_plat`, `warna`, `tahun`,
 (1, 2, 'Suzuki Ciaz White', 'N 1985 RTF', 'Putih', '2019', 700000, 35000, 1, 1, 1, NULL, 1, 'mobil-suzuki-ciaz1.jpg'),
 (2, 2, 'Suzuki Ciaz Brown', 'N 6758 AW', 'Cokelat', '2017', 600000, 30000, 1, NULL, 1, 1, 1, 'Suzuki-Ciaz.jpg'),
 (3, 2, 'Suzuki Ertiga', 'N 1985 NK', 'Merah', '2018', 400000, 20000, 1, NULL, NULL, 1, 0, 'Suzuki-All-new-Ertiga-2018-Warna-merah-Pearl-Radiant-Red.jpg'),
-(4, 1, 'Hyundai 720', 'N 9547 HUY', 'Silver', '2014', 700000, 35000, 1, 1, 1, NULL, 0, 'slider-img-2.jpg'),
+(4, 1, 'Honda Civic', 'N 9547 HUY', 'Silver', '2014', 700000, 35000, 1, 1, 1, NULL, 0, 'slider-img-2.jpg'),
 (5, 1, 'BMW 1500', 'N 1456 DAG', 'Biru', '2015', 900000, 45000, 1, 1, 1, 1, 1, 'car-3.jpg'),
 (6, 1, 'BMW 177', 'N 1234 CAH', 'Biru', '2019', 900000, 45000, 1, 1, 1, 1, 1, 'car-2.jpg'),
 (7, 1, 'BMW 577', 'N 4321 DB', 'Kuning', '2018', 600000, 30000, 1, 1, NULL, 1, 1, 'car-6.jpg'),

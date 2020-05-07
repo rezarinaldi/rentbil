@@ -102,7 +102,7 @@
               </ul>
             </li>
 
-            <li><a class="nav-link" href="<?= base_url('admin/data_user') ?>"><i class="fas fa-users"></i> <span>Data User</span></a></li>
+            <li><a class="nav-link" href="<?= base_url('admin/data_user') ?>"><i class="far fa-user"></i> <span>Data User</span></a></li>
 
             <li class="nav-item dropdown">
               <a href="javascript:;" class="nav-link has-dropdown" data-toggle="dropdown"><i class="far fa-file-alt"></i> <span>Laporan</span></a>
