@@ -18,6 +18,7 @@
                             <th>Tgl Kembali</th>
                             <th>Tgl Pengembalian</th>
                             <th>Metode Pickup</th>
+                            <th>Bukti Pembayaran</th>
                             <th>Total Sewa</th>
                             <th>Total Denda</th>
                             <th>Status</th>
@@ -48,6 +49,15 @@
                                     } else {
                                         echo "<span class='badge badge-primary'>Pickup Sesuai Alamat</span>";
                                     } ?>
+                                </td>
+                                <td>
+                                    <?php if ($ts->status_pembayaran == 0 || $ts->status_pembayaran == 3) { ?>
+                                        -
+                                    <?php  } elseif ($ts->status_pembayaran == 1 || $ts->status_pembayaran == 2) { ?>
+                                        <a href="<?= base_url() . 'assets/upload/bukti_pembayaran/' . $ts->bukti_pembayaran ?>">
+                                            <img width="80px" src="<?= base_url() . 'assets/upload/bukti_pembayaran/' . $ts->bukti_pembayaran ?>">
+                                        </a>
+                                    <?php } ?>
                                 </td>
                                 <td><?= format_rupiah($ts->total_sewa) ?></td>
                                 <td><?= format_rupiah($ts->total_denda) ?></td>

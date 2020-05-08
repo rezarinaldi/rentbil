@@ -35,12 +35,12 @@
                                     <td><?= IndonesiaTgl($ts->tanggal_sewa) ?></td>
                                     <td><?= IndonesiaTgl($ts->tanggal_kembali) ?></td>
                                     <td>
-                                    <?php if (($ts->pickup) == 0) {
-                                        echo "<span class='badge badge-dark'>Ambil Sendiri</span>";
-                                    } else {
-                                        echo "<span class='badge badge-primary'>Pickup Sesuai Alamat</span>";
-                                    } ?>
-                                </td>
+                                        <?php if (($ts->pickup) == 0) {
+                                            echo "<span class='badge badge-dark'>Ambil Sendiri</span>";
+                                        } else {
+                                            echo "<span class='badge badge-primary'>Pickup Sesuai Alamat</span>";
+                                        } ?>
+                                    </td>
                                     <td><?= format_rupiah($ts->total_sewa) ?></td>
                                     <td><span class="badge badge-info">Menunggu Konfirmasi</span></td>
                                     <td>
