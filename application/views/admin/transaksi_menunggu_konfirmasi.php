@@ -50,7 +50,6 @@
                                     </td>
                                     <td>
                                         <a href="<?= base_url('admin/transaksi/konfirmasi_pembayaran/') . $ts->id_transaksi ?>" class="btn btn-sm btn-light tombol-konfirmasi"><i class="fas fa-check"></i></a>
-                                        <a href="<?= base_url('admin/transaksi/pembatalan_sewa/') . $ts->id_transaksi ?>" class="btn btn-sm btn-dark tombol-pembatalan"><i class="fas fa-times"></i></a>
                                     </td>
                                 </tr>
                             <?php endif ?>

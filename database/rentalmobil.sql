@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 07 Bulan Mei 2020 pada 22.29
+-- Waktu pembuatan: 08 Bulan Mei 2020 pada 09.00
 -- Versi server: 10.4.8-MariaDB
 -- Versi PHP: 7.3.10
 
@@ -117,7 +117,8 @@ INSERT INTO `transaksi` (`id_transaksi`, `id_user`, `id_mobil`, `tanggal_sewa`, 
 (6, 4, 4, '2020-04-01', '2020-04-02', '0000-00-00', 1400000, 0, 1, 1, 2, 'Screenshot_122.jpg'),
 (7, 2, 3, '2020-04-17', '2020-04-18', '0000-00-00', 400000, 0, 1, 1, 0, ''),
 (8, 6, 5, '2020-05-05', '2020-05-07', NULL, 1800000, 0, 1, 0, 3, ''),
-(9, 5, 8, '2020-05-07', '2020-05-09', NULL, 800000, 0, 0, 1, 1, 'photo6167767273113233753.jpg');
+(9, 5, 8, '2020-05-07', '2020-05-09', NULL, 800000, 0, 0, 1, 1, 'photo6167767273113233753.jpg'),
+(10, 5, 6, '2020-05-10', '2020-05-13', '2020-05-15', 2700000, 90000, 0, 2, 2, 'Screenshot_1221.jpg');
 
 -- --------------------------------------------------------
 
@@ -229,7 +230,7 @@ ALTER TABLE `pesan`
 -- AUTO_INCREMENT untuk tabel `transaksi`
 --
 ALTER TABLE `transaksi`
-  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT untuk tabel `type`

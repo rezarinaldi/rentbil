@@ -37,8 +37,6 @@
                                     <td><?= format_rupiah($ts->denda) ?></td>
                                     <td><span class="badge badge-warning text-dark">Sedang Disewa</span></td>
                                     <td>
-                                        <a href="<?= base_url('admin/transaksi/pengembalian_sewa/') . $ts->id_transaksi ?>" class="btn btn-sm btn-light tombol-pengembalian"><i class="fas fa-check"></i></a>
-                                        <a href="<?= base_url('admin/transaksi/pembatalan_sewa/') . $ts->id_transaksi ?>" class="btn btn-sm btn-dark tombol-pembatalan"><i class="fas fa-times"></i></a>
                                         <a href="<?= base_url('admin/transaksi/delete_transaksi/') . $ts->id_transaksi ?>" class="btn btn-sm btn-danger tombol-hapus"><i class="far fa-trash-alt"></i></a>
                                         <a href="<?= base_url('admin/transaksi/edit_transaksi/') . $ts->id_transaksi ?>" class="btn btn-sm btn-warning"><i class="far fa-edit"></i></a>
                                     </td>
