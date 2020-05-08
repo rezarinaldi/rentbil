@@ -31,7 +31,8 @@
 
 					<h5 class="mb-4"><i class="fa fa-whatsapp"></i> No. WA: <font color="#FFD000">(0853) 34424941</font></h5>
 					<h5 class="mb-4"><i class="fa fa-comment"></i> No. Telp/SMS: <font color="#FFD000">(0858) 77990684</font></h5>
-					<h5 class="mb-4"><i class="fa fa-envelope"></i> E-mail: <font color="#FFD000">rentalmobilmlg@gmail.com</font></h5>
+					<h5 class="mb-5"><i class="fa fa-envelope"></i> E-mail: <font color="#FFD000">rentalmobilmlg@gmail.com</font></h5>
+					<h5 class="float-right">Ttd, Reza Rinaldi (1841720078).</h5>
 				</div>
 			</div>
 		</div>
