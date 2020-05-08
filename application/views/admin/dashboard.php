@@ -133,7 +133,7 @@
                       if ($psn->status == 0) :
                     ?>
 
-                        <a href="#" class="ticket-item">
+                        <a href="<?= base_url('admin/data_pesan') ?>" class="ticket-item">
                           <div class="ticket-title">
                             <!-- isi pesan -->
                             <h4><?= $psn->isi_pesan ?></h4>

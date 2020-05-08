@@ -63,13 +63,17 @@
                                 <div class="form-group">
                                     <label>Scan KTP</label>
                                     <br>
-                                    <img src="<?= base_url() . 'assets/upload/user/' . $us->scan_ktp ?>" width="150px">
+                                    <a href="<?= base_url() . 'assets/upload/user/' . $us->scan_ktp ?>">
+                                        <img src="<?= base_url() . 'assets/upload/user/' . $us->scan_ktp ?>" width="150px">
+                                    </a>
                                     <input type="file" name="scan_ktp" class="form-control">
                                 </div>
                                 <div class="form-group">
                                     <label>Scan KK</label>
                                     <br>
-                                    <img src="<?= base_url() . 'assets/upload/user/' . $us->scan_kk ?>" width="150px">
+                                    <a href="<?= base_url() . 'assets/upload/user/' . $us->scan_kk ?>">
+                                        <img src="<?= base_url() . 'assets/upload/user/' . $us->scan_kk ?>" width="150px">
+                                    </a>
                                     <input type="file" name="scan_kk" class="form-control">
                                 </div>
                                 <div class="form-group">

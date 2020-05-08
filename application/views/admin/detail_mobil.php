@@ -10,7 +10,9 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-7">
-                        <img class="mt-3" width="500px" src="<?= base_url() . 'assets/upload/mobil/' . $dt->gambar ?>">
+                        <a href="<?= base_url() . 'assets/upload/mobil/' . $dt->gambar ?>">
+                            <img class="mt-3" width="500px" src="<?= base_url() . 'assets/upload/mobil/' . $dt->gambar ?>">
+                        </a>
                     </div>
                     <div class="col-md-5">
                         <table class="table table-striped table-bordered">

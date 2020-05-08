@@ -71,7 +71,9 @@
                                 <div class="form-group">
                                     <label>Gambar</label>
                                     <br>
-                                    <img src="<?= base_url() . 'assets/upload/mobil/' . $mb->gambar ?>" width="150px">
+                                    <a href="<?= base_url() . 'assets/upload/mobil/' . $mb->gambar ?>">
+                                        <img src="<?= base_url() . 'assets/upload/mobil/' . $mb->gambar ?>" width="150px">
+                                    </a>
                                     <input type="file" name="gambar" class="form-control">
                                 </div>
                                 <h4 class="mb-3">Fasilitas Mobil</h4>
