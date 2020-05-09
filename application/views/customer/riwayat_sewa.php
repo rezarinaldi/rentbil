@@ -62,7 +62,7 @@
                                             <?php } ?>
                                         </td>
                                         <td>
-                                            <?php if ($ts->status == 0) { ?>
+                                            <?php if ($ts->status == 0 || $ts->status_pembayaran == 0 || $ts->status_pembayaran == 1) { ?>
                                                 -
                                             <?php } elseif ($ts->status == 1) { ?>
                                                 <a class="btn btn-sm btn-primary" href="<?= base_url('customer/rental/pengembalian_mobil/') . $ts->id_transaksi ?>"><i class="fa fa-flag"></i> Pengembalian
