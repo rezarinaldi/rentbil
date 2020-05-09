@@ -243,4 +243,12 @@ class Data_User extends CI_Controller
         </button></div>');
         redirect('admin/data_user');
     }
+
+    //fitur print laporan
+    function laporan_print()
+    {
+        $data['title'] = 'Laporan Daftar Customer';
+        $data['user'] = $this->user_model->get_data('user')->result();
+        $this->load->view('admin/laporan_user_print', $data);
+    }
 }

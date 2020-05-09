@@ -89,26 +89,3 @@ $('.tombol-konfirmasi').on('click', function (e) {
 	})
 
 });
-
-// tombol-pembatalan
-$('.tombol-pembatalan').on('click', function (e) {
-
-	e.preventDefault();
-	const href = $(this).attr('href');
-
-	Swal({
-		title: 'Batal Sewa',
-		text: "yakin ingin membatalkan sewa?",
-		type: 'warning',
-		showCancelButton: true,
-		confirmButtonColor: '#3085d6',
-		cancelButtonColor: '#d33',
-		confirmButtonText: 'Oke',
-		cancelButtonText: 'Batal'
-	}).then((result) => {
-		if (result.value) {
-			document.location.href = href;
-		}
-	})
-
-});
