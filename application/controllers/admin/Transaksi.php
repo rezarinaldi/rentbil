@@ -110,7 +110,6 @@ class Transaksi extends CI_Controller
         $harga_mobil = $this->input->post('harga');
         $selisih_hari = ((abs(strtotime($tanggal_sewa) - strtotime($tanggal_kembali))) / (60 * 60 * 24));
         $total_sewa = $harga_mobil * round($selisih_hari);
-        $status = $this->input->post('status');
         $pickup = $this->input->post('pickup');
 
         $data = array(
@@ -120,21 +119,20 @@ class Transaksi extends CI_Controller
             'tanggal_sewa' => $tanggal_sewa,
             'tanggal_kembali' => $tanggal_kembali,
             'total_sewa' => $total_sewa,
-            'status' => $status,
+            'status' => 1,
             'pickup' => $pickup
         );
+
+        $where2 = array('id_mobil' => $data->id_mobil);
+
+        $data2 = array('status_mobil' => '0');
 
         $where = array(
             'id_transaksi' => $id_transaksi
         );
 
+        $this->transaksi_model->edit_data('mobil', $data2, $where2);
         $this->transaksi_model->edit_data('transaksi', $data, $where);
-
-        if ($status == 1) {
-            $this->transaksi_model->insert_status_mobil_kosong($id_mobil, 'mobil');
-        } else {
-            $this->transaksi_model->insert_status_mobil_sedia($id_mobil, 'mobil');
-        }
 
         $this->session->set_flashdata('pesan', '
         <div class="alert alert-success alert-dismissible fade show" role="alert">

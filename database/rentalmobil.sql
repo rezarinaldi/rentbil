@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 08 Bulan Mei 2020 pada 09.00
+-- Waktu pembuatan: 09 Bulan Mei 2020 pada 05.35
 -- Versi server: 10.4.8-MariaDB
 -- Versi PHP: 7.3.10
 
@@ -71,7 +71,7 @@ CREATE TABLE `pesan` (
   `subjek` varchar(30) DEFAULT NULL,
   `isi_pesan` longtext DEFAULT NULL,
   `tgl_posting` timestamp NOT NULL DEFAULT current_timestamp(),
-  `status` int(11) NOT NULL
+  `status` int(11) NOT NULL COMMENT '0. belum dibaca, 1. sudah dibaca'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
