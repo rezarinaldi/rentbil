@@ -39,6 +39,9 @@
 									<div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
 										<div class="card-body">
 											Pertama anda harus login terlebih dahulu sebagai customer sebelum melakukan penyewaan.
+											<br>
+											<br>
+											<b>Ketika Anda ingin menyewa pastikan memilih tanggal sewa minimal dibesok harinya, karena tanggal maksimal pembayaran adalah h-1 sebelum tanggal sewa.</b>
 										</div>
 									</div>
 								</div>

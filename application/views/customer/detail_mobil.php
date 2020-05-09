@@ -133,10 +133,10 @@
 
                         <div class="sidebar-body">
                             <div class="social-icons text-center">
-                                <a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
-                                <a href="#" target="_blank"><i class="fa fa-whatsapp"></i></a>
-                                <a href="#" target="_blank"><i class="fa fa-instagram"></i></a>
-                                <a href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
+                                <a href="javascript:;"><i class="fa fa-facebook"></i></a>
+                                <a href="javascript:;"><i class="fa fa-whatsapp"></i></a>
+                                <a href="javascript:;"><i class="fa fa-instagram"></i></a>
+                                <a href="javascript:;"><i class="fa fa-linkedin"></i></a>
                             </div>
                         </div>
                     </div>

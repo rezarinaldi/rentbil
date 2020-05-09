@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 09 Bulan Mei 2020 pada 05.35
+-- Waktu pembuatan: 10 Bulan Mei 2020 pada 01.51
 -- Versi server: 10.4.8-MariaDB
 -- Versi PHP: 7.3.10
 
@@ -50,14 +50,15 @@ CREATE TABLE `mobil` (
 --
 
 INSERT INTO `mobil` (`id_mobil`, `id_type`, `merk`, `no_plat`, `warna`, `tahun`, `harga`, `denda`, `ac`, `supir`, `audio_player`, `central_lock`, `status_mobil`, `gambar`) VALUES
-(1, 2, 'Suzuki Ciaz White', 'N 1985 RTF', 'Putih', '2019', 700000, 35000, 1, 1, 1, NULL, 1, 'mobil-suzuki-ciaz1.jpg'),
-(2, 2, 'Suzuki Ciaz Brown', 'N 6758 AW', 'Cokelat', '2017', 600000, 30000, 1, NULL, 1, 1, 1, 'Suzuki-Ciaz.jpg'),
+(1, 1, 'Suzuki Ciaz White', 'N 1985 RTF', 'Putih', '2019', 700000, 35000, 1, 1, 1, NULL, 1, 'mobil-suzuki-ciaz1.jpg'),
+(2, 1, 'Suzuki Ciaz Brown', 'N 6758 AW', 'Cokelat', '2017', 600000, 30000, 1, NULL, 1, 1, 1, 'Suzuki-Ciaz.jpg'),
 (3, 2, 'Suzuki Ertiga', 'N 1985 NK', 'Merah', '2018', 400000, 20000, 1, NULL, NULL, 1, 0, 'Suzuki-All-new-Ertiga-2018-Warna-merah-Pearl-Radiant-Red.jpg'),
 (4, 1, 'Honda Civic', 'N 9547 HUY', 'Silver', '2014', 700000, 35000, 1, 1, 1, NULL, 0, 'slider-img-2.jpg'),
-(5, 1, 'BMW 1500', 'N 1456 DAG', 'Biru', '2015', 900000, 45000, 1, 1, 1, 1, 1, 'car-3.jpg'),
-(6, 1, 'BMW 177', 'N 1234 CAH', 'Biru', '2019', 900000, 45000, 1, 1, 1, 1, 1, 'car-2.jpg'),
-(7, 1, 'BMW 577', 'N 4321 DB', 'Kuning', '2018', 600000, 30000, 1, 1, NULL, 1, 1, 'car-6.jpg'),
-(8, 2, 'BMW 115', 'N 2707 GG', 'Merah', '2017', 400000, 20000, 1, NULL, 1, NULL, 0, 'car-4.jpg');
+(5, 3, 'BMW 1500', 'N 1456 DAG', 'Biru', '2015', 900000, 45000, 1, 1, 1, 1, 1, 'car-3.jpg'),
+(6, 3, 'BMW 177', 'N 1234 CAH', 'Biru', '2019', 900000, 45000, 1, 1, 1, 1, 1, 'car-2.jpg'),
+(7, 3, 'BMW 577', 'N 4321 DB', 'Kuning', '2018', 600000, 30000, 1, 1, NULL, 1, 1, 'car-6.jpg'),
+(8, 3, 'BMW 115', 'N 2707 GG', 'Merah', '2017', 400000, 20000, 1, NULL, 1, NULL, 0, 'car-4.jpg'),
+(9, 2, 'Datsun Cross', 'N 5678 CV', 'Emas', '2017', 800000, 40000, 1, 1, 1, 1, 1, 'datsun_go_cross.jpg');
 
 -- --------------------------------------------------------
 
@@ -81,7 +82,8 @@ CREATE TABLE `pesan` (
 INSERT INTO `pesan` (`id_pesan`, `id_user`, `subjek`, `isi_pesan`, `tgl_posting`, `status`) VALUES
 (1, 2, 'Salam', 'Bismillah.. Assalamu\'alaikum akhy :)', '2020-04-09 11:36:01', 0),
 (2, 4, 'Salam', 'Bismillah.. Assalamu\'alaikum, anta sehat? :)', '2020-04-09 12:05:23', 1),
-(3, 6, 'Batal Sewa', 'Bismillah.. Assalamu\'alaikum.. Maaf ya kak saya batalkan penyewaannya hihi..', '2020-05-05 02:19:44', 0);
+(3, 6, 'Batal Sewa', 'Bismillah.. Assalamu\'alaikum.. Maaf ya kak saya batalkan penyewaannya hihi..', '2020-05-05 02:19:44', 0),
+(4, 7, 'Testimoni', 'Bismillah.. MasyaaAllah cepat banget responnya, Barakallahu fiik :)', '2020-05-09 16:54:21', 0);
 
 -- --------------------------------------------------------
 
@@ -118,7 +120,8 @@ INSERT INTO `transaksi` (`id_transaksi`, `id_user`, `id_mobil`, `tanggal_sewa`, 
 (7, 2, 3, '2020-04-17', '2020-04-18', '0000-00-00', 400000, 0, 1, 1, 0, ''),
 (8, 6, 5, '2020-05-05', '2020-05-07', NULL, 1800000, 0, 1, 0, 3, ''),
 (9, 5, 8, '2020-05-07', '2020-05-09', NULL, 800000, 0, 0, 1, 1, 'photo6167767273113233753.jpg'),
-(10, 5, 6, '2020-05-10', '2020-05-13', '2020-05-15', 2700000, 90000, 0, 2, 2, 'Screenshot_1221.jpg');
+(10, 5, 6, '2020-05-10', '2020-05-13', '2020-05-15', 2700000, 90000, 0, 2, 2, 'Screenshot_1221.jpg'),
+(11, 7, 9, '2020-05-09', '2020-05-11', '2020-05-11', 1600000, 0, 1, 2, 2, 'Screenshot_123.jpg');
 
 -- --------------------------------------------------------
 
@@ -138,7 +141,8 @@ CREATE TABLE `type` (
 
 INSERT INTO `type` (`id_type`, `kode_type`, `nama_type`) VALUES
 (1, 'SD', 'Sedan'),
-(2, 'HB', 'Hatchback');
+(2, 'HB', 'Hatchback'),
+(3, 'SPR', 'Sport');
 
 -- --------------------------------------------------------
 
@@ -170,7 +174,9 @@ INSERT INTO `user` (`id_user`, `nama`, `email`, `password`, `alamat`, `gender`, 
 (3, 'Alief Al', 'alief@gmail.com', '22db6b9d4434177a4abd28b0c5781f15', 'Madura', 'Laki-laki', '089217112213', '896786128689', 'KTP-15445232623.png', 'KK3.PNG', 2),
 (4, 'Nabila', 'nabila@gmail.com', '652d3266220e0aacb047d3aa6f51f1b0', 'Bandung', 'Perempuan', '089788967123', '275782578222', 'KTP-15445232624.png', 'KK4.PNG', 2),
 (5, 'Fulan', 'fulan@gmail.com', '59ee8bd9e54c300ed35f1ead57cfdcf0', 'Bandung', 'Laki-laki', '087789866648', '32400234843', 'KTP-15445232626.png', 'KK41.PNG', 2),
-(6, 'Aisyah', 'aisyah@gmail.com', '26bb533df5747c7a3f2a9cc48a8cf3ee', 'Cimahi', 'Perempuan', '081334456723', '12313221489', 'KTP-154452326261.png', 'KK42.PNG', 2);
+(6, 'Aisyah', 'aisyah@gmail.com', '26bb533df5747c7a3f2a9cc48a8cf3ee', 'Cimahi', 'Perempuan', '081334456723', '12313221489', 'KTP-154452326261.png', 'KK42.PNG', 2),
+(7, 'Arra', 'arra@gmail.com', '87da199e93f0644fa7df307c80152afb', 'SulTeng', 'Perempuan', '089654478906', '423513224339', 'KTP-15445232627.png', 'KK11.PNG', 2),
+(8, 'Abdullah', 'abdul@gmail.com', '82027888c5bb8fc395411cb6804a066c', 'Riyadh', 'Laki-laki', '081233467893', '334456927048', 'KTP-154452326271.png', 'KK421.PNG', 2);
 
 --
 -- Indexes for dumped tables
@@ -218,31 +224,31 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT untuk tabel `mobil`
 --
 ALTER TABLE `mobil`
-  MODIFY `id_mobil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_mobil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT untuk tabel `pesan`
 --
 ALTER TABLE `pesan`
-  MODIFY `id_pesan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_pesan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT untuk tabel `transaksi`
 --
 ALTER TABLE `transaksi`
-  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT untuk tabel `type`
 --
 ALTER TABLE `type`
-  MODIFY `id_type` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_type` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
@@ -258,14 +264,14 @@ ALTER TABLE `mobil`
 -- Ketidakleluasaan untuk tabel `pesan`
 --
 ALTER TABLE `pesan`
-  ADD CONSTRAINT `fk_pesan` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`);
+  ADD CONSTRAINT `fk_id_user` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`);
 
 --
 -- Ketidakleluasaan untuk tabel `transaksi`
 --
 ALTER TABLE `transaksi`
-  ADD CONSTRAINT `fk_customer` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `fk_mobil` FOREIGN KEY (`id_mobil`) REFERENCES `mobil` (`id_mobil`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `fk_customer` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`),
+  ADD CONSTRAINT `fk_mobil` FOREIGN KEY (`id_mobil`) REFERENCES `mobil` (`id_mobil`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

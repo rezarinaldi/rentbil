@@ -198,7 +198,11 @@
 							<?php if (($mb->status_mobil) == 1) : ?>
 								<tr align="center">
 									<td><?= $no++ ?></td>
-									<td><img width="100px" height="60px" src="<?= base_url() . 'assets/upload/mobil/' . $mb->gambar ?>"></td>
+									<td>
+										<a href="<?= base_url() . 'assets/upload/mobil/' . $mb->gambar ?>">
+											<img width="100px" height="60px" src="<?= base_url() . 'assets/upload/mobil/' . $mb->gambar ?>">
+										</a>
+									</td>
 									<td><?= $mb->merk ?></td>
 									<td><?= $mb->no_plat ?></td>
 									<td><?= $mb->warna ?></td>

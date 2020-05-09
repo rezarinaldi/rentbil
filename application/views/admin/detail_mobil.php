@@ -19,15 +19,11 @@
                             <tr align="center">
                                 <th>Type Mobil</th>
                                 <td>
-                                    <?php
-                                    if ($dt->kode_type == "SD") {
-                                        echo "Sedan";
-                                    } elseif ($dt->kode_type == "HB") {
-                                        echo "Hatchback";
-                                    } else {
+                                    <?php if ($dt->nama_type) { ?>
+                                        <?= $dt->nama_type; ?>
+                                    <?php } elseif (empty($dt->nama_type)) { ?>
                                         echo "<span class='text-danger'>Type mobil belum terdaftar</span>";
-                                    }
-                                    ?>
+                                    <?php } ?>
                                 </td>
                             </tr>
                             <tr align="center">
