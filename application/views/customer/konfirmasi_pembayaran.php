@@ -27,7 +27,7 @@
                             <div class="form-group">
                                 <input type="hidden" name="id_transaksi" value="<?= $id_transaksi ?>">
                                 <h5 class="mb-3">Upload Bukti Pembayaran</h5>
-                                <input type="file" name="bukti_pembayaran" class="form-control">
+                                <input type="file" name="bukti_pembayaran" class="form-control" required>
                             </div>
                             <button type="submit" class="btn btn-sm btn-warning mt-3 float-right">
                                 <i class="fa fa-upload"></i> Upload
