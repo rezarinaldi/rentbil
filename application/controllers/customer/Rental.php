@@ -223,7 +223,7 @@ class Rental extends CI_Controller
         $this->db->where('id_transaksi', $id);
 
         $data['transaksi'] = $this->db->get()->result();
-        $this->load->view('template_customer/header');
+        $this->load->view('template_customer/header', $data);
         $this->load->view('customer/pengembalian_mobil', $data);
         $this->load->view('template_customer/footer');
     }
