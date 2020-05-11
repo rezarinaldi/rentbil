@@ -43,6 +43,7 @@
                                 <div class="form-group">
                                     <label>Tanggal Sewa</label>
                                     <input type="date" name="tgl_sewa" class="form-control" min="<?= $today ?>" required>
+                                    <div class="text-small text-danger font-weight-bold" style="font-size: 12px">*Minimal pilih tanggal sewa dibesok harinya.</div>
                                 </div>
                                 <div class="form-group">
                                     <label>Tanggal Kembali</label>
