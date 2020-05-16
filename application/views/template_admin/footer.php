@@ -3,7 +3,7 @@
         Copyright &copy; Rental Mobil <script>
             document.write(new Date().getFullYear());
         </script>
-        <div class="bullet"></div> Design By <a href="https://nauval.in/">Muhamad Nauval Azhar</a>
+        <div class="bullet"></div> Design By <a href="https://nauv.al/">Muhamad Nauval Azhar</a>
         <div class="footer-right">
             2.3.0
         </div>
