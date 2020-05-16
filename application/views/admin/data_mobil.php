@@ -45,7 +45,7 @@
                                 <td><?= $mb->status_mobil == 0 ? "<span class='badge badge-danger'>Kosong</span>" : "<span class='badge badge-primary'>Tersedia</span>" ?></td>
                                 <td>
                                     <a href="<?= base_url('admin/data_mobil/detail_mobil/') . $mb->id_mobil ?>" class="btn btn-sm btn-success"><i class="fas fa-search-plus"></i></a>
-                                    <a href="<?= base_url('admin/data_mobil/delete_mobil/') . $mb->id_mobil ?>" class="btn btn-sm btn-danger tombol-hapus" onclick="return confirm('Yakin data ini akan dihapus?');"><i class="far fa-trash-alt"></i></a>
+                                    <a href="<?= base_url('admin/data_mobil/delete_mobil/') . $mb->id_mobil ?>" class="btn btn-sm btn-danger tombol-hapus"><i class="far fa-trash-alt"></i></a>
                                     <a href="<?= base_url('admin/data_mobil/edit_mobil/') . $mb->id_mobil ?>" class="btn btn-sm btn-warning"><i class="far fa-edit"></i></a>
                                 </td>
                             </tr>
