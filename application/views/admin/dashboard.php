@@ -15,8 +15,11 @@
                     <h4>Total Mobil</h4>
                   </div>
                   <div class="card-body">
-                    <?php $query = $this->db->query('select*from mobil');
-                    echo $query->num_rows($query) ?>
+                    <?php $count = 0;
+                    foreach ($mobil as $total) : ?>
+                      <?php $count++; ?>
+                    <?php endforeach; ?>
+                    <?= $count; ?>
                   </div>
                 </div>
               </div>
@@ -31,8 +34,11 @@
                     <h4>Total User</h4>
                   </div>
                   <div class="card-body">
-                    <?php $query = $this->db->query('select*from user');
-                    echo $query->num_rows($query) ?>
+                    <?php $count = 0;
+                    foreach ($user as $total) : ?>
+                      <?php $count++; ?>
+                    <?php endforeach; ?>
+                    <?= $count; ?>
                   </div>
                 </div>
               </div>
@@ -47,8 +53,11 @@
                     <h4>Total Transaksi</h4>
                   </div>
                   <div class="card-body">
-                    <?php $query = $this->db->query('select*from transaksi');
-                    echo $query->num_rows($query) ?>
+                    <?php $count = 0;
+                    foreach ($transaksi as $total) : ?>
+                      <?php $count++; ?>
+                    <?php endforeach; ?>
+                    <?= $count; ?>
                   </div>
                 </div>
               </div>
